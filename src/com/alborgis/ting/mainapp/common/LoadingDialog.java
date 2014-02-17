@@ -1,6 +1,8 @@
 package com.alborgis.ting.mainapp.common;
 
 import com.alborgis.ting.mainapp.R;
+
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -51,11 +53,23 @@ public class LoadingDialog extends Dialog {
 	public static void showLoading(Context _ctx){
 		if(loadingDialog == null){
 			if(_ctx != null){
-				loadingDialog = new LoadingDialog(_ctx);
+				Activity act = (Activity)_ctx;
+				if(!act.isFinishing()){
+					loadingDialog = new LoadingDialog(_ctx);
+					loadingDialog.show();
+				}
 			}
 			
+		}else{
+			if(_ctx != null){
+				Activity act = (Activity)_ctx;
+				if(!act.isFinishing()){
+					loadingDialog.show();
+				}
+			}
 		}
-		loadingDialog.show();
+		
+		
 	}
 	public static void hideLoading(){
 		if(loadingDialog != null){

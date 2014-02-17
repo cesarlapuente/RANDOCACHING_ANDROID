@@ -83,6 +83,12 @@
         </activity>
         
         <activity
+            android:name="com.alborgis.ting.mainapp.games.geocache_battle.GeocacheBattleMapActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
             android:name="com.alborgis.ting.mainapp.ra.RAActivity"
             android:configChanges="screenSize|orientation" >
         </activity>

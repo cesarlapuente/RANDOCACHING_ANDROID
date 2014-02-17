@@ -80,6 +80,8 @@ public class MessageDialog extends Dialog {
 		// Poner los textos a los botones
 		if(this.positiveButtonText != null){
 			btnPositive.setText(this.positiveButtonText);
+		}else{
+			btnPositive.setVisibility(View.GONE);
 		}
 		if(this.negativeButtonText != null){
 			btnNegative.setText(this.negativeButtonText);

@@ -5,8 +5,10 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.alborgis.ting.base.log.Milog;
+import com.alborgis.ting.base.model.GeocachesGame;
 import com.alborgis.ting.base.model.Slot;
 import com.alborgis.ting.base.model.Slot.SlotItemListener;
+import com.alborgis.ting.base.model.Slot.SlotStartListener;
 import com.alborgis.ting.base.model.User;
 import com.alborgis.ting.base.model.Slot.SlotJoinListener;
 import com.alborgis.ting.base.model.Slot.SlotUserIsJoinedListener;
@@ -18,6 +20,7 @@ import com.alborgis.ting.mainapp.common.MessageDialog;
 import com.alborgis.ting.mainapp.common.MessageDialog.MessageDialogListener;
 import com.alborgis.ting.mainapp.common.push.TINGPushHandler.EVENTS;
 import com.alborgis.ting.mainapp.common.TINGTypeface;
+import com.alborgis.ting.mainapp.games.geocache_battle.GeocacheBattleMapActivity;
 import com.alborgis.ting.mainapp.home.MainActivity;
 import com.alborgis.ting.mainapp.login.LoginPopupWindow;
 import android.os.Bundle;
@@ -53,6 +56,7 @@ public class JoinSlotActivity extends Activity {
 	ImageButton btnHome;
 	TextView tvTitle;
 	TextView tvGameTitle;
+	TextView tvJugadores;
 	ListView listViewPlayers;
 	TextView tvSlotState;
 	Button btnJugar;
@@ -104,6 +108,7 @@ public class JoinSlotActivity extends Activity {
 		btnHome = (ImageButton) findViewById(R.id.btnHome);
 		tvTitle = (TextView) findViewById(R.id.tvTitle);
 		tvGameTitle = (TextView) findViewById(R.id.tvGameTitle);
+		tvJugadores = (TextView) findViewById(R.id.tvJugadores);
 		listViewPlayers = (ListView)findViewById(R.id.listViewPlayers);
 		tvSlotState = (TextView) findViewById(R.id.tvSlotState);
 		btnJugar = (Button) findViewById(R.id.btnJugar);
@@ -115,6 +120,7 @@ public class JoinSlotActivity extends Activity {
 		Typeface tfGullyNormal = TINGTypeface.getGullyLightTypeface(this);
 		tvTitle.setTypeface(tfGullyLight);
 		tvGameTitle.setTypeface(tfGullyNormal);
+		tvJugadores.setTypeface(tfGullyLight);
 		tvSlotState.setTypeface(tfGullyNormal);
 		
 		btnJugar.setVisibility(View.INVISIBLE);
@@ -135,6 +141,12 @@ public class JoinSlotActivity extends Activity {
 			}
 		});
 		
+		btnJugar.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				checkSessionForStartPlayingSlot();
+			}
+		});
+		
 		// Registrar eventos al recibir notificaciones
 		this.registerReceiver(new BroadcastReceiver() {
 		    @Override
@@ -149,9 +161,14 @@ public class JoinSlotActivity extends Activity {
 		               	// Comprobar por el evento que nos env’an y mostrar notificacion
 		               	if(event.equals(EVENTS.USER_JOINED_TO_SLOT)){
 		               		// Si el evento es que un usuario se ha unido a una partida...
-		               		// Recargar la lista de usuarios
-		       				retrieveSlotData();
+		               		
+		               	}else if(event.equals(EVENTS.USER_START_SLOT_PLAY)){
+		               		// Si el evento es que un usuario ha comenzado jugado la partida...
 		               	}
+		               	
+		               	
+		               	// Recargar la lista de usuarios
+	       				retrieveSlotData();
 		               	
 		              	
 					} catch (JSONException e) {
@@ -168,6 +185,9 @@ public class JoinSlotActivity extends Activity {
 	
 	
 	private void updateView(){
+		
+		btnJugar.setVisibility(View.INVISIBLE);
+		
 		if(currentSlot != null){
 			// Actualizar el t’tulo del slot
 			if(currentSlot.title != null && !currentSlot.title.isEmpty()){
@@ -203,16 +223,19 @@ public class JoinSlotActivity extends Activity {
 				}else{
 					tvSlotState.setText("Partida en curso");
 				}
+				btnJugar.setVisibility(View.VISIBLE);
 			}else{
 				if(currentSlot.numCurrentPlayers >= currentSlot.numMinPlayers){
 					tvSlotState.setText("ÁTodo listo para jugar!");
+					btnJugar.setVisibility(View.VISIBLE);
 				}else{
 					tvSlotState.setText("Esperando a que se unan los jugadores...");
+					btnJugar.setVisibility(View.INVISIBLE);
 				}
 			}
 		}
 		
-		btnJugar.setVisibility(View.INVISIBLE);
+		
 		
 	}
 	
@@ -305,7 +328,7 @@ public class JoinSlotActivity extends Activity {
 	
 	private void joinSlot(){
 		// Preguntar si quiere unirse a la partida
-		MessageDialog.showMessageWith2Buttons(this, "ÀUnirse a partida?", "ÀDeseas unirte a esta partida?", "Unirse", "Cancelar", new MessageDialogListener() {
+		MessageDialog.showMessageWith2Buttons(this, "ÀUnirse a partida?", "ÀDeseas unirte a esta partida?", "Unirme", "Cancelar", new MessageDialogListener() {
 			public void onPositiveButtonClick(MessageDialog dialog) {
 				dialog.dismiss();
 				showLoading(true);
@@ -332,7 +355,85 @@ public class JoinSlotActivity extends Activity {
 		
 	}
 
+	
+	
+	private void checkSessionForStartPlayingSlot(){
+		showLoading(true);
+		User.checkIfUserIsLoggedIn(app.drupalClient,
+				new UserSessionListener() {
+					public void onSessionChecked(
+							boolean userIsLoggedIn, boolean isTempUser) {
+						if (!userIsLoggedIn || isTempUser) {
+							LoadingDialog.hideLoading();
+							boolean enableDemoLogin = false;
+							// Si no est‡ logueado pedir login
+							LoginPopupWindow lp = new LoginPopupWindow(
+									JoinSlotActivity.this,
+									getApplication(),
+									JoinSlotActivity.this, enableDemoLogin, true,
+									new LoginPopupWindow.LoginPopupWindowListener() {
+										public void onLoginPopupWindowDismiss(boolean isLoggedIn, boolean isTempUser) {
+											if (!isLoggedIn || isTempUser) {
+												
+											}else{
+												startPlayingSlot();
+											}
+										}
+									});
+							lp.show();
+						} else {
+							startPlayingSlot();
+						}
+					}
 
+					public void onSessionError(String error) {
+						LoadingDialog.hideLoading();
+						MessageDialog.showMessage(
+								JoinSlotActivity.this, "Error",
+								"Error al comprobar sesi—n");
+					}
+				});
+	}
+	
+	private void startPlayingSlot(){
+		Slot.startSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotStartListener() {
+			public void onSlotUserStart(String uid, String nidSlot) {
+				showLoading(false);
+				
+				// Abrir la pantalla de juego
+				openGameActivity();
+			}
+			public void onSlotUserStartError(String error) {
+				Milog.d("Error al unirse a slot: " + error);
+				showLoading(false);
+				MessageDialog.showMessage(JoinSlotActivity.this, "Error", error);
+				
+			}
+		});
+	}
+
+	
+	
+	private void openGameActivity(){
+		if(currentSlot != null && currentSlot.game != null && currentSlot.game.type != null && currentSlot.game.modality != null){
+			// Si est‡n todos los datos del juego...
+			if(currentSlot.game.type.equals(GeocachesGame.DRUPAL_TYPE)){
+				// Si el tipo de juego es Geocache...
+				if(currentSlot.game.modality.equals(GeocachesGame.MODALITY.BATTLE)){
+					// Si la modalidad de Geocache es Battle...
+					Intent intent = new Intent(this,
+							GeocacheBattleMapActivity.class);
+					intent.putExtra(GeocacheBattleMapActivity.PARAM_KEY_GAME_NID,
+							currentSlot.game.nid);
+					intent.putExtra(GeocacheBattleMapActivity.PARAM_KEY_SLOT_NID,
+							currentSlot.nid);
+					startActivity(intent);
+				}
+			}
+		}else{
+			MessageDialog.showMessage(JoinSlotActivity.this, "Error", "Datos err—neos en la partida");
+		}
+	}
 	
 	private void showLoading(boolean show){
 		if(show){
