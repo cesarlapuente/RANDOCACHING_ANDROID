@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">Travel in Game</string>
+    <string name="app_id">398592920275073</string>
+
+    <string name="mod_global__sin_conexion_a_internet">Sin conexión a Internet</string>
+    <string name="mod_global__no_dispones_de_conexion_a_internet">No dispones de conexión a Internet. Conéctate a Internet e inténtalo de nuevo</string>
+    <string name="mod_global__cargando">Cargando...</string>
+    <string name="mod_global__buscando_ubicacion_gps">Buscando ubicación...</string>
+    <string name="mod_global__error">Error</string>
+    <string name="mod_global__ok">OK</string>
+    <string name="mod_global__cancelar">Cancelar</string>
+    <string name="mod_global__borrar_filtros">Borrar filtros</string>
+    <string name="mod_global__sin_datos">Sin datos</string>
+    <string name="mod_global__ver">Ver</string>
+    <string name="mod_global__no_se_pueden_recuperar_los_datos_del_servidor">No se pueden recuperar los datos del servidor</string>
+
+</resources>

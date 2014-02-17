@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    
+    <LinearLayout 
+        android:id="@+id/textos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btnJoinSlot"
+        android:orientation="vertical">
+        
+        <TextView 
+            android:id="@+id/tvPlayerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Player name"
+            android:textSize="18sp"
+            android:textColor="@color/azul_principal_oscuro"/>
+    
+        
+    </LinearLayout>
+
+
+</RelativeLayout>

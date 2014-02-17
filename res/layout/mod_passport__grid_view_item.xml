@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/blanco">
+    
+    <RelativeLayout
+        android:id="@+id/tileContent"
+	    android:layout_width="100dp"
+	    android:layout_height="100dp">
+	    
+        <ImageView 
+            android:id="@+id/imgViewItem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/badge_falta"/>
+        
+        <TextView 
+            android:id="@+id/tvMainText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:singleLine="false"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="-"
+            android:textSize="13sp"
+            android:textColor="@color/azul_principal_oscuro"/>
+     </RelativeLayout>
+      
+
+
+</RelativeLayout>

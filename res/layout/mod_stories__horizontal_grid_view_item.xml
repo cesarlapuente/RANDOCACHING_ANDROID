@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/blanco">
+    
+    <RelativeLayout
+        android:id="@+id/tileContent"
+	    android:layout_width="110dp"
+	    android:layout_height="110dp"
+	    android:layout_marginLeft="5dp"
+	    android:layout_marginRight="5dp"
+	    android:background="@color/azul_fondo">
+	    
+        <ImageView 
+            android:id="@+id/imgViewBackgroundTile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_state_ppal_peque_historia"/>
+
+        
+        <TextView 
+            android:id="@+id/tvCiudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:layout_above="@+id/tvMainText"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:background="@color/naranja_challenger_principal"
+            android:text="Destination"
+            android:textSize="14sp"
+            android:textColor="@color/azul_principal_oscuro"
+            android:shadowColor="@color/blanco"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+        
+        <TextView 
+            android:id="@+id/tvMainText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:gravity="left"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="TITLE GAME"
+            android:textSize="18sp"
+            android:textColor="@color/azul_principal_oscuro"
+            android:shadowColor="@color/blanco"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+	</RelativeLayout>
+
+
+</RelativeLayout>

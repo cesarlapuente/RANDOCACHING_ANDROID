@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/azul_fondo">
+    
+    <LinearLayout 
+        android:id="@+id/textos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btnJoinSlot"
+        android:orientation="vertical">
+        
+        <TextView 
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="TITLE SLOT"
+            android:textSize="20sp"
+            android:textColor="@color/azul_principal_oscuro"
+            android:shadowColor="@color/negro"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+    
+        <TextView 
+            android:id="@+id/tvGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Juego"
+            android:textSize="16sp"
+            android:textColor="@color/azul_principal_oscuro_transparente_50"/>
+        
+    	<TextView 
+            android:id="@+id/tvOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Creado por"
+            android:textSize="16sp"
+            android:textColor="@color/azul_principal_oscuro_transparente_50"/>
+    	
+    	<TextView 
+            android:id="@+id/tvPlayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Jugadores"
+            android:textSize="16sp"
+            android:textColor="@color/azul_principal_oscuro_transparente_50"/>
+    	
+    	<TextView 
+            android:id="@+id/tvState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Estado de la partida"
+            android:textSize="16sp"
+            android:textColor="@color/azul_principal_oscuro_transparente_50"/>
+        
+    </LinearLayout>
+    
+    
+    <Button
+				            android:id="@+id/btnJoinSlot"
+				            android:layout_width="50dp"
+				            android:layout_height="50dp"
+				            android:layout_marginLeft="5dp"
+				            android:layout_alignParentRight="true"
+				            android:layout_centerVertical="true"
+				            android:background="@drawable/btn_state_ppal_jugar" />
+
+
+</RelativeLayout>

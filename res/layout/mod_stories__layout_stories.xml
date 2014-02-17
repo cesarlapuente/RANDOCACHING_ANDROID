@@ -1,0 +1,231 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.alborgis.ting"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/blanco" >
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true" >
+        
+        <RelativeLayout 
+            android:id="@+id/headerGully"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="5dp"
+            android:background="@color/azul_fondo">
+            
+            <ImageView 
+                android:id="@+id/cabezaGully"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/gully_cabecita_sonrie_hacia_derecha"/>
+            
+            <LinearLayout 
+                android:id="@+id/bocadilloGully"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+				android:paddingLeft="20dp"
+				android:paddingRight="10dp"
+				android:paddingTop="5dp"
+				android:paddingBottom="5dp"
+                android:layout_toRightOf="@+id/cabezaGully"
+                android:background="@drawable/bocadillo_pequeno_izquierda">
+                
+                <TextView
+                    android:id="@+id/tvMensaje"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="Ponte cómodo y selecciona una historia. También puedes elegirla por ciudades o por ubicación"
+                    android:textColor="@color/azul_principal_oscuro"
+                    android:textSize="14sp" />
+                
+            </LinearLayout>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:id="@+id/headerTituloFiltros"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/azul_principal_oscuro">
+            
+            <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="Historias"
+                    android:textColor="@color/naranja_challenger_principal"
+                    android:textSize="35sp"
+                    android:shadowColor="@color/blanco"
+            		android:shadowDx="0"
+            		android:shadowDy="1"
+            		android:shadowRadius="2" />
+            
+            
+            <Button
+                android:id="@+id/btnSelCiudad"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/btnGPS"
+                android:background="@drawable/btn_state_combo"
+                android:ellipsize="end"
+                android:paddingLeft="5dp"
+                android:paddingRight="21dp"
+                android:singleLine="true"
+                android:text="CIUDAD..."
+                android:textColor="@color/azul_principal_oscuro"
+                android:textSize="13sp" />
+            
+            <ToggleButton
+                android:id="@+id/btnGPS"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/btn_state_switch_gps"
+                android:textOff=""
+                android:textOn=""
+                android:visibility="visible" />
+            
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/header" >
+        
+        <RelativeLayout
+            android:id="@+id/panelGridVacio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/footer"
+            android:layout_below="@+id/header"
+            android:paddingLeft="45dp"
+            android:paddingRight="10dp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:background="@drawable/gully_mas_bocadillo_inferior_juego">
+            
+            <TextView 
+                android:id="@+id/tvNoHayElementos"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/gullyPanelVacio"
+                android:text=":( No hay elementos"
+                android:textSize="18sp"/>
+            
+            
+            
+        </RelativeLayout>
+
+        <com.alborgis.ting.mainapp.common.custom_controls.endless_horizontal_tile_gridview.EndlessHorizontalTileGridView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/gridView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/footer"
+            android:layout_below="@+id/header"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            app:cacheColorHint="#00000000"
+            app:columnWidth="110dp"
+            app:gravity="center"
+            app:horizontalSpacing="0dp"
+            app:numColumns="auto_fit"
+            app:numRows="auto_fit"
+            app:rowHeight="110dp"
+            app:scrollDirectionLandscape="horizontal"
+            app:scrollDirectionPortrait="horizontal"
+            app:stretchMode="spacingWidthUniform"
+            app:verticalSpacing="5dp" />
+        
+        
+        
+            <RelativeLayout
+                android:id="@+id/panelCargandoGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/shape_black_translucent_round_corners_border"
+                android:layout_centerInParent="true" >
+
+                <ProgressBar
+                    android:id="@+id/ruedaCargandoGrid"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+        
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+            android:id="@+id/botoneraInf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/btnJugar"
+                android:layout_width="70dp"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_ppal_jugar" />
+
+            <ImageButton
+                android:id="@+id/btnPasaporte"
+                android:layout_width="70dp"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_ppal_pasaporte" />
+
+            <ImageButton
+                android:id="@+id/btnPremios"
+                android:layout_width="70dp"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_ppal_premios" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="@color/verde_explorer_principal">
+    
+    
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@color/verde_explorer_principal"
+        android:padding="1dp" >
+    </ListView>
+    
+    <RelativeLayout
+	    android:id="@+id/panelCargando"
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:padding="10dp"
+	    android:background="@color/blanco">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+    
+	</RelativeLayout>
+    
+</RelativeLayout>
+

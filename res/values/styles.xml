@@ -1,0 +1,73 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    
+    
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
+    </style>
+    
+    
+    <style name="TipDialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+    
+    
+    <!-- Colores de la app -->
+    <color name="blanco">#FFFFFF</color>
+    <color name="blanco_80_alpha">#CCFFFFFF</color>
+    <color name="negro">#000000</color>
+    <color name="negro_80_alpha">#CC000000</color>
+    <color name="gris">#b0b0b0</color>
+    
+    <color name="azul_principal_oscuro">#072963</color>
+    <color name="azul_principal_oscuro_transparente_50">#80072963</color>
+    <color name="azul_fondo">#dbe2ed</color>
+
+    <color name="azul_discover_principal">#6ec3ff</color>
+    <color name="azul_discover_semioscuro">#549cd8</color>
+    <color name="azul_discover_oscuro">#3a76b1</color>
+    
+    <color name="verde_messenger_principal">#1fe5a8</color>
+    <color name="verde_messenger_semioscuro">#19b697</color>
+    <color name="verde_messenger_oscuro">#138785</color>
+    
+    <color name="verde_explorer_principal">#bdf000</color>
+    <color name="verde_explorer_semioscuro">#90be18</color>
+    <color name="verde_explorer_oscuro">#628c32</color>
+    <color name="verde_explorer_oscuro_alpha_90">#E6628c32</color>
+    
+    <color name="verde_explorer_one_principal">#bdf000</color>
+    <color name="verde_explorer_one_semioscuro">#90be18</color>
+    <color name="verde_explorer_one_oscuro">#628c32</color>
+    <color name="verde_explorer_one_oscuro_alpha_90">#E6628c32</color>
+    
+    <color name="verde_explorer_full_principal">#90be18</color>
+    <color name="verde_explorer_full_semioscuro">#628c32</color>
+    <color name="verde_explorer_full_oscuro">#50722a</color>
+    <color name="verde_explorer_full_oscuro_alpha_90">#E650722a</color>
+    
+    <color name="verde_explorer_battle_principal">#628c32</color>
+    <color name="verde_explorer_battle_semioscuro">#50722a</color>
+    <color name="verde_explorer_battle_oscuro">#3c5520</color>
+    <color name="verde_explorer_battle_oscuro_alpha_90">#E63c5520</color>
+    
+    <color name="naranja_challenger_principal">#ff7f00</color>
+    <color name="naranja_challenger_semioscuro">#c16919</color>
+    <color name="naranja_challenger_oscuro">#835432</color>
+
+</resources>

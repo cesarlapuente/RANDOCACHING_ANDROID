@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dark_green_round_corners"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/cajaRegistroTing"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_white_round_corners" >
+        
+        <LinearLayout 
+            android:id="@+id/layoutCabeceraSeccionLoginTing"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal">
+            
+            <ImageView 
+                android:id="@+id/imgViewLogoTing"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/login_icono_ting"/>
+
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Únete a la comunidad Travel in Game"
+                android:textColor="@color/azul_principal_oscuro"
+                android:textSize="18sp" />
+            
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/tbMail"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_green_round_corners_border"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColorHint="@color/azul_principal_oscuro_transparente_50"
+            android:textColor="@color/azul_principal_oscuro"
+            android:text="" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/tbPass"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tbMail"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:text=""
+            android:textColorHint="@color/azul_principal_oscuro_transparente_50"
+            android:textColor="@color/azul_principal_oscuro"
+            android:background="@drawable/shape_green_round_corners_border" />
+        
+        <EditText
+            android:id="@+id/tbRepeatPass"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tbMail"
+            android:hint="Repite contraseña"
+            android:inputType="textPassword"
+            android:text=""
+            android:textColorHint="@color/azul_principal_oscuro_transparente_50"
+            android:textColor="@color/azul_principal_oscuro"
+            android:background="@drawable/shape_green_round_corners_border" />
+        
+        <EditText
+            android:id="@+id/tbName"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_green_round_corners_border"
+            android:hint="Nombre (opcional)"
+            android:inputType="text"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColorHint="@color/azul_principal_oscuro_transparente_50"
+            android:textColor="@color/azul_principal_oscuro"
+            android:text="" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/tbLastName"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_green_round_corners_border"
+            android:hint="Apellidos (opcional)"
+            android:inputType="text"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColorHint="@color/azul_principal_oscuro_transparente_50"
+            android:textColor="@color/azul_principal_oscuro"
+            android:text="" >
+        </EditText>
+        
+        <LinearLayout 
+            android:id="@+id/layoutBotones"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="20">
+
+            <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="10"
+            android:layout_below="@+id/tbPass"
+            android:layout_toRightOf="@+id/btnLogin"
+            android:text="Únete!"
+            android:textSize="18sp"
+            android:background="@drawable/btn_state_general" />
+            
+        	<Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="10"
+            android:layout_below="@+id/tbPass"
+            android:layout_toRightOf="@+id/btnLogin"
+            android:text="Cerrar"
+            android:textSize="18sp"
+            android:background="@drawable/btn_state_general" />
+        	
+        	
+            
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cajaMensaje"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_white_round_corners" >
+    
+        <LinearLayout 
+            android:id="@+id/layoutCabeceraSeccionLoginTing"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal">
+            
+            <ImageView 
+                android:id="@+id/imgViewLogoTing"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/btn_info_intro_normal"/>
+            
+            <TextView
+		        android:id="@+id/tvTitle"
+		        android:layout_width="180dp"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:layout_gravity="center_vertical"
+		        android:text="Title"
+		        android:textColor="@color/azul_principal_oscuro"
+		        android:textSize="20sp" />
+            
+        </LinearLayout>
+        
+        <TextView
+		        android:id="@+id/tvMessage"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="10dp"
+		        android:layout_gravity="center_horizontal"
+		        android:text="Message"
+		        android:textColor="@color/negro"
+		        android:textSize="18sp" />
+        
+        <ImageView 
+                android:id="@+id/imgViewImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"/>
+
+
+        <LinearLayout 
+            android:id="@+id/layoutBotones"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            
+            <Button
+            android:id="@+id/btnNegative"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=""
+            android:textSize="18sp"
+            android:background="@drawable/btn_state_general" />
+
+            <Button
+            android:id="@+id/btnPositive"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=""
+            android:textSize="18sp"
+            android:background="@drawable/btn_state_general" />
+        </LinearLayout>
+        
+        
+</LinearLayout>

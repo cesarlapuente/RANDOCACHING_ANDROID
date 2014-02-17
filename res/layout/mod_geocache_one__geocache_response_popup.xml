@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:background="@android:color/transparent"
+    android:padding="10dp" >
+
+    <RelativeLayout 
+        android:id="@+id/layoutBocadillo"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/gully"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="40dp"
+        android:orientation="vertical"
+        android:background="@drawable/bocadillo_popup_explorer">
+        
+        
+        
+        <ScrollView
+            android:id="@+id/scrollViewDescripcion"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/layoutInf" >
+
+            <LinearLayout
+	        android:id="@+id/layoutContentScroll"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+	        	<ImageView
+			        android:id="@+id/imageViewRespuesta"
+			        android:layout_width="80dp"
+			        android:layout_height="80dp"
+			        android:layout_gravity="center_horizontal"
+			        android:layout_marginLeft="10dp"
+			        android:src="@drawable/icono_acierto_cofre_popup" />
+	        	<TextView
+			        android:id="@+id/tvTitle"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="20dp"
+			        android:layout_marginRight="20dp"
+			        android:text="Title"
+			        android:textColor="@color/azul_principal_oscuro"
+			        android:textSize="20sp" />
+	            <TextView
+	                android:id="@+id/tvBody"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="20dp"
+			        android:layout_marginRight="20dp"
+	                android:text="Description"
+	                android:textColor="@color/azul_principal_oscuro"
+	                android:textSize="15sp" />
+	            <LinearLayout
+			        android:id="@+id/panelLogrosObtenidos"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="20dp"
+			        android:layout_marginRight="20dp"
+			        android:layout_marginTop="10dp"
+			        android:orientation="vertical" >
+			
+			        <TextView
+			            android:id="@+id/tvLogrosObtenidos"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:text="Logros conseguidos"
+			            android:textColor="@color/negro"
+			            android:textSize="15sp" />
+			        <Button
+			            android:id="@+id/btnPasaporte"
+			            android:layout_width="50dp"
+			            android:layout_height="50dp"
+			            android:layout_marginTop="10dp"
+			            android:layout_below="@+id/panelLogrosGanados"
+			            android:layout_gravity="center_horizontal"
+			            android:background="@drawable/btn_state_pasaporte_desde_popup" />
+			    </LinearLayout>
+			    
+	       </LinearLayout>     
+        </ScrollView>
+        
+        <LinearLayout 
+            android:id="@+id/layoutInf"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+			android:layout_marginRight="5dp"
+			android:layout_marginLeft="5dp"
+			android:layout_marginBottom="5dp"
+			android:layout_alignParentBottom="true"
+			android:gravity="center_horizontal"
+			android:orientation="vertical">
+            
+            <LinearLayout 
+                android:id="@+id/layoutVotar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+	            
+                <TextView
+			        android:id="@+id/tvVotar"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginLeft="20dp"
+			        android:layout_marginRight="20dp"
+			        android:text="VOTA ESTE JUEGO"
+			        android:textColor="@color/azul_principal_oscuro"
+			        android:textSize="16sp" />
+	            
+                <RatingBar
+		            android:id="@+id/ratingBar"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true"
+		            android:numStars="5"
+		            android:stepSize="1" />
+                
+            </LinearLayout>
+            
+            
+            <Button
+			        android:id="@+id/btnCerrar"
+			        android:layout_width="150dp"
+			        android:layout_height="40dp"
+			        android:background="@drawable/btn_state_general"
+			        android:text="Continuar"
+			        android:textColor="@color/azul_principal_oscuro" />
+            
+        </LinearLayout>
+        
+        
+    </RelativeLayout>
+
+
+    <ImageView
+	        android:id="@+id/gully"
+	        android:layout_width="50dp"
+	        android:layout_height="60dp"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="20dp"
+	        android:src="@drawable/gully_acierto_popup" />
+    
+
+    
+
+</RelativeLayout>

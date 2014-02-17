@@ -1,0 +1,497 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.alborgis.ting"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/blanco" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <RelativeLayout
+            android:id="@+id/headerNav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/azul_principal_oscuro" >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_back_header" />
+
+            <LinearLayout
+                android:id="@+id/headerTexts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/btnHome"
+                android:layout_toRightOf="@+id/btnBack"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="PASAPORTE"
+                    android:textColor="@color/naranja_challenger_principal"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_home_header" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/headerFileteBottom"
+            android:layout_width="fill_parent"
+            android:layout_height="4dp"
+            android:layout_below="@+id/headerNav"
+            android:background="@color/negro" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/header"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/datosUsuario"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/naranja_challenger_principal"
+            android:gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <RelativeLayout
+                android:id="@+id/layoutEditarFoto"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_state_add_foto_o_avatar" >
+
+                <ImageView
+                    android:id="@+id/imageViewAvatarUsuario"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/tvAddFoto1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tvAddFoto2"
+                    android:layout_centerHorizontal="true"
+                    android:text="AÑADIR"
+                    android:textColor="@color/naranja_challenger_principal"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvAddFoto2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:text="FOTO/AVATAR"
+                    android:textColor="@color/naranja_challenger_principal"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/layoutEditarFoto"
+                android:orientation="vertical"
+                android:weightSum="30" >
+
+                <TextView
+                    android:id="@+id/tvNombreApellidos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:gravity="center_vertical"
+                    android:text="Cargando..."
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:gravity="center_vertical"
+                    android:text="Cargando..."
+                    android:textColor="@color/azul_principal_oscuro"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnEditarDatosUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/btn_state_general"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Editar datos de usuario"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/filete"
+            android:layout_width="fill_parent"
+            android:layout_height="4dp"
+            android:layout_below="@+id/headerNav"
+            android:background="@color/negro" >
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollViewLogros"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+            <LinearLayout
+                android:id="@+id/layoutLogros"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvHeaderPuntos"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/azul_principal_oscuro"
+                    android:gravity="center_horizontal"
+                    android:padding="5dp"
+                    android:text="PUNTOS"
+                    android:textColor="@color/naranja_challenger_principal"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/layoutSeccionPuntosYJuegos"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/azul_fondo"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:weightSum="30" >
+
+                    <LinearLayout
+                        android:id="@+id/layoutSeccionPuntos"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="10"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvNumPuntos"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:padding="5dp"
+                            android:text="--"
+                            android:textColor="@color/naranja_challenger_principal"
+                            android:textSize="35sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutSeccionJuegos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="20"
+                        android:orientation="horizontal"
+                        android:weightSum="100" >
+
+                        <RelativeLayout
+                            android:id="@+id/layoutSeccionDiscover"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="25" >
+
+                            <ImageView
+                                android:id="@+id/imageViewBackground"
+                                android:layout_width="fill_parent"
+                                android:layout_height="70dp"
+                                android:src="@drawable/icono_su_color_juego_discover" />
+
+                            <TextView
+                                android:id="@+id/tvNumDiscover"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:gravity="center_horizontal"
+                                android:padding="5dp"
+                                android:text="--"
+                                android:textColor="@color/azul_discover_principal"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/layoutSeccionMessenger"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="25" >
+
+                            <ImageView
+                                android:id="@+id/imageViewBackground"
+                                android:layout_width="fill_parent"
+                                android:layout_height="70dp"
+                                android:src="@drawable/icono_su_color_juego_messenger" />
+
+                            <TextView
+                                android:id="@+id/tvNumMessenger"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:gravity="center_horizontal"
+                                android:padding="5dp"
+                                android:text="--"
+                                android:textColor="@color/verde_messenger_principal"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/layoutSeccionExplorer"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="25" >
+
+                            <ImageView
+                                android:id="@+id/imageViewBackground"
+                                android:layout_width="fill_parent"
+                                android:layout_height="70dp"
+                                android:src="@drawable/icono_su_color_juego_explorer" />
+
+                            <TextView
+                                android:id="@+id/tvNumExplorer"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:gravity="center_horizontal"
+                                android:padding="5dp"
+                                android:text="--"
+                                android:textColor="@color/verde_explorer_semioscuro"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/layoutSeccionChallenger"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="25" >
+
+                            <ImageView
+                                android:id="@+id/imageViewBackground"
+                                android:layout_width="fill_parent"
+                                android:layout_height="70dp"
+                                android:src="@drawable/icono_su_color_juego_challeger" />
+
+                            <TextView
+                                android:id="@+id/tvNumChallenger"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:gravity="center_horizontal"
+                                android:padding="5dp"
+                                android:text="--"
+                                android:textColor="@color/naranja_challenger_principal"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutSeccionMedallasSellosVisados"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/layoutSeccionMedallas"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/azul_fondo" >
+
+                        <TextView
+                            android:id="@+id/tvNumMedallas"
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="--"
+                            android:textColor="@color/naranja_challenger_principal"
+                            android:textSize="35sp" />
+                        
+                        <Button
+				            android:id="@+id/btnVerMedallas"
+				            android:layout_width="wrap_content"
+				            android:layout_height="fill_parent"
+				            android:layout_alignParentRight="true"
+				            android:layout_centerVertical="true"
+				            android:background="@drawable/btn_state_general"
+				            android:paddingLeft="20dp"
+				            android:paddingRight="20dp"
+				            android:layout_marginRight="10dp"
+				            android:text="Ver"
+				            android:textColor="@color/azul_principal_oscuro"
+				            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvHeaderMedallas"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/azul_principal_oscuro"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp"
+                            android:text="MEDALLAS"
+                            android:textColor="@color/naranja_challenger_principal"
+                            android:textSize="20sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutSeccionVisados"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/azul_fondo" >
+
+                        <TextView
+                            android:id="@+id/tvNumVisados"
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="--"
+                            android:textColor="@color/naranja_challenger_principal"
+                            android:textSize="35sp" />
+                        
+                        <Button
+				            android:id="@+id/btnVerVisados"
+				            android:layout_width="wrap_content"
+				            android:layout_height="fill_parent"
+				            android:layout_alignParentRight="true"
+				            android:layout_centerVertical="true"
+				            android:background="@drawable/btn_state_general"
+				            android:paddingLeft="20dp"
+				            android:paddingRight="20dp"
+				            android:layout_marginRight="10dp"
+				            android:text="Ver"
+				            android:textColor="@color/azul_principal_oscuro"
+				            android:textSize="20sp" />
+                        
+                        <TextView
+                            android:id="@+id/tvHeaderVisados"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/azul_principal_oscuro"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp"
+                            android:text="VISADOS"
+                            android:textColor="@color/naranja_challenger_principal"
+                            android:textSize="20sp" />
+
+                        
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutSeccionSellos"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/azul_fondo"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tvNumSellos"
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="--"
+                            android:textColor="@color/naranja_challenger_principal"
+                            android:textSize="35sp" />
+                        
+                        <Button
+				            android:id="@+id/btnVerSellos"
+				            android:layout_width="wrap_content"
+				            android:layout_height="fill_parent"
+				            android:layout_alignParentRight="true"
+				            android:layout_centerVertical="true"
+				            android:background="@drawable/btn_state_general"
+				            android:paddingLeft="20dp"
+				            android:paddingRight="20dp"
+				            android:layout_marginRight="10dp"
+				            android:text="Ver"
+				            android:textColor="@color/azul_principal_oscuro"
+				            android:textSize="20sp" />
+                        
+                        <TextView
+                            android:id="@+id/tvHeaderSellos"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/azul_principal_oscuro"
+                            android:gravity="center_horizontal"
+                            android:padding="5dp"
+                            android:text="SELLOS"
+                            android:textColor="@color/naranja_challenger_principal"
+                            android:textSize="20sp" />
+
+                        
+                    </RelativeLayout>
+                    
+                    <RelativeLayout
+                        android:id="@+id/layoutSeccionLogout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/azul_fondo"
+                        android:padding="10dp"
+                        android:orientation="vertical" >
+
+						<Button
+				            android:id="@+id/btnLogout"
+				            android:layout_width="fill_parent"
+				            android:layout_height="40dp"
+				            android:background="@drawable/btn_state_general"
+				            android:paddingLeft="20dp"
+				            android:paddingRight="20dp"
+				            android:text="Desconectar"
+				            android:textSize="18sp" />
+                        
+                    </RelativeLayout>
+                    
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

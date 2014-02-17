@@ -1,0 +1,186 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.alborgis.ting"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/blanco" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <RelativeLayout
+            android:id="@+id/headerNav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/azul_principal_oscuro" >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_back_header" />
+
+            <LinearLayout
+                android:id="@+id/headerTexts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/btnHome"
+                android:layout_toRightOf="@+id/btnBack"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="NUEVA PARTIDA"
+                    android:textColor="@color/naranja_challenger_principal"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_home_header" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/headerFileteBottom"
+            android:layout_width="fill_parent"
+            android:layout_height="4dp"
+            android:layout_below="@+id/headerNav"
+            android:background="@color/negro" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/header" >
+
+        <ScrollView
+            android:id="@+id/scrollViewContent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+	        <LinearLayout 
+	            android:id="@+id/scrollContent"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+	            
+	            <EditText
+		            android:id="@+id/tbTitle"
+		            android:layout_width="fill_parent"
+		            android:layout_height="45dp"
+		            android:layout_marginTop="10dp"
+		            android:hint="Nombre de la partida"
+		            android:layout_centerHorizontal="true">
+		        </EditText>
+		        
+	            <Button
+		            android:id="@+id/btnJuego"
+		            android:layout_width="fill_parent"
+		            android:layout_height="45dp"
+		            android:layout_marginTop="10dp"
+		            android:hint="Juego seleccionado"
+		            android:layout_centerHorizontal="true">
+		        </Button>
+		        
+	            <TextView 
+	                android:id="@+id/tvHeaderNumMinJugadores"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="20dp"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="10dp"
+	                android:text="Número mínimo de jugadores para comenzar la partida"/>
+	
+		        <SeekBar
+		            android:id="@+id/seekBarNumMinJugadores"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginLeft="10dp"
+		            android:layout_marginRight="10dp"
+		            android:max="10"
+		            android:progress="2" />
+		        <TextView 
+	                android:id="@+id/tvNumMinJugadores"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="center_horizontal"
+	                android:text="0"/>
+		        
+		        <TextView 
+	                android:id="@+id/tvHeaderNumMaxJugadores"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="20dp"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="10dp"
+	                android:text="Número máximo de jugadores admitidos"/>
+	
+		        <SeekBar
+		            android:id="@+id/seekBarNumMaxJugadores"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginLeft="10dp"
+		            android:layout_marginRight="10dp"
+		            android:layout_centerHorizontal="true"
+		            android:max="10"
+		            android:progress="5"/>
+		        
+		        <TextView 
+	                android:id="@+id/tvNumMaxJugadores"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="center_horizontal"
+	                android:text="0"/>
+	            
+	        </LinearLayout>
+	   </ScrollView>
+        
+        
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+          android:id="@+id/footer"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:padding="10dp"
+          android:layout_alignParentBottom="true" >
+            
+        <Button
+				            android:id="@+id/btnCrearSlot"
+				            android:layout_width="fill_parent"
+				            android:layout_height="45dp"
+				            android:background="@drawable/btn_state_general"
+				            android:paddingLeft="20dp"
+				            android:paddingRight="20dp"
+				            android:text="Entrar a la partida"
+				            android:textSize="18sp"
+				            android:textColor="@color/azul_principal_oscuro" />
+        
+   </RelativeLayout>
+    
+
+</RelativeLayout>

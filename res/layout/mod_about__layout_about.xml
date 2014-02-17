@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.alborgis.ting"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/blanco" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <RelativeLayout
+            android:id="@+id/headerNav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/azul_principal_oscuro" >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_back_header" />
+
+            <LinearLayout
+                android:id="@+id/headerTexts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/btnHome"
+                android:layout_toRightOf="@+id/btnBack"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:maxLines="2"
+                    android:singleLine="false"
+                    android:text="INFORMACIÓN"
+                    android:textColor="@color/naranja_challenger_principal"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_home_header"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/headerFileteBottom"
+            android:layout_width="fill_parent"
+            android:layout_height="4dp"
+            android:layout_below="@+id/headerNav"
+            android:background="@color/negro" >
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/header"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+	        android:id="@+id/logosFila1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:gravity="center_horizontal"
+	        android:weightSum="100"
+	        android:orientation="horizontal" >
+            <ImageView
+		        android:id="@+id/logo1"
+		        android:layout_width="0dp"
+		        android:layout_height="60dp"
+		        android:layout_weight="50"
+		        android:layout_marginRight="10dp"
+		        android:src="@drawable/logo_ministerio_minetur" />
+            <ImageView
+		        android:id="@+id/logo2"
+		        android:layout_width="0dp"
+		        android:layout_height="60dp"
+		        android:layout_weight="50"
+		        android:layout_marginRight="10dp"
+		        android:src="@drawable/logo_cluster_turismo" />
+       	</LinearLayout>
+       	
+        <LinearLayout
+	        android:id="@+id/logosFila2"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:weightSum="100"
+	        android:gravity="center_horizontal"
+	        android:orientation="horizontal" >
+            
+            <ImageView
+		        android:id="@+id/logo1"
+		        android:layout_width="0dp"
+		        android:layout_height="60dp"
+		        android:layout_weight="50"
+		        android:layout_marginRight="10dp"
+		        android:src="@drawable/splash_logo_rumbo" />
+            <ImageView
+		        android:id="@+id/logo2"
+		        android:layout_width="0dp"
+		        android:layout_height="60dp"
+		        android:layout_weight="50"
+		        android:src="@drawable/logo_anaya_touring" />
+            
+       	</LinearLayout>
+        
+        <ScrollView
+                android:id="@+id/scrollViewTexto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingTop="10dp"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:layout_toRightOf="@+id/imageViewJuego" >
+
+                <TextView
+                    android:id="@+id/tvTexto"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Travel in Game es un juego sobre viajes y para viajeros curiosos y audaces o simplemente una manera de entretenimiento entorno a los destinos viajeros. \n\n
+En Travel in Game el destino se convierte en un tablero de juegos. Se puede jugar a juegos geolocalizados, que se juegan directamente en el destino, visitando los lugares que aparecen en el juego. Pero se puede jugar también desde cualquier lado, antes o después del viaje, para reconocer lugares que ya hemos visitado o descubrir los lugares que nos gustaría visitar.\n\n
+Travel in Game se ha realizado gracias a la financiación del Ministerio de Industria, Energía y Turismo y la participación directa del Cluster de Turismo de Madrid Network.\n
+Patrocinan este juego viajero empresas lideres del sector turístico: Rumbo, Restaurante Botín y Anaya Touring.\n\n
+La selección de destinos y lugares de interés turístico, así como los contenidos se inspiran en la colección de guías de Anaya Touring 'Guías compact. Un corto viaje a...' Y de la colección 'Volver a...'\n\n
+Pulsa el play y disfruta del viaje."
+                    android:textColor="@color/negro"
+                    android:textSize="17sp" />
+            </ScrollView>
+        
+    </LinearLayout>
+
+</RelativeLayout>

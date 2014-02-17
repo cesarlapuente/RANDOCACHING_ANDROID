@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/campos"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_orange_round_corners_border"
+            android:orientation="vertical"
+            android:padding="10dp" >
+            
+            <ImageView
+                android:id="@+id/imageViewPictureSeleccionado"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_add_foto_o_avatar_normal" />
+
+            <com.alborgis.ting.mainapp.common.custom_controls.two_way_gridview.TwoWayGridView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/gridView"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                app:cacheColorHint="#00000000"
+                app:columnWidth="60dp"
+                app:rowHeight="60dp"
+                app:gravity="center"
+                app:horizontalSpacing="0dp"
+                app:numColumns="auto_fit"
+                app:numRows="auto_fit"
+                app:scrollDirectionLandscape="horizontal"
+                app:scrollDirectionPortrait="horizontal"
+                app:stretchMode="spacingWidthUniform"
+                app:verticalSpacing="5dp"
+                app:listSelector="@color/azul_principal_oscuro_transparente_50" />
+
+            
+
+            <EditText
+                android:id="@+id/tbNombre"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_green_round_corners_border"
+                android:hint="Agrega tu nombre"
+                android:inputType="text"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text=""
+                android:textColor="@color/azul_principal_oscuro"
+                android:textColorHint="@color/azul_principal_oscuro_transparente_50" />
+
+            <EditText
+                android:id="@+id/tbApellidos"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_green_round_corners_border"
+                android:hint="Agrega tus apellidos"
+                android:inputType="text"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text=""
+                android:textColor="@color/azul_principal_oscuro"
+                android:textColorHint="@color/azul_principal_oscuro_transparente_50" />
+
+            <Button
+                android:id="@+id/btnCambiarPass"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_state_general"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Modificar mi contraseña"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/tbNewPass"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tbMail"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_green_round_corners_border"
+                android:hint="Nueva contraseña"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text=""
+                android:textColor="@color/azul_principal_oscuro"
+                android:textColorHint="@color/azul_principal_oscuro_transparente_50" />
+
+            <EditText
+                android:id="@+id/tbCurrentPass"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tbMail"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_green_round_corners_border"
+                android:hint="Contraseña actual"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text=""
+                android:textColor="@color/azul_principal_oscuro"
+                android:textColorHint="@color/azul_principal_oscuro_transparente_50" />
+
+            <LinearLayout
+                android:id="@+id/layoutBotones"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="100" >
+
+                <Button
+                    android:id="@+id/btnActualizar"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/tbPass"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="50"
+                    android:background="@drawable/btn_state_general"
+                    android:text="Guardar"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/tbPass"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/btnLogin"
+                    android:layout_weight="50"
+                    android:background="@drawable/btn_state_general"
+                    android:text="Cancelar"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/blanco">
+    
+    <RelativeLayout
+        android:id="@+id/tileContent"
+	    android:layout_width="110dp"
+	    android:layout_height="110dp"
+	    android:layout_marginLeft="5dp"
+	    android:layout_marginRight="5dp"
+	    android:background="@color/azul_principal_oscuro_transparente_50">
+	    
+        <ImageView 
+            android:id="@+id/imgViewBackgroundTile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        
+        <TextView 
+            android:id="@+id/tvMainText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="TITLE GAME"
+            android:textSize="16sp"
+            android:textColor="@color/blanco"
+            android:shadowColor="@color/negro"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+	</RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,117 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dp"
+    android:background="@color/verde_explorer_principal">
+    
+    <LinearLayout 
+        android:id="@+id/llContent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="100"
+        android:orientation="vertical">
+        
+        <RelativeLayout
+	        android:id="@+id/top"
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="37.5"
+	        android:scaleType="centerInside"
+	        android:background="@color/azul_discover_principal" >
+	        
+            <ImageView 
+                android:id="@+id/imgViewTop"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/splash_logo_ting"/>
+            
+            
+	    </RelativeLayout>
+    
+        <RelativeLayout 
+            android:id="@+id/center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="25"
+            android:background="@color/azul_principal_oscuro">
+            
+            <android.support.v4.view.ViewPager
+		    xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:id="@+id/viewPager"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent" />
+            
+            <RelativeLayout 
+            android:id="@+id/layerBlueTop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:background="@color/azul_principal_oscuro_transparente_50"/>
+            
+            
+            <RelativeLayout 
+                android:id="@+id/layerButtonsCenter"
+	            android:layout_width="wrap_content"
+	            android:layout_height="80dp"
+	            android:layout_centerInParent="true">
+	            
+                <Button 
+	                android:id="@+id/btnAbout"
+	                android:layout_height="75dp"
+	                android:layout_width="75dp"
+	                android:layout_marginRight="3dp"
+	                android:layout_alignParentBottom="true"
+	                android:background="@drawable/btn_state_info_intro"/>
+            
+	            <Button
+			        android:id="@+id/btnEntrar"
+			        android:layout_width="80dp"
+			        android:layout_height="80dp"
+			        android:layout_toRightOf="@+id/btnAbout"
+			        android:background="@drawable/btn_state_play_intro" />
+                
+            </RelativeLayout>
+	            
+            
+        </RelativeLayout>
+	    
+	    
+	    <RelativeLayout
+	        android:id="@+id/bottom"
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="37.5"
+	        android:scaleType="centerInside"
+	        android:background="@color/blanco" >
+	    
+		    <ImageView 
+	                android:id="@+id/imgViewTop"
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                android:scaleType="centerInside"
+	                android:src="@drawable/splash_logo_rumbo"/>
+		    
+		                
+            <ProgressBar
+		        android:id="@+id/progressWheel"
+		        android:layout_width="40dp"
+		        android:layout_height="40dp"
+		        android:layout_alignParentTop="true"
+		        android:layout_centerHorizontal="true" />
+            
+            
+
+		    
+
+	    </RelativeLayout>
+        
+    </LinearLayout>
+    
+    
+    
+    
+    
+    
+</RelativeLayout>

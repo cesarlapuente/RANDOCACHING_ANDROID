@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/blanco">
+    
+    <RelativeLayout
+        android:id="@+id/tileContent"
+	    android:layout_width="110dp"
+	    android:layout_height="110dp"
+	    android:layout_marginLeft="5dp"
+	    android:layout_marginRight="5dp"
+	    android:background="@color/azul_principal_oscuro_transparente_50">
+	    
+        <ImageView 
+            android:id="@+id/imgViewBackgroundTile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+        
+        <TextView 
+            android:id="@+id/tvMainTextDestination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="TITLE DESTINATION"
+            android:textSize="18sp"
+            android:textColor="@color/blanco"
+            android:shadowColor="@color/negro"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+        
+        <TextView 
+            android:id="@+id/tvMainTextGame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_above="@+id/bottomBand"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:singleLine="false"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="TITLE GAME"
+            android:textSize="16sp"
+            android:textColor="@color/negro"
+            android:shadowColor="@color/blanco"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+        
+        <RelativeLayout
+	        android:id="@+id/bottomBand"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:orientation="horizontal"
+		    android:background="@color/azul_principal_oscuro_transparente_50">
+		    
+            <LinearLayout 
+                android:id="@+id/layoutDificultad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="horizontal">
+                
+                <ImageView 
+		            android:id="@+id/imgViewDificultad"
+		            android:layout_width="22dp"
+		            android:layout_height="22dp"
+		            android:src="@drawable/iconito_dificultad"/>
+                
+                <TextView 
+		            android:id="@+id/tvDificultad"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="center_vertical"
+		            android:singleLine="true"
+		            android:ellipsize="end"
+		            android:text="X/X"
+		            android:textSize="10sp"
+		            android:textColor="@color/blanco"/>
+            </LinearLayout>
+
+            
+            <LinearLayout 
+                android:id="@+id/layoutCompletado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/layoutDificultad"
+                android:layout_toLeftOf="@+id/layoutValoracion"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+                
+                <ImageView 
+		            android:id="@+id/imgViewCompletado"
+		            android:layout_width="22dp"
+		            android:layout_height="22dp"
+		            android:src="@drawable/iconito_completado_000"/>
+                
+                <TextView 
+		            android:id="@+id/tvCompletado"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="center_vertical"
+		            android:singleLine="true"
+		            android:ellipsize="end"
+		            android:text="%"
+		            android:textSize="10sp"
+		            android:textColor="@color/blanco"/>
+            </LinearLayout>
+            
+            
+            <LinearLayout 
+                android:id="@+id/layoutValoracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="2dp"
+                android:orientation="horizontal">
+                
+                <ImageView 
+		            android:id="@+id/imgViewValoracion"
+		            android:layout_width="22dp"
+		            android:layout_height="22dp"
+		            android:src="@drawable/iconito_valoracion"/>
+                
+                <TextView 
+		            android:id="@+id/tvValoracion"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="center_vertical"
+		            android:singleLine="true"
+		            android:ellipsize="end"
+		            android:text="0"
+		            android:textSize="10sp"
+		            android:textColor="@color/blanco"/>
+            </LinearLayout>
+            
+            
+		</RelativeLayout>
+        
+
+	</RelativeLayout>
+
+
+</RelativeLayout>

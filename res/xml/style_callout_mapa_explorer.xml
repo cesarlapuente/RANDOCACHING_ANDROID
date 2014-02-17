@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<calloutViewStyle
+	backgroundColor="@color/blanco"
+	backgroundAlpha="204"
+	frameColor="@color/verde_explorer_principal"	
+	cornerCurve="10"
+	flat="true"
+	anchor="5" />
+</resources>

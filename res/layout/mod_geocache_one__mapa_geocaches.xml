@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <RelativeLayout
+            android:id="@+id/headerNav"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/verde_explorer_principal" >
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_back_header" />
+
+            <LinearLayout
+                android:id="@+id/headerTexts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/btnHome"
+                android:layout_toRightOf="@+id/btnBack"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_horizontal"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:text="EXPLORER"
+                    android:textColor="@color/azul_principal_oscuro"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnHome"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_state_home_header" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/headerFileteBottom"
+            android:layout_width="fill_parent"
+            android:layout_height="4dp"
+            android:layout_below="@+id/headerNav"
+            android:background="@color/verde_explorer_semioscuro" >
+        </RelativeLayout>    
+        
+    </RelativeLayout>
+    
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/header">
+        
+        <com.esri.android.map.MapView
+	        xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:id="@+id/mapa"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_below="@+id/cabecera" >
+    	</com.esri.android.map.MapView>
+    	
+        <ImageButton 
+            android:id="@+id/btnRA"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_state_ojo_ar"/>
+    	
+        <LinearLayout 
+            android:id="@+id/layoutIntentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="60dp"
+            android:paddingLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/gully_mas_bocadillo_inferior_juego_derecha">
+        </LinearLayout>
+        
+     </RelativeLayout>
+    
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+    </RelativeLayout>
+
+</RelativeLayout>
