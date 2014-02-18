@@ -130,14 +130,29 @@
           android:padding="10dp"
           android:layout_alignParentBottom="true" >
         
+        <Button
+				            android:id="@+id/btnAbandonar"
+				            android:layout_width="wrap_content"
+				            android:layout_height="45dp"
+				            android:layout_alignParentLeft="true"
+				            android:layout_centerVertical="true"
+				            android:background="@drawable/btn_state_general"
+				            android:paddingLeft="10dp"
+				            android:paddingRight="10dp"
+				            android:text="Abandonar"
+				            android:textSize="18sp"
+				            android:textColor="@color/azul_principal_oscuro" />
+        
         <TextView
                     android:id="@+id/tvSlotState"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/btnAbandonar"
                     android:layout_toLeftOf="@+id/btnJugar"
+                    android:padding="5dp"
                     android:ellipsize="end"
                     android:layout_centerVertical="true"
-                    android:maxLines="2"
+                    android:maxLines="3"
                     android:singleLine="false"
                     android:text="Slot state"
                     android:textColor="@color/naranja_challenger_principal"
@@ -145,8 +160,8 @@
             
         <Button
 				            android:id="@+id/btnJugar"
-				            android:layout_width="80dp"
-				            android:layout_height="80dp"
+				            android:layout_width="60dp"
+				            android:layout_height="60dp"
 				            android:layout_alignParentRight="true"
 				            android:background="@drawable/btn_state_play_explorer" />
         

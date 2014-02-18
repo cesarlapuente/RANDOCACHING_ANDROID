@@ -8,6 +8,7 @@ import com.alborgis.ting.base.log.Milog;
 import com.alborgis.ting.base.model.GeocachesGame;
 import com.alborgis.ting.base.model.Slot;
 import com.alborgis.ting.base.model.Slot.SlotItemListener;
+import com.alborgis.ting.base.model.Slot.SlotLeaveListener;
 import com.alborgis.ting.base.model.Slot.SlotStartListener;
 import com.alborgis.ting.base.model.User;
 import com.alborgis.ting.base.model.Slot.SlotJoinListener;
@@ -41,6 +42,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class JoinSlotActivity extends Activity {
 
@@ -60,10 +62,44 @@ public class JoinSlotActivity extends Activity {
 	ListView listViewPlayers;
 	TextView tvSlotState;
 	Button btnJugar;
+	Button btnAbandonar;
 	
 	PlayersSlotAdapter adapter;
 	
 	Slot currentSlot;
+	
+	
+	BroadcastReceiver pushReceiver = new BroadcastReceiver() {
+	    @Override
+	    public void onReceive(Context context, Intent intent) {
+			Bundle extras = intent.getExtras();
+			String data = extras.getString("data");
+	       	if(data != null){
+	      		try {
+	      			JSONObject dataDic = new JSONObject(data);
+	               	String event = dataDic.getString("event");
+	               	String slot_nid = dataDic.getString("slot_nid");
+	               	if(slot_nid != null && slot_nid.equals(nidSlot)){
+	               		// Comprobar por el evento que nos env’an y mostrar notificacion
+		               	if(event.equals(EVENTS.USER_JOINED_TO_SLOT)){
+		               		// Si el evento es que un usuario se ha unido a una partida...
+		               		
+		               	}else if(event.equals(EVENTS.USER_START_SLOT_PLAY)){
+		               		// Si el evento es que un usuario ha comenzado jugado la partida...
+		               	}
+
+		               	// Recargar la lista de usuarios
+	       				retrieveSlotData();
+	               	}
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	              	
+	              	
+	        }
+	    }
+	};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +112,7 @@ public class JoinSlotActivity extends Activity {
 		Bundle b = getIntent().getExtras();
 		if(b != null){
 			nidSlot = b.getString(PARAM_KEY_SLOT_NID);
+			Milog.d("Slot nid recibido en el Bundle: " + nidSlot);
 		}
 
 		capturarControles();
@@ -84,7 +121,7 @@ public class JoinSlotActivity extends Activity {
 	}
 	
 
-	
+
 
 	protected void onResume() {
 		super.onResume();
@@ -98,6 +135,7 @@ public class JoinSlotActivity extends Activity {
 
 	public void finish() {
 		super.finish();
+		unregisterReceiver(pushReceiver);
 	}
 
 
@@ -112,6 +150,7 @@ public class JoinSlotActivity extends Activity {
 		listViewPlayers = (ListView)findViewById(R.id.listViewPlayers);
 		tvSlotState = (TextView) findViewById(R.id.tvSlotState);
 		btnJugar = (Button) findViewById(R.id.btnJugar);
+		btnAbandonar = (Button)findViewById(R.id.btnAbandonar);
 	}
 
 	private void inicializarForm() {
@@ -147,39 +186,34 @@ public class JoinSlotActivity extends Activity {
 			}
 		});
 		
-		// Registrar eventos al recibir notificaciones
-		this.registerReceiver(new BroadcastReceiver() {
-		    @Override
-		    public void onReceive(Context context, Intent intent) {
-				Bundle extras = intent.getExtras();
-				String data = extras.getString("data");
-		       	if(data != null){
-		      		try {
-		      			JSONObject dataDic = new JSONObject(data);
-		               	String event = dataDic.getString("event");
-		               	
-		               	// Comprobar por el evento que nos env’an y mostrar notificacion
-		               	if(event.equals(EVENTS.USER_JOINED_TO_SLOT)){
-		               		// Si el evento es que un usuario se ha unido a una partida...
-		               		
-		               	}else if(event.equals(EVENTS.USER_START_SLOT_PLAY)){
-		               		// Si el evento es que un usuario ha comenzado jugado la partida...
-		               	}
-		               	
-		               	
-		               	// Recargar la lista de usuarios
-	       				retrieveSlotData();
-		               	
-		              	
-					} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+		btnAbandonar.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				MessageDialog.showMessageWith2Buttons(JoinSlotActivity.this, "ÀAbandonar la partida?", "ÀSeguro que deseas abandonar esta partida?", "Si",  "No", new MessageDialogListener() {
+					public void onPositiveButtonClick(final MessageDialog dialog) {
+						LoadingDialog.showLoading(JoinSlotActivity.this);
+						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
+							public void onSlotUserLeaved(String uid, String nidSlot) {
+								LoadingDialog.hideLoading();
+								dialog.dismiss();
+								Toast.makeText(JoinSlotActivity.this, "Abandonaste la partida", Toast.LENGTH_SHORT).show();
+								finish();
+							}
+							public void onSlotUserLeaveError(String error) {
+								LoadingDialog.hideLoading();
+								dialog.dismiss();
+								MessageDialog.showMessage(JoinSlotActivity.this, "Error", error);
+							}
+						});
 					}
-		              	
-		              	
-		        }
-		    }
-		}, new IntentFilter("MyGCMMessageReceived"));
+					public void onNegativeButtonClick(MessageDialog dialog) {
+						dialog.dismiss();
+					}
+				});
+			}
+		});
+		
+		// Registrar eventos al recibir notificaciones
+		this.registerReceiver(pushReceiver, new IntentFilter("MyGCMMessageReceived"));
 
 	}
 	
@@ -233,6 +267,12 @@ public class JoinSlotActivity extends Activity {
 					btnJugar.setVisibility(View.INVISIBLE);
 				}
 			}
+			
+			if(currentSlot.finished){
+				tvSlotState.setText("PARTIDA FINALIZADA");
+				btnJugar.setVisibility(View.INVISIBLE);
+			}
+			
 		}
 		
 		
@@ -242,6 +282,7 @@ public class JoinSlotActivity extends Activity {
 	
 	
 	private void checkSession(){
+		LoadingDialog.showLoading(this);
 		User.checkIfUserIsLoggedIn(app.drupalClient,
 				new UserSessionListener() {
 					public void onSessionChecked(

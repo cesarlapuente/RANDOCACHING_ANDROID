@@ -391,11 +391,16 @@ public class SlotsActivity extends Activity implements SlotsListListener, Endles
 					holder.tvState.setText("Estado: en curso");
 				}
 			}else{
-				if(slot.numCurrentPlayers >= slot.numMinPlayers){
-					holder.tvState.setText("Estado: lista para jugar");
+				if(slot.finished){
+					holder.tvState.setText("Estado: finalizada");
 				}else{
-					holder.tvState.setText("Estado: esperando jugadores");
+					if(slot.numCurrentPlayers >= slot.numMinPlayers){
+						holder.tvState.setText("Estado: lista para jugar");
+					}else{
+						holder.tvState.setText("Estado: esperando jugadores");
+					}
 				}
+				
 			}
 			
 			
@@ -413,9 +418,6 @@ public class SlotsActivity extends Activity implements SlotsListListener, Endles
 			}else{
 				holder.btnJoin.setVisibility(View.GONE);
 			}
-			
-			
-			
 
 
 			return convertView;

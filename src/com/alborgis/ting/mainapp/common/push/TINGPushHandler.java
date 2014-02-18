@@ -20,10 +20,12 @@ public class TINGPushHandler {
 	public static final class EVENTS {
 		public static final String USER_JOINED_TO_SLOT			=	"1";
 		public static final String USER_START_SLOT_PLAY			=	"2";
+		public static final String USER_LEAVED_SLOT				=	"3";
 	}
 	
 	public static final class GEOCACHE_GAME_BATTLE_EVENTS {
-		public static final String USER_FOUND_TREASURE			=	"3";
+		public static final String USER_FOUND_TREASURE			=	"100";
+		public static final String USER_WASTE_ATTEMPTS			=	"101";
 	}
 	
 	public static void handleNotificationIntent(Context _ctx, Intent _notifIntent){
@@ -61,10 +63,10 @@ public class TINGPushHandler {
 	                	// Comprobar por el evento que nos env’an y mostrar notificacion
 	                	if(event.equals(EVENTS.USER_JOINED_TO_SLOT)){
 	                		// Si el evento es que un usuario se ha unido a una partida...
-	                		String slot_nid = extras.getString("slot_nid");
+	                		String slot_nid = dataDic.getString("slot_nid");
 	                		Intent intent = new Intent(_ctx, JoinSlotActivity.class);
 	                		intent.putExtra(JoinSlotActivity.PARAM_KEY_SLOT_NID, slot_nid);
-	                		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	                		intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 	                		int idNot = 1;
 	                		try{
 	                			idNot = Integer.parseInt(slot_nid);
@@ -74,10 +76,23 @@ public class TINGPushHandler {
 	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
 	                	}else if(event.equals(EVENTS.USER_START_SLOT_PLAY)){
 	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
-	                		String slot_nid = extras.getString("slot_nid");
+	                		String slot_nid = dataDic.getString("slot_nid");
 	                		Intent intent = new Intent(_ctx, JoinSlotActivity.class);
 	                		intent.putExtra(JoinSlotActivity.PARAM_KEY_SLOT_NID, slot_nid);
-	                		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	                		intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	                		int idNot = 1;
+	                		try{
+	                			idNot = Integer.parseInt(slot_nid);
+	                		}catch(NumberFormatException ex){
+	                			
+	                		}
+	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
+	                	}else if(event.equals(EVENTS.USER_LEAVED_SLOT)){
+	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
+	                		String slot_nid = dataDic.getString("slot_nid");
+	                		Intent intent = new Intent(_ctx, JoinSlotActivity.class);
+	                		intent.putExtra(JoinSlotActivity.PARAM_KEY_SLOT_NID, slot_nid);
+	                		intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 	                		int idNot = 1;
 	                		try{
 	                			idNot = Integer.parseInt(slot_nid);
@@ -87,10 +102,23 @@ public class TINGPushHandler {
 	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
 	                	}else if(event.equals(GEOCACHE_GAME_BATTLE_EVENTS.USER_FOUND_TREASURE)){
 	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
-	                		String slot_nid = extras.getString("slot_nid");
+	                		String slot_nid = dataDic.getString("slot_nid");
 	                		Intent intent = new Intent(_ctx, JoinSlotActivity.class);
 	                		intent.putExtra(JoinSlotActivity.PARAM_KEY_SLOT_NID, slot_nid);
-	                		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	                		intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+	                		int idNot = 1;
+	                		try{
+	                			idNot = Integer.parseInt(slot_nid);
+	                		}catch(NumberFormatException ex){
+	                			
+	                		}
+	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
+	                	}else if(event.equals(GEOCACHE_GAME_BATTLE_EVENTS.USER_WASTE_ATTEMPTS)){
+	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
+	                		String slot_nid = dataDic.getString("slot_nid");
+	                		Intent intent = new Intent(_ctx, JoinSlotActivity.class);
+	                		intent.putExtra(JoinSlotActivity.PARAM_KEY_SLOT_NID, slot_nid);
+	                		intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 	                		int idNot = 1;
 	                		try{
 	                			idNot = Integer.parseInt(slot_nid);
@@ -129,8 +157,10 @@ public class TINGPushHandler {
     private static void showNotification(Context _ctx, int notificationId, int resIdIcon, String _title, String _msg, Intent intent) {
     	NotificationManager mNotificationManager = (NotificationManager) _ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(_ctx, 0,
-                intent, 0);
+        /*PendingIntent contentIntent = PendingIntent.getActivity(_ctx, 0,
+                intent, 0);*/
+    	PendingIntent contentIntent = PendingIntent.getActivity(_ctx, 0,
+                intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder mBuilder =  new NotificationCompat.Builder(_ctx)
         .setSmallIcon(resIdIcon)

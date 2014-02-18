@@ -40,9 +40,11 @@ import com.alborgis.ting.base.model.BundleEarned;
 import com.alborgis.ting.base.model.GeoPoint;
 import com.alborgis.ting.base.model.Geocache;
 import com.alborgis.ting.base.model.GeocachesGame;
+import com.alborgis.ting.base.model.Slot;
 import com.alborgis.ting.base.model.Geocache.GeocacheBattleCaptureListener;
 import com.alborgis.ting.base.model.Geocache.GeocacheBattleListListener;
 import com.alborgis.ting.base.model.GeocachesGame.GeocacheGameItemListener;
+import com.alborgis.ting.base.model.Slot.SlotLeaveListener;
 import com.alborgis.ting.base.model.Poi;
 import com.alborgis.ting.base.utils.DataConection;
 import com.alborgis.ting.mainapp.MainApp;
@@ -97,6 +99,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 	View calloutContentView;
 	TextView lblMessageCallout;
 	Button btnCaptureCallout;
+	Button btnAbandonar;
 
 	GraphicsLayer capaGeometrias;
 	
@@ -106,10 +109,52 @@ public class GeocacheBattleMapActivity extends Activity implements
 	Geocache currentSelectedGeocache;
 
 	GeoPoint lastLocation;
+	
+	BroadcastReceiver pushReceiver = new BroadcastReceiver() {
+	    @Override
+	    public void onReceive(Context context, Intent intent) {
+			Bundle extras = intent.getExtras();
+			String data = extras.getString("data");
+	       	if(data != null){
+	      		try {
+	      			JSONObject dataDic = new JSONObject(data);
+	               	String event = dataDic.getString("event");
+	               	String slot_nid = dataDic.getString("slot_nid");
+	               	String title = dataDic.getString("title");
+	               	String message = extras.getString("message");
+	               	if(slot_nid != null && slot_nid.equals(nidSlot)){
+	               		// Comprobar por el evento que nos env’an y mostrar notificacion
+		               	if(event.equals(GEOCACHE_GAME_BATTLE_EVENTS.USER_FOUND_TREASURE)){
+		               		// Si el evento es que un usuario ha encontrado el tesoro...
+		               		// Mostrar mensaje de que ha perdido la partida
+		               		LoadingDialog.showLoading(GeocacheBattleMapActivity.this);
+		               		MessageDialog.showMessageWith1Buttons(GeocacheBattleMapActivity.this, title, message, "Finalizar", new MessageDialogListener() {
+								public void onPositiveButtonClick(MessageDialog dialog) {
+									LoadingDialog.hideLoading();
+									dialog.dismiss();
+								}
+								public void onNegativeButtonClick(MessageDialog dialog) {
+									LoadingDialog.hideLoading();
+									dialog.dismiss();
+									finish();
+								}
+							});
+		               	}
+	               	}      	
+	      		} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	              	
+	              	
+	        }
+	    }
+	};
+	
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.mod_geocache_one__mapa_geocaches);
+		setContentView(R.layout.mod_geocache_battle__mapa_geocaches);
 
 		this.app = (MainApp) getApplication();
 		
@@ -142,6 +187,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 
 	public void finish() {
 		super.finish();
+		unregisterReceiver(pushReceiver);
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -161,6 +207,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 		tvTitle = (TextView) findViewById(R.id.tvTitle);
 		mapView = (MapView) findViewById(R.id.mapa);
 		btnRA = (ImageButton)findViewById(R.id.btnRA);
+		btnAbandonar = (Button)findViewById(R.id.btnAbandonar);
 		layoutIntentos = (LinearLayout)findViewById(R.id.layoutIntentos);
 	}
 
@@ -206,44 +253,32 @@ public class GeocacheBattleMapActivity extends Activity implements
 			}
 		});
 		
+		btnAbandonar.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				MessageDialog.showMessageWith2Buttons(GeocacheBattleMapActivity.this, "ÀAbandonar la partida?", "ÀSeguro que deseas abandonar esta partida?", "Si",  "No", new MessageDialogListener() {
+					public void onPositiveButtonClick(final MessageDialog dialog) {
+						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
+							public void onSlotUserLeaved(String uid, String nidSlot) {
+								dialog.dismiss();
+								Toast.makeText(GeocacheBattleMapActivity.this, "Abandonaste la partida", Toast.LENGTH_SHORT).show();
+								finish();
+							}
+							public void onSlotUserLeaveError(String error) {
+								dialog.dismiss();
+								MessageDialog.showMessage(GeocacheBattleMapActivity.this, "Error", error);
+							}
+						});
+					}
+					public void onNegativeButtonClick(MessageDialog dialog) {
+						dialog.dismiss();
+					}
+				});
+			}
+		});
+		
 		
 		// Registrar eventos al recibir notificaciones
-		this.registerReceiver(new BroadcastReceiver() {
-		    @Override
-		    public void onReceive(Context context, Intent intent) {
-				Bundle extras = intent.getExtras();
-				String data = extras.getString("data");
-		       	if(data != null){
-		      		try {
-		      			JSONObject dataDic = new JSONObject(data);
-		               	String event = dataDic.getString("event");
-		               	
-		               	// Comprobar por el evento que nos env’an y mostrar notificacion
-		               	if(event.equals(GEOCACHE_GAME_BATTLE_EVENTS.USER_FOUND_TREASURE)){
-		               		// Si el evento es que un usuario ha encontrado el tesoro...
-		               		// Mostrar mensaje de que ha perdido la partida
-		               		MessageDialog.showMessageWith1Buttons(GeocacheBattleMapActivity.this, "Has perdido", "Otro jugador encontr— el tesoro antes que tœ", "OK", new MessageDialogListener() {
-								public void onPositiveButtonClick(MessageDialog dialog) {
-									dialog.dismiss();
-								}
-								public void onNegativeButtonClick(MessageDialog dialog) {
-									dialog.dismiss();
-									finish();
-								}
-							});
-		               		
-		               	}
-		               	
-				              	
-		      		} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-		              	
-		              	
-		        }
-		    }
-		}, new IntentFilter("MyGCMMessageReceived"));
+		this.registerReceiver(pushReceiver, new IntentFilter("MyGCMMessageReceived"));
 
 		// Al tocar un punto en el mapa
 		this.mapView.setOnSingleTapListener(new OnSingleTapListener() {
@@ -380,6 +415,8 @@ public class GeocacheBattleMapActivity extends Activity implements
 			public void onGeocacheGameItemLoad(GeocachesGame geocachesGame) {
 				// Asigno el geocacheGame
 				game = geocachesGame;
+				// Actualizar intentos
+				updateAttempts();
 				// Actualizar el view
 				updateView();
 				// Cargar los geocaches una vez que tengo conexi—n
@@ -447,7 +484,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			Geocache geo = getGeocache(nidGeocache);
 			String title = geo.title;
 			String body = geo.body;
-			String buttonText = "Juega otra vez";
+			String buttonText = "Finalizar";
 			GeocacheBattleResponseDialog popup = new GeocacheBattleResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheBattleResponseDialog.STATE_GULLY_TESORO_ENCONTRADO, true, nidGame, new GeocacheBattleResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					finish();
@@ -479,7 +516,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			Geocache geo = getGeocache(nidGeocache);
 			String title = geo.title;
 			String body = "Has agotado los intentos para encontrar el tesoro.\n" + geo.body;
-			String buttonText = "Juega otra vez";
+			String buttonText = "Finalizar";
 			GeocacheBattleResponseDialog popup = new GeocacheBattleResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheBattleResponseDialog.STATE_GULLY_AGOTADOS_INTENTOS, true, nidGame, new GeocacheBattleResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					finish();
@@ -506,7 +543,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 					"Ya has consultado este geocache y no ten’a el tesoro. Te quedan "
 							+ remainAttempts);*/
 		} else {
-			MessageDialog.showMessage(this, "Error", "Error general"	+ remainAttempts);
+			MessageDialog.showMessage(this, "Error", "Error desconocido");
 		}
 
 		showLoading(false);
@@ -514,7 +551,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 
 	public void onGeocacheBattleCaptureError(String error) {
 		Milog.d("Error al capturar geocache: " + error);
-		MessageDialog.showMessage(this, "Error", "No se puede capturar el geocache");
+		MessageDialog.showMessage(this, "Error", "No se puede capturar el geocache. Es posible que la partida haya finalizado");
 		showLoading(false);
 	}
 

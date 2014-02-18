@@ -83,7 +83,6 @@ public class CreateSlotActivity extends Activity {
 
 	public void finish() {
 		super.finish();
-		overridePendingTransition(R.anim.anim_pop_enter, R.anim.anim_pop_exit);
 	}
 
 
