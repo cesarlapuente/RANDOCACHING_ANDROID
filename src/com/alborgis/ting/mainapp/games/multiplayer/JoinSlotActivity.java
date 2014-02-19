@@ -31,6 +31,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Typeface;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,9 @@ public class JoinSlotActivity extends Activity {
 	
 	public static final String PARAM_KEY_SLOT_NID	=	"param_key_slot_nid";
 
+	public static boolean isVisible = false; // Esta variable va cambiando si el activity est‡ visible o no
+	
+	
 	String nidSlot;
 	
 	
@@ -73,6 +77,7 @@ public class JoinSlotActivity extends Activity {
 	    @Override
 	    public void onReceive(Context context, Intent intent) {
 			Bundle extras = intent.getExtras();
+			String message = extras.getString("message");
 			String data = extras.getString("data");
 	       	if(data != null){
 	      		try {
@@ -83,9 +88,29 @@ public class JoinSlotActivity extends Activity {
 	               		// Comprobar por el evento que nos env’an y mostrar notificacion
 		               	if(event.equals(EVENTS.USER_JOINED_TO_SLOT)){
 		               		// Si el evento es que un usuario se ha unido a una partida...
+		               		if(isVisible){
+		               			Toast toast = Toast.makeText(JoinSlotActivity.this, message, Toast.LENGTH_SHORT);
+			               		toast.setGravity(Gravity.BOTTOM, 0, 0);
+			               		toast.show();
+		               		}
+		               		
 		               		
 		               	}else if(event.equals(EVENTS.USER_START_SLOT_PLAY)){
-		               		// Si el evento es que un usuario ha comenzado jugado la partida...
+		               		// Si el evento es que un usuario ha comenzado jugando la partida...
+		               		if(isVisible){
+		               			Toast toast = Toast.makeText(JoinSlotActivity.this, message, Toast.LENGTH_SHORT);
+			               		toast.setGravity(Gravity.BOTTOM, 0, 0);
+			               		toast.show();
+		               		}
+		               		
+		               	}else if(event.equals(EVENTS.USER_LEAVED_SLOT)){
+		               		// Si el evento es que un usuario ha abandonado la partida...
+		               		if(isVisible){
+		               			Toast toast = Toast.makeText(JoinSlotActivity.this, message, Toast.LENGTH_SHORT);
+			               		toast.setGravity(Gravity.BOTTOM, 0, 0);
+			               		toast.show();
+		               		}
+		               		
 		               	}
 
 		               	// Recargar la lista de usuarios
@@ -125,12 +150,14 @@ public class JoinSlotActivity extends Activity {
 
 	protected void onResume() {
 		super.onResume();
+		isVisible = true; // Poner que el activity est‡ visible
 		checkSession();
 		updateView();
 	}
 	
 	public void onPause() {
 		super.onPause();
+		isVisible = false; // Poner que el activity est‡ no visible (en background)
 	}
 
 	public void finish() {

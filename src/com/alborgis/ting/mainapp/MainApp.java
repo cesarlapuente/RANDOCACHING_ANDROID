@@ -1,6 +1,5 @@
 package com.alborgis.ting.mainapp;
 import java.util.ArrayList;
-
 import com.alborgis.ting.base.drupalsvcsapi.Drupal7ServicesClient;
 import com.alborgis.ting.base.log.Milog;
 import com.alborgis.ting.base.push_not.PushNotificationsClient;
@@ -9,6 +8,7 @@ import com.alborgis.ting.base.utils.Util;
 import com.alborgis.ting.mainapp.common.map_layer_change.CapaBase;
 import com.esri.android.map.bing.BingMapsLayer;
 import com.esri.core.geometry.SpatialReference;
+
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -179,6 +179,5 @@ public class MainApp extends Application {
 		capa.setClaseCapaBase(BingMapsLayer.class);
 		this.capaBaseSeleccionada = capa;
 	}
-
 
 }

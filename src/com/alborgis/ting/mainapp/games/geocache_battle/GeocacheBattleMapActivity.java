@@ -25,6 +25,7 @@ import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +56,7 @@ import com.alborgis.ting.mainapp.common.MessageDialog.MessageDialogListener;
 import com.alborgis.ting.mainapp.common.TINGSound;
 import com.alborgis.ting.mainapp.common.TINGTypeface;
 import com.alborgis.ting.mainapp.common.map_layer_change.CapaBase;
+import com.alborgis.ting.mainapp.common.push.TINGPushHandler.EVENTS;
 import com.alborgis.ting.mainapp.common.push.TINGPushHandler.GEOCACHE_GAME_BATTLE_EVENTS;
 import com.alborgis.ting.mainapp.home.MainActivity;
 import com.alborgis.ting.mainapp.ra.JSONPOIParser;
@@ -83,6 +85,8 @@ public class GeocacheBattleMapActivity extends Activity implements
 	public static final String PARAM_KEY_GAME_NID = "key_game_nid";
 	public static final String PARAM_KEY_SLOT_NID = "key_slot_nid";
 
+	public static boolean isVisible = false; // Esta variable va cambiando si el activity est‡ visible o no
+	
 	String nidGame;
 	String nidSlot;
 	
@@ -126,19 +130,45 @@ public class GeocacheBattleMapActivity extends Activity implements
 	               		// Comprobar por el evento que nos env’an y mostrar notificacion
 		               	if(event.equals(GEOCACHE_GAME_BATTLE_EVENTS.USER_FOUND_TREASURE)){
 		               		// Si el evento es que un usuario ha encontrado el tesoro...
-		               		// Mostrar mensaje de que ha perdido la partida
-		               		LoadingDialog.showLoading(GeocacheBattleMapActivity.this);
-		               		MessageDialog.showMessageWith1Buttons(GeocacheBattleMapActivity.this, title, message, "Finalizar", new MessageDialogListener() {
-								public void onPositiveButtonClick(MessageDialog dialog) {
-									LoadingDialog.hideLoading();
-									dialog.dismiss();
-								}
-								public void onNegativeButtonClick(MessageDialog dialog) {
-									LoadingDialog.hideLoading();
-									dialog.dismiss();
-									finish();
-								}
-							});
+		               		// Mostrar mensaje de que ha perdido la partida, s—lo si el activity est‡ visible
+		               		if(isVisible){
+		               			MessageDialog.showMessageWith1Buttons(GeocacheBattleMapActivity.this, title, message, "Finalizar", new MessageDialogListener() {
+									public void onPositiveButtonClick(MessageDialog dialog) {
+										dialog.dismiss();
+									}
+									public void onNegativeButtonClick(MessageDialog dialog) {
+										dialog.dismiss();
+										finish();
+									}
+								});
+		               		}
+		               		
+		               		
+		               	}else if(event.equals(EVENTS.USER_JOINED_TO_SLOT)){
+		               		// Si el evento es que un usuario se ha unido a una partida...
+		               		if(isVisible){
+		               			Toast toast = Toast.makeText(GeocacheBattleMapActivity.this, message, Toast.LENGTH_SHORT);
+			               		toast.setGravity(Gravity.TOP, 0, 0);
+			               		toast.show();
+		               		}
+		               		
+		               		
+		               	}else if(event.equals(EVENTS.USER_START_SLOT_PLAY)){
+		               		// Si el evento es que un usuario ha comenzado jugando la partida...
+		               		if(isVisible){
+		               			Toast toast = Toast.makeText(GeocacheBattleMapActivity.this, message, Toast.LENGTH_SHORT);
+			               		toast.setGravity(Gravity.TOP, 0, 0);
+			               		toast.show();
+		               		}
+		               		
+		               	}else if(event.equals(EVENTS.USER_LEAVED_SLOT)){
+		               		// Si el evento es que un usuario ha abandonado la partida...
+		               		if(isVisible){
+		               			Toast toast = Toast.makeText(GeocacheBattleMapActivity.this, message, Toast.LENGTH_SHORT);
+			               		toast.setGravity(Gravity.TOP, 0, 0);
+			               		toast.show();
+		               		}
+		               		
 		               	}
 	               	}      	
 	      		} catch (JSONException e) {
@@ -173,6 +203,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 
 	protected void onPause() {
 		super.onPause();
+		isVisible = false; // Poner que el activity est‡ no visible (en background)
 		if (mapView != null) {
 			mapView.pause();
 		}
@@ -180,6 +211,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 
 	public void onResume() {
 		super.onResume();
+		isVisible = true; // Poner que el activity est‡ visible
 		if (mapView != null) {
 			mapView.unpause();
 		}
@@ -257,13 +289,16 @@ public class GeocacheBattleMapActivity extends Activity implements
 			public void onClick(View arg0) {
 				MessageDialog.showMessageWith2Buttons(GeocacheBattleMapActivity.this, "ÀAbandonar la partida?", "ÀSeguro que deseas abandonar esta partida?", "Si",  "No", new MessageDialogListener() {
 					public void onPositiveButtonClick(final MessageDialog dialog) {
+						LoadingDialog.showLoading(GeocacheBattleMapActivity.this);
 						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
 							public void onSlotUserLeaved(String uid, String nidSlot) {
+								LoadingDialog.hideLoading();
 								dialog.dismiss();
 								Toast.makeText(GeocacheBattleMapActivity.this, "Abandonaste la partida", Toast.LENGTH_SHORT).show();
 								finish();
 							}
 							public void onSlotUserLeaveError(String error) {
+								LoadingDialog.hideLoading();
 								dialog.dismiss();
 								MessageDialog.showMessage(GeocacheBattleMapActivity.this, "Error", error);
 							}

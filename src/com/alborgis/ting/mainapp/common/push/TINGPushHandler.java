@@ -5,8 +5,10 @@ import org.json.JSONObject;
 
 import com.alborgis.ting.base.log.Milog;
 import com.alborgis.ting.mainapp.R;
+import com.alborgis.ting.mainapp.games.geocache_battle.GeocacheBattleMapActivity;
 import com.alborgis.ting.mainapp.games.multiplayer.JoinSlotActivity;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -73,7 +75,11 @@ public class TINGPushHandler {
 	                		}catch(NumberFormatException ex){
 	                			
 	                		}
-	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
+	                		// S—lo mostrar notificaci—n si la pantalla de unirse al juego y la del mapa est‡n invisibles
+	                		if( !JoinSlotActivity.isVisible && !GeocacheBattleMapActivity.isVisible){
+	                			showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, true, false, intent);
+	                		}
+	                		
 	                	}else if(event.equals(EVENTS.USER_START_SLOT_PLAY)){
 	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
 	                		String slot_nid = dataDic.getString("slot_nid");
@@ -86,7 +92,10 @@ public class TINGPushHandler {
 	                		}catch(NumberFormatException ex){
 	                			
 	                		}
-	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
+	                		// S—lo mostrar notificaci—n si la pantalla de unirse al juego y la del mapa est‡n invisibles
+	                		if( !JoinSlotActivity.isVisible && !GeocacheBattleMapActivity.isVisible){
+	                			showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, true, false, intent);
+	                		}
 	                	}else if(event.equals(EVENTS.USER_LEAVED_SLOT)){
 	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
 	                		String slot_nid = dataDic.getString("slot_nid");
@@ -99,7 +108,10 @@ public class TINGPushHandler {
 	                		}catch(NumberFormatException ex){
 	                			
 	                		}
-	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
+	                		// S—lo mostrar notificaci—n si la pantalla de unirse al juego y la del mapa est‡n invisibles
+	                		if( !JoinSlotActivity.isVisible && !GeocacheBattleMapActivity.isVisible){
+	                			showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, true, false, intent);
+	                		}
 	                	}else if(event.equals(GEOCACHE_GAME_BATTLE_EVENTS.USER_FOUND_TREASURE)){
 	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
 	                		String slot_nid = dataDic.getString("slot_nid");
@@ -112,7 +124,10 @@ public class TINGPushHandler {
 	                		}catch(NumberFormatException ex){
 	                			
 	                		}
-	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
+	                		// S—lo mostrar notificaci—n si la pantalla de unirse al juego y la del mapa est‡n invisibles
+	                		if( !JoinSlotActivity.isVisible && !GeocacheBattleMapActivity.isVisible){
+	                			showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, true, false, intent);
+	                		}
 	                	}else if(event.equals(GEOCACHE_GAME_BATTLE_EVENTS.USER_WASTE_ATTEMPTS)){
 	                		// Si el evento es que un usuario ha comenzado a jugar la partida...
 	                		String slot_nid = dataDic.getString("slot_nid");
@@ -125,14 +140,17 @@ public class TINGPushHandler {
 	                		}catch(NumberFormatException ex){
 	                			
 	                		}
-	                		showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, intent);
+	                		// S—lo mostrar notificaci—n si la pantalla de unirse al juego y la del mapa est‡n invisibles
+	                		if( !JoinSlotActivity.isVisible && !GeocacheBattleMapActivity.isVisible){
+	                			showNotification(_ctx, idNot, R.drawable.ic_launcher, title, msg, true, false, intent);
+	                		}
 	                	}
 	                	
 	                	// Enviar un mensaje a todas las activities para comunicarlas
 	                    Intent broadCast = new Intent("MyGCMMessageReceived");
 	                    broadCast.putExtras(extras);
 	                    _ctx.sendBroadcast(broadCast);
-	                	
+
                 	
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
@@ -154,7 +172,7 @@ public class TINGPushHandler {
 	// Put the message into a notification and post it.
     // This is just one simple example of what you might choose to do with
     // a GCM message.
-    private static void showNotification(Context _ctx, int notificationId, int resIdIcon, String _title, String _msg, Intent intent) {
+    private static void showNotification(Context _ctx, int notificationId, int resIdIcon, String _title, String _msg, boolean autoCancel, boolean onGoing, Intent intent) {
     	NotificationManager mNotificationManager = (NotificationManager) _ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
         /*PendingIntent contentIntent = PendingIntent.getActivity(_ctx, 0,
@@ -168,6 +186,8 @@ public class TINGPushHandler {
         .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
         .setStyle(new NotificationCompat.BigTextStyle()
         .bigText(_msg))
+        .setAutoCancel(autoCancel)
+        .setOngoing(onGoing)
         .setContentText(_msg);
 
         mBuilder.setContentIntent(contentIntent);
@@ -180,4 +200,7 @@ public class TINGPushHandler {
         NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
         nMgr.cancel(notificationId);
     }
+    
+    
+    
 }
