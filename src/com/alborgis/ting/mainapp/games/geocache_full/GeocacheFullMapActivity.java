@@ -241,6 +241,10 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 								mapView.toMapPoint(new Point(x, y)),
 								contenidoCallout);
 
+						// Centrar el mapa en ese lugar
+						Point geoPoint = (Point)gr.getGeometry();
+						mapView.centerAt(geoPoint, true);
+						
 					}
 
 				} else {
@@ -730,7 +734,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 		if (show) {
 			LoadingDialog.showLoading(this);
 		} else {
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(this);
 		}
 	}
 

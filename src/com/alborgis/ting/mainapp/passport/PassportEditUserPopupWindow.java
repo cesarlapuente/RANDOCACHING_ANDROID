@@ -243,7 +243,7 @@ public class PassportEditUserPopupWindow implements UserUpdateListener, FileUplo
 			LoadingDialog.showLoading(activity);
 		}else{
 			// Ocultar el panel de carga
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(activity);
 		}
 	}
 	

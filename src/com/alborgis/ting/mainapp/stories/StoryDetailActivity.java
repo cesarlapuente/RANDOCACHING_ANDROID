@@ -128,7 +128,7 @@ public class StoryDetailActivity extends Activity implements InfoItemListener {
 			LoadingDialog.showLoading(this);
 		}else{
 			// Ocultar el panel de carga
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(this);
 		}
 	}
 

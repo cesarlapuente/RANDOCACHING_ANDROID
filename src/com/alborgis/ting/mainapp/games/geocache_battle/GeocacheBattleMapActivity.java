@@ -292,13 +292,13 @@ public class GeocacheBattleMapActivity extends Activity implements
 						LoadingDialog.showLoading(GeocacheBattleMapActivity.this);
 						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
 							public void onSlotUserLeaved(String uid, String nidSlot) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GeocacheBattleMapActivity.this);
 								dialog.dismiss();
 								Toast.makeText(GeocacheBattleMapActivity.this, "Abandonaste la partida", Toast.LENGTH_SHORT).show();
 								finish();
 							}
 							public void onSlotUserLeaveError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GeocacheBattleMapActivity.this);
 								dialog.dismiss();
 								MessageDialog.showMessage(GeocacheBattleMapActivity.this, "Error", error);
 							}
@@ -347,6 +347,10 @@ public class GeocacheBattleMapActivity extends Activity implements
 								mapView.toMapPoint(new Point(x, y)),
 								contenidoCallout);
 
+						// Centrar el mapa en ese lugar
+						Point geoPoint = (Point)gr.getGeometry();
+						mapView.centerAt(geoPoint, true);
+						
 					}
 
 				} else {
@@ -405,8 +409,10 @@ public class GeocacheBattleMapActivity extends Activity implements
 	private void inicializarForm() {
 		// Poner tipograf’as
 		Typeface tfLight = TINGTypeface.getGullyLightTypeface(this);
+		Typeface tfNormal = TINGTypeface.getGullyNormalTypeface(this);
 
 		tvTitle.setTypeface(tfLight);
+		btnAbandonar.setTypeface(tfNormal);
 
 		// Comprobar si tiene el gps activado
 		LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
@@ -446,7 +452,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 		}
 		
 		// Cargar el  geocache Game
-		GeocachesGame.getGame(nidGame, app.drupalClient, app.drupalSecurity, new GeocacheGameItemListener() {
+		GeocachesGame.getGame(nidGame, nidSlot, app.drupalClient, app.drupalSecurity, new GeocacheGameItemListener() {
 			public void onGeocacheGameItemLoad(GeocachesGame geocachesGame) {
 				// Asigno el geocacheGame
 				game = geocachesGame;
@@ -752,7 +758,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 		if (show) {
 			LoadingDialog.showLoading(this);
 		} else {
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(GeocacheBattleMapActivity.this);
 		}
 	}
 

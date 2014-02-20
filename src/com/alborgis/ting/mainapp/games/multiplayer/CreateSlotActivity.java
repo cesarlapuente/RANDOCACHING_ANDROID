@@ -236,7 +236,7 @@ public class CreateSlotActivity extends Activity {
 			LoadingDialog.showLoading(this);
 		}else{
 			// Ocultar el panel de carga
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(this);
 		}
 	}
 	

@@ -157,7 +157,7 @@ public class RegisterPopupWindow extends Dialog {
 			
 			
 			LoadingDialog.showLoading(ctx);
-			User.checkIfUserIsLoggedIn(app.drupalClient, new User.UserSessionListener() {
+			User.checkIfUserIsLoggedIn(app.drupalClient, app.preferencias, new User.UserSessionListener() {
 				public void onSessionChecked(boolean userIsLoggedIn, boolean isTempUser) {
 					if(userIsLoggedIn){
 						// Si est‡ logueado lo deslogueo y luego registro
@@ -165,34 +165,34 @@ public class RegisterPopupWindow extends Dialog {
 							public void onLogoutSuccess() {
 								Milog.d("Se ha deslogueado el usuario actual");
 								// Ahora logueo
-								User.register(app.drupalClient, app.drupalSecurity, user, new User.UserRegisterListener() {
+								User.register(app.drupalClient, app.drupalSecurity, user, app.preferencias, new User.UserRegisterListener() {
 									public void onRegisterSuccess(User userRegistered) {
-										LoadingDialog.hideLoading();
+										LoadingDialog.hideLoading(ctx);
 										dismiss();
 										listener.onLoginPopupWindowDismiss(true, false);
 									}
 									public void onRegisterError(String error) {
-										LoadingDialog.hideLoading();
+										LoadingDialog.hideLoading(ctx);
 										MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
 									}
 								});
 							}
 							public void onLogoutError(String error) {
 								Milog.d("Error al desloguear el usuario actual");
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(ctx);
 								MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
 							}
 						});
 					}else{
 						// Si no est‡ logueado lo registro y logueo
-						User.register(app.drupalClient, app.drupalSecurity, user, new User.UserRegisterListener() {
+						User.register(app.drupalClient, app.drupalSecurity, user, app.preferencias, new User.UserRegisterListener() {
 							public void onRegisterSuccess(User userRegistered) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(ctx);
 								dismiss();
 								listener.onLoginPopupWindowDismiss(true, false);
 							}
 							public void onRegisterError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(ctx);
 								MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
 							}
 						});
@@ -200,7 +200,7 @@ public class RegisterPopupWindow extends Dialog {
 					
 				}
 				public void onSessionError(String error) {
-					LoadingDialog.hideLoading();
+					LoadingDialog.hideLoading(ctx);
 					MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
 				}
 			});

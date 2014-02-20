@@ -288,7 +288,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 			
 		}else{
 			// Ocultar el panel de carga
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(this);
 			
 		}
 	}
@@ -298,7 +298,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 		showLoading(true);
 		// Quitar el bot—n de logout
 		btnLogout.setVisibility(View.GONE);
-		User.checkIfUserIsLoggedIn(app.drupalClient,
+		User.checkIfUserIsLoggedIn(app.drupalClient,app.preferencias,
 				new UserSessionListener() {
 					public void onSessionChecked(boolean userIsLoggedIn, boolean isTempUser) {
 						

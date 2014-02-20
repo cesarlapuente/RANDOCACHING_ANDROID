@@ -45,6 +45,7 @@ public class LoadingDialog extends Dialog {
 	private void inicializarForm(){
 		// Poner tipograf’as
 
+		setCancelable(false);
 	}
 	
 	
@@ -71,10 +72,13 @@ public class LoadingDialog extends Dialog {
 		
 		
 	}
-	public static void hideLoading(){
-		if(loadingDialog != null){
-			loadingDialog.dismiss();
-			loadingDialog = null;
+	public static void hideLoading(Context _ctx){
+		if(loadingDialog != null && _ctx != null){
+			Activity act = (Activity)_ctx;
+			if(!act.isFinishing()){
+				loadingDialog.dismiss();
+				loadingDialog = null;
+			}
 		}
 	}
 }

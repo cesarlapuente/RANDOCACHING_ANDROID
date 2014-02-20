@@ -128,7 +128,7 @@ public class AwardDetailActivity extends Activity implements AwardItemListener {
 			LoadingDialog.showLoading(this);
 		}else{
 			// Ocultar el panel de carga
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(this);
 		}
 	}
 

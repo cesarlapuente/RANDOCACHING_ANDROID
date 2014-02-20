@@ -128,7 +128,7 @@ public class DestinationDetailActivity extends Activity implements DestinationIt
 			LoadingDialog.showLoading(this);
 		}else{
 			// Ocultar el panel de carga
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(this);
 		}
 	}
 

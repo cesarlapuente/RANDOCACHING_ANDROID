@@ -93,7 +93,7 @@ public class FacebookLoginActivity extends FragmentActivity {
 
     	// Conectar con facebook a Drupal
 		LoadingDialog.showLoading(FacebookLoginActivity.this);
-		User.checkIfUserIsLoggedIn(app.drupalClient,
+		User.checkIfUserIsLoggedIn(app.drupalClient,app.preferencias,
 				new User.UserSessionListener() {
 					public void onSessionChecked(
 							boolean userIsLoggedIn, boolean isTempUser) {
@@ -109,11 +109,12 @@ public class FacebookLoginActivity extends FragmentActivity {
 													app.drupalClient,
 													app.drupalSecurity,
 													session.getAccessToken(),
+													app.preferencias,
 													new UserFBConnectListener() {
 														public void onFBConnectSuccess(
 																User userLoggedIn) {
 															LoadingDialog
-																	.hideLoading();
+																	.hideLoading(FacebookLoginActivity.this);
 															if(facebookLoginListener != null){
 																facebookLoginListener.onFacebookLoginActivityFinish(true);
 															}
@@ -123,7 +124,7 @@ public class FacebookLoginActivity extends FragmentActivity {
 														public void onFBConnectError(
 																String error) {
 															LoadingDialog
-																	.hideLoading();
+																	.hideLoading(FacebookLoginActivity.this);
 															if (error
 																	.contains("rong username")) {
 																MessageDialog
@@ -146,7 +147,7 @@ public class FacebookLoginActivity extends FragmentActivity {
 										public void onLogoutError(
 												String error) {
 											Milog.d("Error al desloguear el usuario actual");
-											LoadingDialog.hideLoading();
+											LoadingDialog.hideLoading(FacebookLoginActivity.this);
 											MessageDialog
 													.showMessage(FacebookLoginActivity.this,
 															"Error",
@@ -159,11 +160,12 @@ public class FacebookLoginActivity extends FragmentActivity {
 									app.drupalClient,
 									app.drupalSecurity,
 									session.getAccessToken(),
+									app.preferencias,
 									new UserFBConnectListener() {
 										public void onFBConnectSuccess(
 												User userLoggedIn) {
 											LoadingDialog
-													.hideLoading();
+													.hideLoading(FacebookLoginActivity.this);
 											if(facebookLoginListener != null){
 												facebookLoginListener.onFacebookLoginActivityFinish(true);
 											}
@@ -173,7 +175,7 @@ public class FacebookLoginActivity extends FragmentActivity {
 										public void onFBConnectError(
 												String error) {
 											LoadingDialog
-													.hideLoading();
+													.hideLoading(FacebookLoginActivity.this);
 											if (error
 													.contains("rong username")) {
 												MessageDialog
@@ -196,7 +198,7 @@ public class FacebookLoginActivity extends FragmentActivity {
 					}
 
 					public void onSessionError(String error) {
-						LoadingDialog.hideLoading();
+						LoadingDialog.hideLoading(FacebookLoginActivity.this);
 						MessageDialog.showMessage(FacebookLoginActivity.this, "Error",
 								"Error al entrar");
 					}

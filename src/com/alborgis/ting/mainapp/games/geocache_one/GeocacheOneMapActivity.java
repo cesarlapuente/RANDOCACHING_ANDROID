@@ -237,6 +237,10 @@ public class GeocacheOneMapActivity extends Activity implements
 						callout.animatedShow(
 								mapView.toMapPoint(new Point(x, y)),
 								contenidoCallout);
+						
+						// Centrar el mapa en ese lugar
+						Point geoPoint = (Point)gr.getGeometry();
+						mapView.centerAt(geoPoint, true);
 
 					}
 
@@ -618,7 +622,7 @@ public class GeocacheOneMapActivity extends Activity implements
 		if (show) {
 			LoadingDialog.showLoading(this);
 		} else {
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(this);
 		}
 	}
 

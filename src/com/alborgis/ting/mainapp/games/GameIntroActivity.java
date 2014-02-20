@@ -146,7 +146,7 @@ public class GameIntroActivity extends Activity implements
 		// Cargar los datos del juego en funci—n del tipo
 		if (typeGame.equalsIgnoreCase(GeocachesGame.DRUPAL_TYPE)) {
 			LoadingDialog.showLoading(this);
-			GeocachesGame.getGame(nidGame, app.drupalClient,
+			GeocachesGame.getGame(nidGame, null, app.drupalClient,
 					app.drupalSecurity, this);
 		}
 	}
@@ -168,11 +168,11 @@ public class GameIntroActivity extends Activity implements
 			public void onClick(View v) {
 				// Comprobar la sesi—n
 				LoadingDialog.showLoading(GameIntroActivity.this);
-				User.checkIfUserIsLoggedIn(app.drupalClient,
+				User.checkIfUserIsLoggedIn(app.drupalClient,app.preferencias,
 						new UserSessionListener() {
 							public void onSessionChecked(
 									boolean userIsLoggedIn, boolean isTempUser) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GameIntroActivity.this);
 								if (!userIsLoggedIn || isTempUser) {
 									
 									boolean enableDemoLogin = true;
@@ -200,7 +200,7 @@ public class GameIntroActivity extends Activity implements
 							}
 
 							public void onSessionError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GameIntroActivity.this);
 								MessageDialog.showMessage(
 										GameIntroActivity.this, "Error",
 										"Error al comprobar sesi—n");
@@ -213,12 +213,12 @@ public class GameIntroActivity extends Activity implements
 			public void onClick(View arg0) {
 				// Comprobar la sesi—n
 				LoadingDialog.showLoading(GameIntroActivity.this);
-				User.checkIfUserIsLoggedIn(app.drupalClient,
+				User.checkIfUserIsLoggedIn(app.drupalClient,app.preferencias,
 						new UserSessionListener() {
 							public void onSessionChecked(
 									boolean userIsLoggedIn, boolean isTempUser) {
 								if (!userIsLoggedIn) {
-									LoadingDialog.hideLoading();
+									LoadingDialog.hideLoading(GameIntroActivity.this);
 									
 									boolean enableDemoLogin = true;
 									if(typeGame.equalsIgnoreCase(GeocachesGame.DRUPAL_TYPE) && modalityGame.equalsIgnoreCase(GeocachesGame.MODALITY.BATTLE)){
@@ -240,7 +240,7 @@ public class GameIntroActivity extends Activity implements
 							}
 
 							public void onSessionError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GameIntroActivity.this);
 								MessageDialog.showMessage(
 										GameIntroActivity.this, "Error",
 										"Error al comprobar sesi—n");
@@ -325,7 +325,7 @@ public class GameIntroActivity extends Activity implements
 						new GeocachesGame.GeocacheGameOneResetListener() {
 							public void onGeocacheOneResetSuccess(
 									String nidGeocacheGame) {
-								GeocachesGame.getGame(nidGame,
+								GeocachesGame.getGame(nidGame, null,
 										app.drupalClient, app.drupalSecurity,
 										new GeocacheGameItemListener() {
 											public void onGeocacheGameItemLoad(
@@ -338,7 +338,7 @@ public class GameIntroActivity extends Activity implements
 
 											public void onGeocacheGameItemError(
 													String error) {
-												LoadingDialog.hideLoading();
+												LoadingDialog.hideLoading(GameIntroActivity.this);
 												MessageDialog
 														.showMessage(
 																GameIntroActivity.this,
@@ -349,7 +349,7 @@ public class GameIntroActivity extends Activity implements
 							}
 
 							public void onGeocacheOneResetError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GameIntroActivity.this);
 								Toast.makeText(GameIntroActivity.this,
 										"No se puede reiniciar la partida",
 										Toast.LENGTH_SHORT).show();
@@ -363,7 +363,7 @@ public class GameIntroActivity extends Activity implements
 						new GeocachesGame.GeocacheGameFullResetListener() {
 							public void onGeocacheFullResetSuccess(
 									String nidGeocacheGame) {
-								GeocachesGame.getGame(nidGame,
+								GeocachesGame.getGame(nidGame, null, 
 										app.drupalClient, app.drupalSecurity,
 										new GeocacheGameItemListener() {
 											public void onGeocacheGameItemLoad(
@@ -376,7 +376,7 @@ public class GameIntroActivity extends Activity implements
 
 											public void onGeocacheGameItemError(
 													String error) {
-												LoadingDialog.hideLoading();
+												LoadingDialog.hideLoading(GameIntroActivity.this);
 												MessageDialog
 														.showMessage(
 																GameIntroActivity.this,
@@ -387,7 +387,7 @@ public class GameIntroActivity extends Activity implements
 							}
 
 							public void onGeocacheFullResetError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GameIntroActivity.this);
 								Toast.makeText(GameIntroActivity.this,
 										"No se puede reiniciar la partida",
 										Toast.LENGTH_SHORT).show();
@@ -409,11 +409,11 @@ public class GameIntroActivity extends Activity implements
 			// Cargar los datos del juego en funci—n del tipo
 			if (typeGame.equalsIgnoreCase(GeocachesGame.DRUPAL_TYPE)) {
 				LoadingDialog.showLoading(this);
-				GeocachesGame.getGame(nidGame, app.drupalClient,
+				GeocachesGame.getGame(nidGame, null, app.drupalClient,
 						app.drupalSecurity, new GeocacheGameItemListener() {
 							public void onGeocacheGameItemLoad(
 									GeocachesGame _geocachesGame) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GameIntroActivity.this);
 								if (geocachesGame != null) {
 									geocachesGame = _geocachesGame;
 									Milog.d("Geolocated = "
@@ -461,7 +461,7 @@ public class GameIntroActivity extends Activity implements
 
 							@Override
 							public void onGeocacheGameItemError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(GameIntroActivity.this);
 								MessageDialog.showMessage(
 										GameIntroActivity.this, "Error",
 										"Error al cargar el juego");
@@ -473,7 +473,7 @@ public class GameIntroActivity extends Activity implements
 
 	// Al cargar un juego de geocache
 	public void onGeocacheGameItemLoad(GeocachesGame geocachesGame) {
-		LoadingDialog.hideLoading();
+		LoadingDialog.hideLoading(GameIntroActivity.this);
 		if (geocachesGame != null) {
 			this.geocachesGame = geocachesGame;
 			Milog.d("Geolocated = " + this.geocachesGame.geolocated);
@@ -505,7 +505,7 @@ public class GameIntroActivity extends Activity implements
 
 	// Error al cargar juego de geocache
 	public void onGeocacheGameItemError(String error) {
-		LoadingDialog.hideLoading();
+		LoadingDialog.hideLoading(GameIntroActivity.this);
 		MessageDialog.showMessage(GameIntroActivity.this, "Error",
 				"Error al cargar el juego");
 	}

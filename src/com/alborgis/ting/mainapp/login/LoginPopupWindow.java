@@ -116,12 +116,12 @@ public class LoginPopupWindow extends Dialog {
 		btnModoPrueba.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 				LoadingDialog.showLoading(ctx);
-				User.checkIfUserIsLoggedIn(app.drupalClient,
+				User.checkIfUserIsLoggedIn(app.drupalClient, app.preferencias,
 						new User.UserSessionListener() {
 							public void onSessionChecked(
 									boolean userIsLoggedIn, boolean isTempUser) {
 								if (userIsLoggedIn) {
-									LoadingDialog.hideLoading();
+									LoadingDialog.hideLoading(ctx);
 									dismiss();
 									if (isTempUser) {
 										// Si est‡ logueado y es temporal
@@ -138,7 +138,7 @@ public class LoginPopupWindow extends Dialog {
 											new UserTempLoginListener() {
 												public void onTempLoginSuccess(
 														User userRegistered) {
-													LoadingDialog.hideLoading();
+													LoadingDialog.hideLoading(ctx);
 													listener.onLoginPopupWindowDismiss(
 															true, true);
 													dismiss();
@@ -146,7 +146,7 @@ public class LoginPopupWindow extends Dialog {
 
 												public void onTempLoginError(
 														String error) {
-													LoadingDialog.hideLoading();
+													LoadingDialog.hideLoading(ctx);
 													MessageDialog.showMessage(
 															ctx, "Error",
 															"Error al entrar");
@@ -157,7 +157,7 @@ public class LoginPopupWindow extends Dialog {
 							}
 
 							public void onSessionError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(ctx);
 								MessageDialog.showMessage(ctx, "Error",
 										"Error al entrar");
 							}
@@ -210,7 +210,7 @@ public class LoginPopupWindow extends Dialog {
 				}
 
 				LoadingDialog.showLoading(ctx);
-				User.checkIfUserIsLoggedIn(app.drupalClient,
+				User.checkIfUserIsLoggedIn(app.drupalClient,app.preferencias,
 						new User.UserSessionListener() {
 							public void onSessionChecked(
 									boolean userIsLoggedIn, boolean isTempUser) {
@@ -229,11 +229,12 @@ public class LoginPopupWindow extends Dialog {
 																	.toString(),
 															tbPass.getText()
 																	.toString(),
+															app.preferencias,
 															new UserLoginListener() {
 																public void onLoginSuccess(
 																		User userLoggedIn) {
 																	LoadingDialog
-																			.hideLoading();
+																			.hideLoading(ctx);
 																	saveUserCredentials();
 																	// Registrar el dispositivo para que reciba push notifications
 																	app.pushNotificationsClient.start(activity);
@@ -247,7 +248,7 @@ public class LoginPopupWindow extends Dialog {
 																public void onLoginError(
 																		String error) {
 																	LoadingDialog
-																			.hideLoading();
+																			.hideLoading(ctx);
 																	if (error
 																			.contains("rong username")) {
 																		MessageDialog
@@ -270,7 +271,7 @@ public class LoginPopupWindow extends Dialog {
 												public void onLogoutError(
 														String error) {
 													Milog.d("Error al desloguear el usuario actual");
-													LoadingDialog.hideLoading();
+													LoadingDialog.hideLoading(ctx);
 													MessageDialog
 															.showMessage(ctx,
 																	"Error",
@@ -283,10 +284,11 @@ public class LoginPopupWindow extends Dialog {
 											app.drupalSecurity, tbCorreo
 													.getText().toString(),
 											tbPass.getText().toString(),
+											app.preferencias,
 											new UserLoginListener() {
 												public void onLoginSuccess(
 														User userLoggedIn) {
-													LoadingDialog.hideLoading();
+													LoadingDialog.hideLoading(ctx);
 													saveUserCredentials();
 													// Registrar el dispositivo para que reciba push notifications
 													app.pushNotificationsClient.start(activity);
@@ -298,7 +300,7 @@ public class LoginPopupWindow extends Dialog {
 
 												public void onLoginError(
 														String error) {
-													LoadingDialog.hideLoading();
+													LoadingDialog.hideLoading(ctx);
 													if (error
 															.contains("rong username")) {
 														MessageDialog
@@ -320,7 +322,7 @@ public class LoginPopupWindow extends Dialog {
 							}
 
 							public void onSessionError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(ctx);
 								MessageDialog.showMessage(ctx, "Error",
 										"Error al entrar");
 							}

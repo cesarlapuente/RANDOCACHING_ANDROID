@@ -19,6 +19,7 @@ import com.alborgis.ting.mainapp.MainApp;
 import com.alborgis.ting.mainapp.common.LoadingDialog;
 import com.alborgis.ting.mainapp.common.MessageDialog;
 import com.alborgis.ting.mainapp.common.MessageDialog.MessageDialogListener;
+import com.alborgis.ting.mainapp.common.push.TINGPushHandler;
 import com.alborgis.ting.mainapp.common.push.TINGPushHandler.EVENTS;
 import com.alborgis.ting.mainapp.common.TINGTypeface;
 import com.alborgis.ting.mainapp.games.geocache_battle.GeocacheBattleMapActivity;
@@ -71,6 +72,8 @@ public class JoinSlotActivity extends Activity {
 	PlayersSlotAdapter adapter;
 	
 	Slot currentSlot;
+	
+	User currentUser;
 	
 	
 	BroadcastReceiver pushReceiver = new BroadcastReceiver() {
@@ -189,6 +192,8 @@ public class JoinSlotActivity extends Activity {
 		tvJugadores.setTypeface(tfGullyLight);
 		tvSlotState.setTypeface(tfGullyNormal);
 		
+		btnAbandonar.setTypeface(tfGullyNormal);
+		
 		btnJugar.setVisibility(View.INVISIBLE);
 	}
 
@@ -220,13 +225,13 @@ public class JoinSlotActivity extends Activity {
 						LoadingDialog.showLoading(JoinSlotActivity.this);
 						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
 							public void onSlotUserLeaved(String uid, String nidSlot) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(JoinSlotActivity.this);
 								dialog.dismiss();
 								Toast.makeText(JoinSlotActivity.this, "Abandonaste la partida", Toast.LENGTH_SHORT).show();
 								finish();
 							}
 							public void onSlotUserLeaveError(String error) {
-								LoadingDialog.hideLoading();
+								LoadingDialog.hideLoading(JoinSlotActivity.this);
 								dialog.dismiss();
 								MessageDialog.showMessage(JoinSlotActivity.this, "Error", error);
 							}
@@ -298,7 +303,17 @@ public class JoinSlotActivity extends Activity {
 			if(currentSlot.finished){
 				tvSlotState.setText("PARTIDA FINALIZADA");
 				btnJugar.setVisibility(View.INVISIBLE);
+				btnAbandonar.setVisibility(View.INVISIBLE);
 			}
+			
+			
+			// Actualizar el usuario logueado
+			currentUser = User.getCurrentUser(app.preferencias);
+			
+			// Quitar las notificaciones de este slot
+			try{
+				TINGPushHandler.cancelNotification(this, Integer.parseInt(nidSlot));
+			}catch(Exception ex){}
 			
 		}
 		
@@ -310,12 +325,12 @@ public class JoinSlotActivity extends Activity {
 	
 	private void checkSession(){
 		LoadingDialog.showLoading(this);
-		User.checkIfUserIsLoggedIn(app.drupalClient,
+		User.checkIfUserIsLoggedIn(app.drupalClient,app.preferencias,
 				new UserSessionListener() {
 					public void onSessionChecked(
 							boolean userIsLoggedIn, boolean isTempUser) {
 						if (!userIsLoggedIn || isTempUser) {
-							LoadingDialog.hideLoading();
+							LoadingDialog.hideLoading(JoinSlotActivity.this);
 							boolean enableDemoLogin = false;
 							// Si no est‡ logueado pedir login
 							LoginPopupWindow lp = new LoginPopupWindow(
@@ -340,7 +355,7 @@ public class JoinSlotActivity extends Activity {
 					}
 
 					public void onSessionError(String error) {
-						LoadingDialog.hideLoading();
+						LoadingDialog.hideLoading(JoinSlotActivity.this);
 						MessageDialog.showMessage(
 								JoinSlotActivity.this, "Error",
 								"Error al comprobar sesi—n");
@@ -396,13 +411,14 @@ public class JoinSlotActivity extends Activity {
 	
 	private void joinSlot(){
 		// Preguntar si quiere unirse a la partida
-		MessageDialog.showMessageWith2Buttons(this, "ÀUnirse a partida?", "ÀDeseas unirte a esta partida?", "Unirme", "Cancelar", new MessageDialogListener() {
+		MessageDialog.showMessageWith2Buttons(this, "ÀUnirse a partida?", "ÀQuieres unirte a esta partida?", "Unirme", "Cancelar", new MessageDialogListener() {
 			public void onPositiveButtonClick(MessageDialog dialog) {
 				dialog.dismiss();
 				showLoading(true);
 				Slot.joinSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotJoinListener() {
 					public void onSlotUserJoined(String uid, String nidSlot) {
 						Milog.d("Unido a slot: " + nidSlot);
+						
 						retrieveSlotData();
 						showLoading(false);
 					}
@@ -427,12 +443,12 @@ public class JoinSlotActivity extends Activity {
 	
 	private void checkSessionForStartPlayingSlot(){
 		showLoading(true);
-		User.checkIfUserIsLoggedIn(app.drupalClient,
+		User.checkIfUserIsLoggedIn(app.drupalClient,app.preferencias,
 				new UserSessionListener() {
 					public void onSessionChecked(
 							boolean userIsLoggedIn, boolean isTempUser) {
 						if (!userIsLoggedIn || isTempUser) {
-							LoadingDialog.hideLoading();
+							LoadingDialog.hideLoading(JoinSlotActivity.this);
 							boolean enableDemoLogin = false;
 							// Si no est‡ logueado pedir login
 							LoginPopupWindow lp = new LoginPopupWindow(
@@ -455,7 +471,7 @@ public class JoinSlotActivity extends Activity {
 					}
 
 					public void onSessionError(String error) {
-						LoadingDialog.hideLoading();
+						LoadingDialog.hideLoading(JoinSlotActivity.this);
 						MessageDialog.showMessage(
 								JoinSlotActivity.this, "Error",
 								"Error al comprobar sesi—n");
@@ -509,7 +525,7 @@ public class JoinSlotActivity extends Activity {
 			LoadingDialog.showLoading(this);
 		}else{
 			// Ocultar el panel de carga
-			LoadingDialog.hideLoading();
+			LoadingDialog.hideLoading(JoinSlotActivity.this);
 		}
 	}
 
@@ -589,7 +605,11 @@ public class JoinSlotActivity extends Activity {
 			
 			// Poner t’tulo
 			if(user.mail != null && !user.mail.isEmpty()){
-				holder.tvPlayerName.setText(user.mail);
+				String userTxt = user.mail;
+				if(currentUser != null && currentUser.uid.equals(user.uid)){
+					userTxt += " (Yo)";
+				}
+				holder.tvPlayerName.setText(userTxt);
 			}else{
 				holder.tvPlayerName.setText("Usuario sin nombre");
 			}
