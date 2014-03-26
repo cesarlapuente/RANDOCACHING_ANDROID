@@ -43,7 +43,9 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="com.alborgis.ting.mainapp.permission.C2D_MESSAGE" />
 
-    <application
+    
+
+<application
         android:name="com.alborgis.ting.mainapp.MainApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"

@@ -1,5 +1,6 @@
 package com.alborgis.ting.mainapp;
 import java.util.ArrayList;
+
 import com.alborgis.ting.base.drupalsvcsapi.Drupal7ServicesClient;
 import com.alborgis.ting.base.log.Milog;
 import com.alborgis.ting.base.push_not.PushNotificationsClient;
@@ -7,6 +8,7 @@ import com.alborgis.ting.base.utils.Drupal7Security;
 import com.alborgis.ting.base.utils.Util;
 import com.alborgis.ting.mainapp.common.map_layer_change.CapaBase;
 import com.esri.android.map.bing.BingMapsLayer;
+import com.esri.android.runtime.ArcGISRuntime;
 import com.esri.core.geometry.SpatialReference;
 
 import android.app.Application;
@@ -53,6 +55,9 @@ public class MainApp extends Application {
 	
 	// Define la el api key para los mapas de bing
 	public String BING_MAPS_KEY = "AknzEuD2VRWfmk_HRnAq7SIBMNE6n3qXskFXUDhEW5kWjTlnec8I5dHjWht9_j_O";
+	
+	// User id de Arcgis 
+	public String ARCGIS_USERID	=	"LY5rSp7PnAqA34EH";
 
 	// Preferencias de la aplicaci—n
 	public SharedPreferences preferencias;
@@ -166,6 +171,9 @@ public class MainApp extends Application {
 			pushNotificationsClient = new PushNotificationsClient(this, preferencias, drupalClient, GCM_SENDER_ID);
 		}
 
+		// Poner el id de Arcgis
+		ArcGISRuntime.setClientId(ARCGIS_USERID);
+		
 		// Colocar la capa base por defecto para los mapas
 		this.setCapaBaseSeleccionadaPorDefecto();
 

@@ -36,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.alborgis.ting.base.log.Milog;
 import com.alborgis.ting.base.model.BundleEarned;
 import com.alborgis.ting.base.model.GeoPoint;
@@ -64,8 +65,9 @@ import com.alborgis.ting.mainapp.ra.RAActivity;
 import com.esri.android.map.Callout;
 import com.esri.android.map.GraphicsLayer;
 import com.esri.android.map.Layer;
-import com.esri.android.map.LocationService;
+import com.esri.android.map.LocationDisplayManager;
 import com.esri.android.map.MapView;
+import com.esri.android.map.LocationDisplayManager.AutoPanMode;
 import com.esri.android.map.ags.ArcGISTiledMapServiceLayer;
 import com.esri.android.map.bing.BingMapsLayer;
 import com.esri.android.map.event.OnSingleTapListener;
@@ -375,10 +377,10 @@ public class GeocacheBattleMapActivity extends Activity implements
 					callout.setMaxWidth(1000);
 					callout.setMaxHeight(1000);
 
-					LocationService ls = mapView.getLocationService();
-					ls.setLocationListener(GeocacheBattleMapActivity.this);
-					ls.setAutoPan(false);
-					ls.start();
+					LocationDisplayManager ldm = mapView.getLocationDisplayManager();
+					ldm.setLocationListener(GeocacheBattleMapActivity.this);
+					ldm.setAutoPanMode(AutoPanMode.OFF);
+					ldm.start();
 
 					recargarDatos();
 
