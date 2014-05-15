@@ -3,12 +3,12 @@ package com.alborgis.ting.mainapp.home;
 import java.util.ArrayList;
 
 import org.apache.http.message.BasicNameValuePair;
-
 import com.alborgis.ting.base.log.Milog;
 import com.alborgis.ting.base.model.Destination;
+import com.alborgis.ting.base.model.Destination.DestinationListPaginatedListener;
+import com.alborgis.ting.base.model.Game;
+import com.alborgis.ting.base.model.Game.GamesListListener;
 import com.alborgis.ting.base.model.GeocachesGame;
-import com.alborgis.ting.base.model.Misc;
-import com.alborgis.ting.base.model.Misc.DestinationsAndGamesListener;
 import com.alborgis.ting.base.utils.GPS;
 import com.alborgis.ting.mainapp.R;
 import com.alborgis.ting.mainapp.MainApp;
@@ -46,7 +46,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-public class MainActivity extends Activity implements EndlessGridViewListener, LocationListener, DestinationsAndGamesListener {
+public class MainActivity extends Activity implements EndlessGridViewListener, LocationListener, GamesListListener, DestinationListPaginatedListener {
 
 	public static final int ITEMS_BY_PAGE		=		15;//18;
 	public static final int START_PAGE			=		1;
@@ -67,6 +67,8 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 	TextView lblBocadilloTexto1;
 	TextView lblBocadilloTexto2;
 	
+	Button btnMostrarJuegos;
+	Button btnMostrarSoloDestinos;
 	Button btnSelCiudad;
 	Button btnSelJuego;
 	ToggleButton btnGPS;
@@ -84,6 +86,8 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 	
 	GPS gps;
 	Location lastLocation;
+	
+	boolean mostrarSoloDestinos = false;
 
 
 	@Override
@@ -133,6 +137,8 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		panelCargandoGrid = (RelativeLayout) findViewById(R.id.panelCargandoGrid);
 		panelGridVacio = (RelativeLayout) findViewById(R.id.panelGridVacio);
 		tvNoHayElementos = (TextView) findViewById(R.id.tvNoHayElementos);
+		btnMostrarJuegos = (Button) findViewById(R.id.btnMostrarJuegos);
+		btnMostrarSoloDestinos = (Button) findViewById(R.id.btnMostrarSoloDestinos);
 		btnSelCiudad = (Button) findViewById(R.id.btnSelCiudad);
 		btnSelJuego = (Button) findViewById(R.id.btnSelJuego);
 		btnGPS = (ToggleButton) findViewById(R.id.btnGPS);
@@ -152,6 +158,8 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		btnSelCiudad.setTypeface(tfDroidSansNormal);
 		btnSelJuego.setTypeface(tfDroidSansNormal);
 		tvNoHayElementos.setTypeface(tfGullyBold);
+		btnMostrarJuegos.setTypeface(tfDroidSansNormal);
+		btnMostrarSoloDestinos.setTypeface(tfDroidSansNormal);
 		
 		// Inicializar el gps
 		gps = new GPS(this, this);
@@ -202,6 +210,9 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		// Ocultar el footer al entrar
 		footer.setVisibility(View.GONE);
 		
+		// Ocultar el bot—n de mostrar juegos al entrar
+		btnMostrarJuegos.setVisibility(View.GONE);
+		
 		// Por defecto desactivar el bot—n del gps (no se tiene en cuenta el filtro de gps)
 		btnGPS.setChecked(false);
 
@@ -242,6 +253,46 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		btnSelJuego.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				comboTiposJuegos.showPopup(btnSelJuego, filtroGameTypeSeleccionado);
+			}
+		});
+		btnMostrarJuegos.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				mostrarSoloDestinos = false;
+				// Mostrar el bot—n de mostrar s—lo destinos
+				btnMostrarSoloDestinos.setVisibility(View.VISIBLE);
+				// Mostrar los filtros para juegos
+				btnSelCiudad.setVisibility(View.VISIBLE);
+				btnSelJuego.setVisibility(View.VISIBLE);
+				// Ocultar el bot—n de mostrar juegos
+				btnMostrarJuegos.setVisibility(View.GONE);
+				// Ocultar el footer
+				footer.setVisibility(View.GONE);
+				btnDeslizaMenuInf.setImageResource(R.drawable.btn_state_desliza_menu_inf);
+				
+				// Poner p‡gina inicial
+				gridViewNextPageToAsk = START_PAGE;
+				// Cargar los datos desde el principio
+				cargarDatos();
+			}
+		});
+		btnMostrarSoloDestinos.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				mostrarSoloDestinos = true;
+				// Ocultar el bot—n de mostrar s—lo destinos
+				btnMostrarSoloDestinos.setVisibility(View.GONE);
+				// Ocultar los filtros para juegos
+				btnSelCiudad.setVisibility(View.GONE);
+				btnSelJuego.setVisibility(View.GONE);
+				// Mostrar el bot—n de mostrar juegos
+				btnMostrarJuegos.setVisibility(View.VISIBLE);
+				// Ocultar el footer
+				footer.setVisibility(View.GONE);
+				btnDeslizaMenuInf.setImageResource(R.drawable.btn_state_desliza_menu_inf);
+				
+				// Poner p‡gina inicial
+				gridViewNextPageToAsk = START_PAGE;
+				// Cargar los datos desde el principio
+				cargarDatos();
 			}
 		});
 		btnGPS.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -303,27 +354,46 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		// Ocultar el panel de grid Vac’o
 		showEmptyGrid(false);
 		
-		// Recojo los filtros que ha seleccionado
-		String destNid = null;
-		if(filtroDestinoSeleccionado != null){
-			destNid = filtroDestinoSeleccionado.nid;
-		}
-		String gameType = null;
-		if(filtroGameTypeSeleccionado != null){
-			gameType = filtroGameTypeSeleccionado.getName();
-		}
-		String lat = null;
-		String lon = null;
-		int radio = 0;
-		if(lastLocation != null){
-			lat = String.valueOf(lastLocation.getLatitude());
-			lon = String.valueOf(lastLocation.getLongitude());
-			radio = app.MAX_DISTANCE_SEARCH_HOME;
+		
+		if(mostrarSoloDestinos){
+			String lat = null;
+			String lon = null;
+			int radio = 0;
+			if(lastLocation != null){
+				lat = String.valueOf(lastLocation.getLatitude());
+				lon = String.valueOf(lastLocation.getLongitude());
+				radio = app.MAX_DISTANCE_SEARCH_HOME;
+			}
+						
+			// Hago la llamada al servicio con los parametros
+			Milog.d("P‡gina que voy a pedir: " + gridViewNextPageToAsk);
+			Destination.listDestinationsPaginated(lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, null, app.drupalClient, app.drupalSecurity, this);
+		}else{
+			// Recojo los filtros que ha seleccionado
+			String destNid = null;
+			if(filtroDestinoSeleccionado != null){
+				destNid = filtroDestinoSeleccionado.nid;
+			}
+			String gameType = null;
+			if(filtroGameTypeSeleccionado != null){
+				gameType = filtroGameTypeSeleccionado.getName();
+			}
+			String lat = null;
+			String lon = null;
+			int radio = 0;
+			if(lastLocation != null){
+				lat = String.valueOf(lastLocation.getLatitude());
+				lon = String.valueOf(lastLocation.getLongitude());
+				radio = app.MAX_DISTANCE_SEARCH_HOME;
+			}
+						
+			// Hago la llamada al servicio con los parametros
+			Milog.d("P‡gina que voy a pedir: " + gridViewNextPageToAsk);
+			Game.listGames(destNid, gameType, lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, null, app.drupalClient, app.drupalSecurity, this);
 		}
 		
-		// Hago la llamada al servicio con los parametros
-		Milog.d("P‡gina que voy a pedir: " + gridViewNextPageToAsk);
-		Misc.listDestinationsAndGames(destNid, gameType, lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, null, app.drupalClient, app.drupalSecurity, this);		
+		
+				
 	}
 
 	
@@ -346,9 +416,9 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 			this.panelGridVacio.setVisibility(View.GONE);
 		}
 	}
-	
-	
-	public void onDestinationsAndGamesListLoad(ArrayList<Object> listItems) {
+
+
+	public void onGamesListLoad(ArrayList<Object> listItems) {
 		if(listItems != null){
 			
 			Milog.d("Nœmero de elementos devueltos: " + listItems.size());
@@ -390,11 +460,65 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		}
 	}
 
-	public void onDestinationsAndGamesListError(String error) {
+	public void onGamesListError(String error) {
 		Milog.d("Error al cargar datos en el grid");
 		// Ocultar cargando
 		showLoading(false);
 	}
+	
+	
+	
+	
+
+	public void onDestinationListLoad(ArrayList<Object> listItems) {
+		if(listItems != null){
+			
+			Milog.d("Nœmero de elementos devueltos: " + listItems.size());
+			
+			if(adapter == null || gridViewNextPageToAsk == START_PAGE){
+				// Si el adapter es nulo o la p‡gina es la inicial, inicializarlo y asignar la colecci—n inicial de objetos
+				adapter = new HomeEndlessTileAdapter(this,
+						R.layout.mod_home__horizontal_grid_view_item, listItems);
+				gridView.setAdapter(adapter);
+				gridView.setListener(this);
+				gridView.setLoadingView(panelCargandoGrid);
+				
+				// Mostrar el panel de gridVacio, cuando no haya elementos
+				if(listItems.size() == 0){
+					showEmptyGrid(true);
+				}
+				
+			}else{
+				if(listItems.size() > 0){
+					//gridView.addNewData(listItems);
+					gridView.hideFooterView();
+					if(Build.VERSION.SDK_INT >= 11){
+						adapter.addAll(listItems);
+					}else{
+						for(Object obj : listItems){
+							adapter.add(obj);
+						}
+					}
+					adapter.notifyDataSetChanged();
+					gridView.setLoading(false);
+				}else{
+					// Ocultar cargando
+					showLoading(false);
+				}
+			}
+			
+			
+			gridViewNextPageToAsk++;
+		}
+	}
+
+	public void onDestinationListLoadError(String error) {
+		Milog.d("Error al cargar datos en el grid");
+		// Ocultar cargando
+		showLoading(false);
+	}
+	
+	
 
 
 	@Override
@@ -435,6 +559,16 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		// TODO Auto-generated method stub
 		
 	}
+
+
+
+
+	
+
+
+
+
+	
 
 	
 

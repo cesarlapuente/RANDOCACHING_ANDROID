@@ -40,7 +40,7 @@ public class MainApp extends Application {
 	public int MAX_DISTANCE_SEARCH_STORIES = 1000000 		/*50000*/;
 	
 	// Constante de la distancia m‡xima a la que te tienes que encontrar para capturar un geocache (metros)
-	public int MAX_DISTANCE_CAPTURE_GEOCACHE = /*20*/ 		1000000;
+	public int MAX_DISTANCE_CAPTURE_GEOCACHE = 20 		/*1000000*/;
 	
 	// Constante del radio maximo de distancia para buscar pois y rutas en la ra (en metros)
 	public int MAX_DISTANCE_SEARCH_GEOMETRIES_RA = 1000000 		/*50000*/;
