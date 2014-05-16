@@ -201,13 +201,13 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 					}
 					String poisJSON = JSONPOIParser.parseToJSONArray(app, pois).toString();
 					Intent intent = new Intent(GeocacheFullMapActivity.this, RAActivity.class);
-					intent.putExtra(RAActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, "Realidad aumentada");
+					intent.putExtra(RAActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, getString(R.string.full_realidad_aumentada));
 					intent.putExtra(RAActivity.EXTRAS_KEY_ACTIVITY_ARCHITECT_WORLD_URL, "wikitudeWorld" + File.separator + "index.html");
 					intent.putExtra(RAActivity.PARAM_KEY_JSON_POI_DATA, poisJSON );
 					startActivity(intent);
 					overridePendingTransition(R.anim.anim_push_enter, R.anim.anim_push_exit);
 				}else{
-					Toast.makeText(GeocacheFullMapActivity.this, "No hay geocachés que mostrar", Toast.LENGTH_SHORT).show();
+					Toast.makeText(GeocacheFullMapActivity.this, getString(R.string.full_no_hay_geocaches_que_mostrar), Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -395,7 +395,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 	}
 
 	public void onGeocacheFullListError(String error) {
-		Toast.makeText(this, "Error en la carga de geocaches",
+		Toast.makeText(this, getString(R.string.full_error_en_la_carga_de_geocaches),
 				Toast.LENGTH_SHORT).show();
 		showLoading(false);
 	}
@@ -409,8 +409,8 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			Milog.d("Estado 1. Has capturado TODOS los geocaches");
 			
 			String title = geo.title;
-			String body = "¡Enhorabuena!, Has encontrado todos los tesoros \n" + geo.body;
-			String buttonText = "Volver a jugar";
+			String body = getString(R.string.full_enhorabuena_has_encontrado_todos_los_tesoros) + "\n" + geo.body;
+			String buttonText = getString(R.string.full_volver_a_jugar);
 			GeocacheFullResponseDialog popup = new GeocacheFullResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheFullResponseDialog.STATE_GULLY_TESORO_ENCONTRADO, true, nidGame, new GeocacheFullResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					finish();
@@ -429,8 +429,8 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			Milog.d("Estado 2. Acabas de capturar un geocache. A por el siguiente");
 			
 			String title = geo.title;
-			String body = "¡Has encontrado un tesoro! \n" + geo.body;
-			String buttonText = "Continuar";
+			String body = getString(R.string.full_has_encontrado_un_tesoro) + "\n" + geo.body;
+			String buttonText = getString(R.string.full_continuar);
 			GeocacheFullResponseDialog popup = new GeocacheFullResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheFullResponseDialog.STATE_GULLY_TESORO_ENCONTRADO, false, nidGame, new GeocacheFullResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					
@@ -455,7 +455,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			
 			String title = geo.title;
 			String body = geo.body;
-			String buttonText = "Ir a otro lugar";
+			String buttonText = getString(R.string.full_ir_a_otro_lugar);
 			GeocacheFullResponseDialog popup = new GeocacheFullResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheFullResponseDialog.STATE_GULLY_COFRE_VACIO, false, nidGame, new GeocacheFullResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					
@@ -470,8 +470,8 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			Milog.d("Estado 4. Te has saltado el orden para capturar los cachés");
 			
 			String title = geo.title;
-			String body = "Debes seguir el orden para abrir los geocachés.\n Vuelves a empezar.\n" + geo.body;
-			String buttonText = "Volver a empezar";
+			String body = getString(R.string.full_debes_seguir_el_orden_para_abrir_los_geocaches_vuelves_a_empezar) + "\n" + geo.body;
+			String buttonText = getString(R.string.full_volver_a_empezar);
 			GeocacheFullResponseDialog popup = new GeocacheFullResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheFullResponseDialog.STATE_GULLY_SALTADO_ORDEN, true, nidGame, new GeocacheFullResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					finish();
@@ -491,8 +491,8 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			Milog.d("Estado 5. Ya has abierto este geocache antes");
 			
 			String title = geo.title;
-			String body = "Ya has abierto este geocache antes. " + geo.body;
-			String buttonText = "Prueba otro lugar";
+			String body = getString(R.string.full_ya_has_abierto_este_geocache_antes) + " " + geo.body;
+			String buttonText = getString(R.string.full_prueba_otro_lugar);
 			GeocacheFullResponseDialog popup = new GeocacheFullResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheFullResponseDialog.STATE_GULLY_COFRE_VACIO, false, nidGame, new GeocacheFullResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					
@@ -504,7 +504,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			/*MessageDialog.showMessage(this, "Geocache consultado",
 					"Ya has consultado este geocache. ");*/
 		} else {
-			MessageDialog.showMessage(this, "Error", "Error general");
+			MessageDialog.showMessage(this, getString(R.string.full_error), getString(R.string.full_error_general));
 		}
 
 		showLoading(false);
@@ -512,7 +512,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 
 	public void onGeocacheFullCaptureError(String error) {
 		Milog.d("Error al capturar geocache: " + error);
-		MessageDialog.showMessage(this, "Error", "No se puede capturar el geocache");
+		MessageDialog.showMessage(this, getString(R.string.full_error), getString(R.string.full_no_se_puede_capturar_el_geocache));
 		showLoading(false);
 	}
 
@@ -560,7 +560,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 				Graphic gr = new Graphic(puntoProyectado, sym, attrs);
 				capaHighlights.addGraphic(gr);
 				// Agregar texto para señalarlo
-				TextSymbol txtSym = new TextSymbol(18, "Dirígete aquí", Color.WHITE, TextSymbol.HorizontalAlignment.CENTER, TextSymbol.VerticalAlignment.TOP);
+				TextSymbol txtSym = new TextSymbol(18, getString(R.string.full_dirigete_aqui), Color.WHITE, TextSymbol.HorizontalAlignment.CENTER, TextSymbol.VerticalAlignment.TOP);
 				Graphic grTxt = new Graphic(puntoProyectado, txtSym, attrs);
 				capaHighlights.addGraphic(grTxt);
 			}
@@ -579,7 +579,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 							app.spatialReference);
 			if (puntoProyectado != null) {
 				HashMap<String, Object> attrs = new HashMap<String, Object>();
-			    TextSymbol sym = new TextSymbol(18, "Inicio", Color.WHITE, TextSymbol.HorizontalAlignment.CENTER, TextSymbol.VerticalAlignment.TOP);
+			    TextSymbol sym = new TextSymbol(18, getString(R.string.full_inicio), Color.WHITE, TextSymbol.HorizontalAlignment.CENTER, TextSymbol.VerticalAlignment.TOP);
 				Graphic gr = new Graphic(puntoProyectado, sym, attrs);
 				capaHighlights.addGraphic(gr);
 			}
@@ -592,7 +592,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 							app.spatialReference);
 			if (puntoProyectado != null) {
 				HashMap<String, Object> attrs = new HashMap<String, Object>();
-			    TextSymbol sym = new TextSymbol(18, "Final", Color.WHITE, TextSymbol.HorizontalAlignment.CENTER, TextSymbol.VerticalAlignment.TOP);
+			    TextSymbol sym = new TextSymbol(18, getString(R.string.full_final), Color.WHITE, TextSymbol.HorizontalAlignment.CENTER, TextSymbol.VerticalAlignment.TOP);
 				Graphic gr = new Graphic(puntoProyectado, sym, attrs);
 				capaHighlights.addGraphic(gr);
 			}
@@ -707,7 +707,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			btnCaptureCallout.setEnabled(false);
 
 			// Poner un mensaje de espera
-			lblMessageCallout.setText("Esperando GPS...");
+			lblMessageCallout.setText(getString(R.string.full_esperando_gps));
 			
 			// Recalcular la distancia
 			recalcularDistancia();
@@ -723,8 +723,8 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 					callout.animatedHide();
 				} else {
 					MessageDialog.showMessage(GeocacheFullMapActivity.this,
-							"No hay conexión",
-							"No dispones de conexión a Internet. Inténtalo de nuevo");
+							getString(R.string.full_no_hay_conexion),
+							getString(R.string.full_no_dispones_de_conexion_a_internet_intentalo_de_nuevo));
 				}
 
 			}
@@ -790,17 +790,17 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 						if (distMetros <= app.MAX_DISTANCE_CAPTURE_GEOCACHE) {
 							// Se cumple la distancia
 							btnCaptureCallout.setEnabled(true); // Habilitar el botón de capturar
-							this.lblMessageCallout.setText("Bravo, lo has encontrado, Abre el cofre"); // Poner mensaje
+							this.lblMessageCallout.setText(getString(R.string.full_bravo_lo_has_encontrado_abre_el_cofre)); // Poner mensaje
 
 						} else {
 							// No se cumple la distancia
 							btnCaptureCallout.setEnabled(false); // Deshabilitar el botón de capturar
 							if(distMetros > 3000){
 								// Si la distancia es mayor a 3 kms, decirle que se acerque más
-								this.lblMessageCallout.setText("Aún estás lejos, este cofre está a " + getDistanceString(distMetros) + " de donde te encuentras. Aproxímate a este lugar y lo podrás abrir"); // Poner mensaje
+								this.lblMessageCallout.setText(getString(R.string.full_aun_estas_lejos_este_cofre_esta_a) + " " + getDistanceString(distMetros) + " " + getString(R.string.full_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir)); // Poner mensaje
 							}else{
 								// Si la distancia es inferior a 3 km, decirle que no le queda mucho
-								this.lblMessageCallout.setText("No te queda mucho, solo estás a " + getDistanceString(distMetros) + ", sigue buscando"); // Poner mensaje
+								this.lblMessageCallout.setText(getString(R.string.full_no_te_queda_mucho_solo_estas_a) + " " + getDistanceString(distMetros) + ", " + getString(R.string.full_sigue_buscando)); // Poner mensaje
 							}
 							
 							
@@ -811,7 +811,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 																// botón de
 																// capturar
 						this.lblMessageCallout
-								.setText("El cache no tiene coordenadas"); // Poner
+								.setText(getString(R.string.full_el_geocache_no_tiene_coordenadas)); // Poner
 																			// que
 																			// el
 																			// geocache
@@ -823,7 +823,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 					// No hay coordenadas aún
 					btnCaptureCallout.setEnabled(false); // Deshabilito botón de
 															// capturar
-					this.lblMessageCallout.setText("Esperando al gps..."); // Poner que no hay coordenadas aún
+					this.lblMessageCallout.setText(getString(R.string.full_esperando_gps)); // Poner que no hay coordenadas aún
 				}
 
 			} else {
@@ -831,7 +831,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 				btnCaptureCallout.setEnabled(true); // Habilitar el botón de
 													// capturar
 				this.lblMessageCallout
-						.setText("Abre el cofre y descubre si esconde el tesoro de Gully"); // Poner
+						.setText(getString(R.string.full_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully)); // Poner
 																					// que
 																					// el
 																					// geocache
@@ -846,14 +846,14 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 	
 	private void mostrarMensajeNoTieneGPSActivado() {
 	    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	    builder.setMessage("Parece que no tienes encendido el GPS. ¿Quieres habilitarlo?")
+	    builder.setMessage(getString(R.string.full_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo))
 	           .setCancelable(false)
-	           .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+	           .setPositiveButton(getString(R.string.full_si), new DialogInterface.OnClickListener() {
 	               public void onClick(final DialogInterface dialog, final int id) {
 	                   startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
 	               }
 	           })
-	           .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	           .setNegativeButton(getString(R.string.full_no), new DialogInterface.OnClickListener() {
 	               public void onClick(final DialogInterface dialog, final int id) {
 	                    dialog.cancel();
 	               }

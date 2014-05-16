@@ -141,13 +141,13 @@ public class StoryDetailActivity extends Activity implements InfoItemListener {
 			if(info.title != null && !info.title.equals("")){
 				tvTitle.setText(info.title.toUpperCase());
 			}else{
-				tvTitle.setText("SIN TÍTULO");
+				tvTitle.setText(getString(R.string.historias_sin_titulo));
 			}
 
 			if(info.body != null && !info.body.equals("") && !info.body.equals("null")){
 				tvBody.setText( Html.fromHtml(info.body), BufferType.SPANNABLE );
 			}else{
-				tvBody.setText("Sin descripción disponible");
+				tvBody.setText(getString(R.string.historias_sin_descripcion_disponible));
 			}
 			
 			Util.loadBitmapOnImageView(this, imageView, info.featuredImage, null, 0, R.anim.anim_fade_in_300, 0, 0);
@@ -156,7 +156,7 @@ public class StoryDetailActivity extends Activity implements InfoItemListener {
 
 	public void onInfoItemError(String error) {
 		showLoading(false);
-		MessageDialog.showMessage(this, "Error al cargar", "No se puede cargar el premio en estos momentos");
+		MessageDialog.showMessage(this, getString(R.string.historias_error_al_cargar), getString(R.string.historias_no_se_puede_cargar_la_historia_en_estos_momentos));
 	}
 
 

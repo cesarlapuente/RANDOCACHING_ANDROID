@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="NUEVA PARTIDA"
+                    android:text="@string/multiplayer_nueva_partida"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -89,7 +89,7 @@
 		            android:layout_width="fill_parent"
 		            android:layout_height="45dp"
 		            android:layout_marginTop="10dp"
-		            android:hint="Nombre de la partida"
+		            android:hint="@string/multiplayer_nombre_de_la_partida"
 		            android:layout_centerHorizontal="true">
 		        </EditText>
 		        
@@ -98,7 +98,7 @@
 		            android:layout_width="fill_parent"
 		            android:layout_height="45dp"
 		            android:layout_marginTop="10dp"
-		            android:hint="Juego seleccionado"
+		            android:hint="@string/multiplayer_juego_seleccionado"
 		            android:layout_centerHorizontal="true">
 		        </Button>
 		        
@@ -109,7 +109,7 @@
 	                android:layout_marginTop="20dp"
 	                android:layout_marginLeft="10dp"
 	                android:layout_marginRight="10dp"
-	                android:text="Número mínimo de jugadores para comenzar la partida"/>
+	                android:text="@string/multiplayer_numero_minimo_de_jugadores_para_comenzar"/>
 	
 		        <SeekBar
 		            android:id="@+id/seekBarNumMinJugadores"
@@ -135,7 +135,7 @@
 	                android:layout_marginTop="20dp"
 	                android:layout_marginLeft="10dp"
 	                android:layout_marginRight="10dp"
-	                android:text="Número máximo de jugadores admitidos"/>
+	                android:text="@string/multiplayer_numero_maximo_de_jugadores_admitidos"/>
 	
 		        <SeekBar
 		            android:id="@+id/seekBarNumMaxJugadores"
@@ -176,7 +176,7 @@
 				            android:background="@drawable/btn_state_general"
 				            android:paddingLeft="20dp"
 				            android:paddingRight="20dp"
-				            android:text="Entrar a la partida"
+				            android:text="@string/multiplayer_entrar_en_la_partida"
 				            android:textSize="18sp"
 				            android:textColor="@color/azul_principal_oscuro" />
         

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Únete a la comunidad de jugadores audaces Travel in Game"
+        android:text="@string/login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game"
         android:textColor="@color/blanco"
         android:textSize="25sp"
         android:gravity="center_horizontal" />
@@ -24,7 +24,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/tbPass"
-            android:text="Si sólo quieres probar"
+            android:text="@string/login_si_solo_quieres_probar"
             android:textSize="18sp"
             android:background="@drawable/btn_state_general" />
 
@@ -55,7 +55,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginLeft="10dp"
 		        android:layout_gravity="center_horizontal|center_vertical"
-		        android:text="Usa tu cuenta de Facebook"
+		        android:text="@string/login_usa_tu_cuenta_de_facebook"
 		        android:textColor="@color/azul_principal_oscuro"
 		        android:textSize="18sp" />
             
@@ -91,7 +91,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginLeft="10dp"
 		        android:layout_gravity="center_horizontal|center_vertical"
-		        android:text="Usa tu cuenta de Travel in Game"
+		        android:text="@string/login_usa_tu_cuenta_de_travel_in_game"
 		        android:textColor="@color/azul_principal_oscuro"
 		        android:textSize="18sp" />
             
@@ -104,7 +104,7 @@
             android:layout_marginTop="5dp"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:hint="Correo electrónico"
+            android:hint="@string/login_correo_electronico"
             android:textColorHint="@color/azul_principal_oscuro_transparente_50"
             android:textColor="@color/azul_principal_oscuro"
             android:inputType="textEmailAddress"
@@ -119,7 +119,7 @@
             android:paddingRight="5dp"
             android:layout_marginTop="5dp"
             android:layout_below="@+id/tbMail"
-            android:hint="Contraseña"
+            android:hint="@string/login_contrasena"
             android:inputType="textPassword"
             android:text=""
             android:textColorHint="@color/azul_principal_oscuro_transparente_50"
@@ -140,7 +140,7 @@
             android:layout_height="40dp"
             android:layout_weight="10"
             android:layout_below="@+id/tbPass"
-            android:text="Entrar!"
+            android:text="@string/login_entrar"
             android:textSize="18sp"
             android:background="@drawable/btn_state_general" />
 
@@ -151,7 +151,7 @@
             android:layout_weight="10"
             android:layout_below="@+id/tbPass"
             android:layout_toRightOf="@+id/btnLogin"
-            android:text="Cerrar"
+            android:text="@string/login_cerrar"
             android:textSize="18sp"
             android:background="@drawable/btn_state_general" />
         	
@@ -162,7 +162,7 @@
             android:layout_weight="10"
             android:layout_below="@+id/tbPass"
             android:layout_toRightOf="@+id/btnLogin"
-            android:text="Unirse"
+            android:text="@string/login_unirse"
             android:textSize="18sp"
             android:background="@drawable/btn_state_general" />
             

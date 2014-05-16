@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="UNIRSE A PARTIDA"
+                    android:text="@string/multiplayer_unirse_a_partida"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -86,7 +86,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="Game title"
+                    android:text="@string/multiplayer_juego_seleccionado"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
 
@@ -102,7 +102,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="Jugadores en esta partida:"
+                    android:text="@string/multiplayer_jugadores_en_esta_partida"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="20sp" />
         
@@ -139,7 +139,7 @@
 				            android:background="@drawable/btn_state_general"
 				            android:paddingLeft="10dp"
 				            android:paddingRight="10dp"
-				            android:text="Abandonar"
+				            android:text="@string/multiplayer_abandonar"
 				            android:textSize="18sp"
 				            android:textColor="@color/azul_principal_oscuro" />
         

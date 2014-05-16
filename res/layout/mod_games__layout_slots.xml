@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="UNIRSE A PARTIDA"
+                    android:text="@string/multiplayer_unirse_a_partida"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -95,7 +95,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/gullyPanelVacio"
-                android:text=":( No hay partidas creadas"
+                android:text="@string/multiplayer_no_hay_partidas_creadas"
                 android:textSize="18sp"/>
             
             
@@ -147,7 +147,7 @@
 				            android:background="@drawable/btn_state_general"
 				            android:paddingLeft="20dp"
 				            android:paddingRight="20dp"
-				            android:text="Crear nueva partida"
+				            android:text="@string/multiplayer_crear_nueva_partida"
 				            android:textSize="18sp"
 				            android:textColor="@color/azul_principal_oscuro" />
         
@@ -159,7 +159,7 @@
 				            android:background="@drawable/btn_state_general"
 				            android:paddingLeft="20dp"
 				            android:paddingRight="20dp"
-				            android:text="Actualizar"
+				            android:text="@string/multiplayer_actualizar"
 				            android:textSize="18sp"
 				            android:textColor="@color/azul_principal_oscuro" />
         

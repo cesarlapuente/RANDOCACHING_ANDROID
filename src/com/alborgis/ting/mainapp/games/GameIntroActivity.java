@@ -202,8 +202,8 @@ public class GameIntroActivity extends Activity implements
 							public void onSessionError(String error) {
 								LoadingDialog.hideLoading(GameIntroActivity.this);
 								MessageDialog.showMessage(
-										GameIntroActivity.this, "Error",
-										"Error al comprobar sesi—n");
+										GameIntroActivity.this, getString(R.string.game_intro_error),
+										getString(R.string.game_intro_error_al_comprobar_sesion));
 							}
 						});
 			}
@@ -242,8 +242,8 @@ public class GameIntroActivity extends Activity implements
 							public void onSessionError(String error) {
 								LoadingDialog.hideLoading(GameIntroActivity.this);
 								MessageDialog.showMessage(
-										GameIntroActivity.this, "Error",
-										"Error al comprobar sesi—n");
+										GameIntroActivity.this, getString(R.string.game_intro_error),
+										getString(R.string.game_intro_error_al_comprobar_sesion));
 							}
 						});
 
@@ -342,8 +342,8 @@ public class GameIntroActivity extends Activity implements
 												MessageDialog
 														.showMessage(
 																GameIntroActivity.this,
-																"Error",
-																"Error al cargar el juego");
+																getString(R.string.game_intro_error),
+																getString(R.string.game_intro_error_al_cargar_juego));
 											}
 										});
 							}
@@ -351,7 +351,7 @@ public class GameIntroActivity extends Activity implements
 							public void onGeocacheOneResetError(String error) {
 								LoadingDialog.hideLoading(GameIntroActivity.this);
 								Toast.makeText(GameIntroActivity.this,
-										"No se puede reiniciar la partida",
+										getString(R.string.game_intro_no_se_puede_reiniciar_la_partida),
 										Toast.LENGTH_SHORT).show();
 							}
 						});
@@ -380,8 +380,8 @@ public class GameIntroActivity extends Activity implements
 												MessageDialog
 														.showMessage(
 																GameIntroActivity.this,
-																"Error",
-																"Error al cargar el juego");
+																getString(R.string.game_intro_error),
+																getString(R.string.game_intro_error_al_cargar_juego));
 											}
 										});
 							}
@@ -389,7 +389,7 @@ public class GameIntroActivity extends Activity implements
 							public void onGeocacheFullResetError(String error) {
 								LoadingDialog.hideLoading(GameIntroActivity.this);
 								Toast.makeText(GameIntroActivity.this,
-										"No se puede reiniciar la partida",
+										getString(R.string.game_intro_no_se_puede_reiniciar_la_partida),
 										Toast.LENGTH_SHORT).show();
 							}
 						});
@@ -463,8 +463,8 @@ public class GameIntroActivity extends Activity implements
 							public void onGeocacheGameItemError(String error) {
 								LoadingDialog.hideLoading(GameIntroActivity.this);
 								MessageDialog.showMessage(
-										GameIntroActivity.this, "Error",
-										"Error al cargar el juego");
+										GameIntroActivity.this, getString(R.string.game_intro_error),
+										getString(R.string.game_intro_error_al_cargar_juego));
 							}
 						});
 			}
@@ -506,8 +506,8 @@ public class GameIntroActivity extends Activity implements
 	// Error al cargar juego de geocache
 	public void onGeocacheGameItemError(String error) {
 		LoadingDialog.hideLoading(GameIntroActivity.this);
-		MessageDialog.showMessage(GameIntroActivity.this, "Error",
-				"Error al cargar el juego");
+		MessageDialog.showMessage(GameIntroActivity.this, getString(R.string.game_intro_error),
+				getString(R.string.game_intro_error_al_cargar_juego));
 	}
 
 }

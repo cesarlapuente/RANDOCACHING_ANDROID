@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="PASAPORTE"
+                    android:text="@string/pasaporte_pasaporte"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -81,7 +81,7 @@
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
 						android:gravity="center_horizontal"
-                        android:text="MEDALLAS"
+                        android:text="-"
                         android:textColor="@color/naranja_challenger_principal"
                         android:background="@color/azul_principal_oscuro"
                         android:textSize="20sp" />

@@ -35,7 +35,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:singleLine="true"
-                android:text="Mostrar JUEGOS"
+                android:text="@string/home_mostrar_juegos"
                 android:textColor="@color/azul_principal_oscuro"
                 android:textSize="13sp" />
             
@@ -52,7 +52,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="21dp"
                 android:singleLine="true"
-                android:text="CIUDAD..."
+                android:text="@string/home_ciudad"
                 android:textColor="@color/azul_principal_oscuro"
                 android:textSize="13sp" />
 
@@ -69,7 +69,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="21dp"
                 android:singleLine="true"
-                android:text="JUEGO..."
+                android:text="@string/home_juego"
                 android:textColor="@color/azul_principal_oscuro"
                 android:textSize="13sp" />
 
@@ -119,7 +119,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center_horizontal"
-                    android:text="¡Hola! Soy Gully. Bienvenido a"
+                    android:text="@string/home_gully_frase_bocadillo_1"
                     android:textColor="@color/azul_principal_oscuro"
                     android:textSize="13sp" />
 
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center_horizontal"
-                    android:text="El juego de los viajeros audaces. Explora los destinos del social geo-gaming"
+                    android:text="@string/home_gully_frase_bocadillo_2"
                     android:textColor="@color/azul_principal_oscuro"
                     android:textSize="11sp" />
             </LinearLayout>
@@ -178,7 +178,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/gullyPanelVacio"
-                android:text=":( No hay elementos"
+                android:text="@string/home_no_hay_elementos"
                 android:textSize="18sp" />
         </RelativeLayout>
 
@@ -235,7 +235,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:layout_margin="5dp"
-            android:text="Mostrar sólo DESTINOS"
+            android:text="@string/home_mostrar_solo_destinos"
             android:textColor="@color/azul_principal_oscuro"
             android:textSize="13sp"
             android:background="@drawable/btn_state_general" />

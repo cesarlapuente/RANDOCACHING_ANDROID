@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="DETALLE PREMIO"
+                    android:text="@string/premios_detalle_premio"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -97,7 +97,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Cargando..."
+                    android:text="@string/common_cargando"
                     android:textColor="@color/azul_principal_oscuro"
                     android:textSize="17sp" />
                 

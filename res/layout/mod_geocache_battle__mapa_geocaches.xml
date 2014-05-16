@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="EXPLORER"
+                    android:text="@string/battle_explorer"
                     android:textColor="@color/azul_principal_oscuro"
                     android:textSize="25sp" />
             </LinearLayout>
@@ -104,7 +104,7 @@
             android:background="@drawable/btn_state_general"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:text="Abandonar"
+            android:text="@string/battle_abandonar"
             android:textColor="@color/azul_principal_oscuro"
             android:textSize="18sp" />
 

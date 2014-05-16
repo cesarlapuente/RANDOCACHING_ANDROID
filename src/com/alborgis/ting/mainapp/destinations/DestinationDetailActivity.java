@@ -140,13 +140,13 @@ public class DestinationDetailActivity extends Activity implements DestinationIt
 			if(dest.title != null && !dest.title.equals("")){
 				tvTitle.setText(dest.title.toUpperCase());
 			}else{
-				tvTitle.setText("SIN TÍTULO");
+				tvTitle.setText(getString(R.string.destinos_sin_titulo));
 			}
 
 			if(dest.body != null && !dest.body.equals("") && !dest.body.equals("null")){
 				tvBody.setText( Html.fromHtml(dest.body), BufferType.SPANNABLE );
 			}else{
-				tvBody.setText("Sin descripción disponible");
+				tvBody.setText(getString(R.string.destinos_sin_descripcion_disponible));
 			}
 			
 			Util.loadBitmapOnImageView(this, imageView, dest.featuredImage, null, 0, R.anim.anim_fade_in_300, 0, 0);
@@ -156,7 +156,7 @@ public class DestinationDetailActivity extends Activity implements DestinationIt
 	public void onDestinationItemError(String error) {
 		showLoading(false);
 		
-		MessageDialog.showMessage(this, "Error al cargar", "No se puede cargar el destino en estos momentos");
+		MessageDialog.showMessage(this, getString(R.string.destinos_error_al_cargar), getString(R.string.destinos_no_se_puede_cargar_el_destino_en_estos_momentos));
 	}
 
 

@@ -19,20 +19,20 @@ public class GeocacheOneTipManager {
 		// Sacar unos mensajes si está en modo demo y otros si está en modo normal
 		if(modoDemo){
 			TINGTip tip1 = new TINGTip();
-			tip1.title = "MODO DEMO";
-			tip1.message = "¡Bienvenido al juego del Geocaching One! Estás jugando en modo DEMO. Recuerda que puedes jugar con tu cuenta de Travel in Games o de Facebook para poder obtener logros, ganar premios y guardar la partida";
+			tip1.title = ctx.getString(R.string.one_tip_title_modo_demo);
+			tip1.message = ctx.getString(R.string.one_tip_message_estas_jugando_en_modo_demo);
 			tip1.gravity = Gravity.BOTTOM;
 			wizard.addTip(tip1);
 			
 			TINGTip tip2 = new TINGTip();
-			tip2.title = "OBJETIVO";
-			tip2.message = "Tu objetivo es encontrar el tesoro que Gully ha escondido en alguno de los cofres repartidos por la zona que ves sobre el mapa";
+			tip2.title = ctx.getString(R.string.one_tip_title_objetivo);
+			tip2.message = ctx.getString(R.string.one_tip_message_tu_objetivo_es_encontrar_el_tesoro_escondido_por_gully);
 			tip2.gravity = Gravity.BOTTOM;
 			wizard.addTip(tip2);
 		}else{
 			TINGTip tip1 = new TINGTip();
-			tip1.title = "¡BIENVENIDO AL JUEGO!";
-			tip1.message = "¡Bienvenido al juego del Geocaching One! Tu objetivo es encontrar el tesoro que Gully ha escondido en alguno de los cofres repartidos por la zona que ves sobre el mapa";
+			tip1.title = ctx.getString(R.string.one_tip_title_bienvenido_al_juego);
+			tip1.message = ctx.getString(R.string.one_tip_message_bienvenido_al_juego_del_geocaching_one);
 			tip1.gravity = Gravity.BOTTOM;
 			wizard.addTip(tip1);
 		}
@@ -40,14 +40,14 @@ public class GeocacheOneTipManager {
 		// Sacar unos mensajes si el el juego es geolocated
 		if(geolocatedGame){
 			TINGTip tip1 = new TINGTip();
-			tip1.title = "JUEGO OUTDOOR";
-			tip1.message = "Este juego es 'Outdoor'. Quiere decir que para jugar esta partida necesitarás estar cerca de los cofres para poderlos abrir";
+			tip1.title = ctx.getString(R.string.one_tip_title_juego_outdoor);
+			tip1.message = ctx.getString(R.string.one_tip_message_este_juego_es_outdoor);
 			tip1.gravity = Gravity.BOTTOM;
 			wizard.addTip(tip1);
 		}else{
 			TINGTip tip1 = new TINGTip();
-			tip1.title = "JUEGO INDOOR";
-			tip1.message = "Este juego es 'Indoor'. Quiere decir que puedes estar en cualquier lugar para abrir los cofres y encontrar el tesoro";
+			tip1.title = ctx.getString(R.string.one_tip_title_juego_indoor);
+			tip1.message = ctx.getString(R.string.one_tip_message_este_juego_es_indoor);
 			tip1.gravity = Gravity.BOTTOM;
 			wizard.addTip(tip1);
 		}
@@ -55,22 +55,22 @@ public class GeocacheOneTipManager {
 		
 
 		TINGTip tip2 = new TINGTip();
-		tip2.title = "INTENTOS";
-		tip2.message = "En la parte inferior de la pantalla verás los intentos que tienes. Cada vez que abres un cofre pierdes un intento. Los cofres ya abiertos no te quitan intentos";
+		tip2.title = ctx.getString(R.string.one_tip_title_intentos);
+		tip2.message = ctx.getString(R.string.one_tip_message_en_la_parte_inferior_veras_los_intentos);
 		tip2.resIdImage = R.drawable.icono_cofre_por_abrir;
 		tip2.gravity = Gravity.TOP;
 		wizard.addTip(tip2);
 		
 		TINGTip tip3 = new TINGTip();
-		tip3.title = "BRÚJULA";
-		tip3.message = "Si te sientes perdido, siempre puedes consultar la brújula. Te permitirá mostrar los cofres sobre la cámara, y de esta manera orientarte";
+		tip3.title = ctx.getString(R.string.one_tip_title_brujula);
+		tip3.message = ctx.getString(R.string.one_tip_message_si_te_sientes_perdido_puedes_consultar_la_brujula);
 		tip3.resIdImage = R.drawable.btn_realidad_aumentada_en_mapa_normal;
 		tip3.gravity = Gravity.BOTTOM;
 		wizard.addTip(tip3);
 		
 		TINGTip tip4 = new TINGTip();
-		tip4.title = "SELECCIONAR UN COFRE";
-		tip4.message = "Para abrir un cofre toca sobre uno de los iconos del mapa";
+		tip4.title = ctx.getString(R.string.one_tip_title_seleccionar_un_cofre);
+		tip4.message = ctx.getString(R.string.one_tip_message_para_abrir_un_cofre_toca_sobre_uno_de_los_iconos_del_mapa);
 		tip4.resIdImage = R.drawable.btn_poi_cache_normal;
 		tip4.gravity = Gravity.BOTTOM;
 		wizard.addTip(tip4);
@@ -82,21 +82,21 @@ public class GeocacheOneTipManager {
 	
 	public static void showTipsBeforeOpenCofre(Context ctx, SharedPreferences prefs, boolean forceShow){
 		TINGTip tip1 = new TINGTip();
-		tip1.title = "ABRIR UN COFRE";
-		tip1.message = "Cuando seleccionas un cofre aparecerá un bocadillo donde verás un botón que te permite abrir el cofre.";
+		tip1.title = ctx.getString(R.string.one_tip_title_abrir_un_cofre);
+		tip1.message = ctx.getString(R.string.one_tip_message_cuando_seleccionas_un_cofre_podras_abrirlo_desde_su_bocadillo);
 		tip1.resIdImage = R.drawable.btn_abrir_cofre_normal;
 		tip1.gravity = Gravity.BOTTOM;
 		
 		
 		TINGTip tip2 = new TINGTip();
-		tip2.title = "ABRIR UN COFRE";
-		tip2.message = "Si el botón de 'Abrir Cofre' está desactivado quiere decir que no estás lo suficientemente cerca del lugar. ¡Tendrás que acercarte más!";
+		tip2.title = ctx.getString(R.string.one_tip_title_abrir_un_cofre);
+		tip2.message = ctx.getString(R.string.one_tip_message_si_el_boton_de_abrir_cofre_esta_desactivado_no_estas_cerca_del_lugar);
 		tip2.resIdImage = R.drawable.btn_abrir_cofre_disabled;
 		tip2.gravity = Gravity.BOTTOM;
 		
 		TINGTip tip3 = new TINGTip();
-		tip3.title = "ABRIR UN COFRE";
-		tip3.message = "La distancia a la que te encuentras de un cofre aparece sobre el botón de 'Abrir cofre'. Tu posición en el mapa está indicada por el círculo azul. Cuando estés cerca del cofre, podrás abrirlo.";
+		tip3.title = ctx.getString(R.string.one_tip_title_abrir_un_cofre);
+		tip3.message = ctx.getString(R.string.one_tip_message_la_distancia_a_la_que_te_encuentras_de_un_cofre_aparece_sobre_el_boton_abrir_cofre);
 		tip3.gravity = Gravity.BOTTOM;
 		
 		TINGTipWizard wizard = new TINGTipWizard(ctx, prefs);

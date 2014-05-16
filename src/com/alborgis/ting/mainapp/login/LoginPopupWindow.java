@@ -148,8 +148,8 @@ public class LoginPopupWindow extends Dialog {
 														String error) {
 													LoadingDialog.hideLoading(ctx);
 													MessageDialog.showMessage(
-															ctx, "Error",
-															"Error al entrar");
+															ctx, ctx.getString(R.string.login_error),
+															ctx.getString(R.string.login_error_al_entrar));
 												}
 											});
 								}
@@ -158,8 +158,8 @@ public class LoginPopupWindow extends Dialog {
 
 							public void onSessionError(String error) {
 								LoadingDialog.hideLoading(ctx);
-								MessageDialog.showMessage(ctx, "Error",
-										"Error al entrar");
+								MessageDialog.showMessage(ctx, ctx.getString(R.string.login_error),
+										ctx.getString(R.string.login_error_al_entrar));
 							}
 						});
 
@@ -189,23 +189,23 @@ public class LoginPopupWindow extends Dialog {
 			public void onClick(View v) {
 				// Validar campos
 				if (TextUtils.isEmpty(tbCorreo.getText().toString())) {
-					MessageDialog.showMessage(ctx, "Correo electr—nico",
-							"Por favor, introduce tu correo electr—nico");
+					MessageDialog.showMessage(ctx, ctx.getString(R.string.login_correo_electronico),
+							ctx.getString(R.string.login_por_favor_introduce_tu_correo_electronico));
 					return;
 				}
 				if (TextUtils.isEmpty(tbPass.getText().toString())) {
-					MessageDialog.showMessage(ctx, "Contrase–a",
-							"Por favor, introduce tu contrase–a");
+					MessageDialog.showMessage(ctx, ctx.getString(R.string.login_contrasena),
+							ctx.getString(R.string.login_por_favor_introduce_tu_contrasena));
 					return;
 				}
 				if (!tbCorreo.getText().toString().contains("@")) {
-					MessageDialog.showMessage(ctx, "Correo electr—nico",
-							"El correo electr—nico especificado no es v‡lido");
+					MessageDialog.showMessage(ctx, ctx.getString(R.string.login_correo_electronico),
+							ctx.getString(R.string.login_el_correo_electronico_especificado_no_es_valido));
 					return;
 				}
 				if (tbPass.getText().toString().length() < 3) {
-					MessageDialog.showMessage(ctx, "Contrase–a",
-							"La contrase–a es demasiado corta");
+					MessageDialog.showMessage(ctx, ctx.getString(R.string.login_contrasena),
+							ctx.getString(R.string.login_la_contrasena_es_demasiado_corta));
 					return;
 				}
 
@@ -254,14 +254,14 @@ public class LoginPopupWindow extends Dialog {
 																		MessageDialog
 																				.showMessage(
 																						ctx,
-																						"Datos incorrectos",
-																						"El usuario o la contrase–a no existe");
+																						ctx.getString(R.string.login_datos_incorrectos),
+																						ctx.getString(R.string.login_el_usuario_o_la_contrasena_no_existe));
 																	} else {
 																		MessageDialog
 																				.showMessage(
 																						ctx,
-																						"Error",
-																						"Error al hacer login");
+																						ctx.getString(R.string.login_error),
+																						ctx.getString(R.string.login_error_al_hacer_login));
 																	}
 
 																}
@@ -274,8 +274,8 @@ public class LoginPopupWindow extends Dialog {
 													LoadingDialog.hideLoading(ctx);
 													MessageDialog
 															.showMessage(ctx,
-																	"Error",
-																	"Error al hacer login");
+																	ctx.getString(R.string.login_error),
+																	ctx.getString(R.string.login_error_al_hacer_login));
 												}
 											});
 								} else {
@@ -306,14 +306,14 @@ public class LoginPopupWindow extends Dialog {
 														MessageDialog
 																.showMessage(
 																		ctx,
-																		"Datos incorrectos",
-																		"El usuario o la contrase–a no existe");
+																		ctx.getString(R.string.login_datos_incorrectos),
+																		ctx.getString(R.string.login_el_usuario_o_la_contrasena_no_existe));
 													} else {
 														MessageDialog
 																.showMessage(
 																		ctx,
-																		"Error",
-																		"Error al hacer login");
+																		ctx.getString(R.string.login_error),
+																		ctx.getString(R.string.login_error_al_hacer_login));
 													}
 												}
 											});
@@ -323,8 +323,8 @@ public class LoginPopupWindow extends Dialog {
 
 							public void onSessionError(String error) {
 								LoadingDialog.hideLoading(ctx);
-								MessageDialog.showMessage(ctx, "Error",
-										"Error al entrar");
+								MessageDialog.showMessage(ctx, ctx.getString(R.string.login_error),
+										ctx.getString(R.string.login_error_al_entrar));
 							}
 						});
 

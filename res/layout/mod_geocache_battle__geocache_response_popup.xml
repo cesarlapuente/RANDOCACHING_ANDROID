@@ -46,7 +46,7 @@
 			        android:layout_height="wrap_content"
 			        android:layout_marginLeft="20dp"
 			        android:layout_marginRight="20dp"
-			        android:text="@string/full_titulo"
+			        android:text="@string/battle_titulo"
 			        android:textColor="@color/azul_principal_oscuro"
 			        android:textSize="20sp" />
 	            <TextView
@@ -55,7 +55,7 @@
 	                android:layout_height="wrap_content"
 	                android:layout_marginLeft="20dp"
 			        android:layout_marginRight="20dp"
-	                android:text="@string/full_descripcion"
+	                android:text="@string/battle_descripcion"
 	                android:textColor="@color/azul_principal_oscuro"
 	                android:textSize="15sp" />
 	            <LinearLayout
@@ -71,7 +71,7 @@
 			            android:id="@+id/tvLogrosObtenidos"
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
-			            android:text="@string/full_logros_conseguidos"
+			            android:text="@string/battle_logros_conseguidos"
 			            android:textColor="@color/negro"
 			            android:textSize="15sp" />
 			        <Button
@@ -111,7 +111,7 @@
 			        android:layout_height="wrap_content"
 			        android:layout_marginLeft="20dp"
 			        android:layout_marginRight="20dp"
-			        android:text="@string/full_vota_este_juego"
+			        android:text="@string/battle_vota_este_juego"
 			        android:textColor="@color/azul_principal_oscuro"
 			        android:textSize="16sp" />
 	            
@@ -131,7 +131,7 @@
 			        android:layout_width="150dp"
 			        android:layout_height="40dp"
 			        android:background="@drawable/btn_state_general"
-			        android:text="@string/full_continuar"
+			        android:text="@string/battle_continuar"
 			        android:textColor="@color/azul_principal_oscuro" />
             
         </LinearLayout>

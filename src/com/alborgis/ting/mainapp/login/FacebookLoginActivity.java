@@ -130,14 +130,14 @@ public class FacebookLoginActivity extends FragmentActivity {
 																MessageDialog
 																		.showMessage(
 																				FacebookLoginActivity.this,
-																				"Datos incorrectos",
-																				"El usuario o la contrase–a no existe");
+																				getString(R.string.login_datos_incorrectos),
+																				getString(R.string.login_el_usuario_o_la_contrasena_no_existe));
 															} else {
 																MessageDialog
 																		.showMessage(
 																				FacebookLoginActivity.this,
-																				"Error",
-																				"Error al hacer login");
+																				getString(R.string.login_error),
+																				getString(R.string.login_error_al_hacer_login));
 															}
 
 														}
@@ -150,8 +150,8 @@ public class FacebookLoginActivity extends FragmentActivity {
 											LoadingDialog.hideLoading(FacebookLoginActivity.this);
 											MessageDialog
 													.showMessage(FacebookLoginActivity.this,
-															"Error",
-															"Error al hacer login");
+															getString(R.string.login_error),
+															getString(R.string.login_error_al_hacer_login));
 										}
 									});
 						} else {
@@ -181,14 +181,14 @@ public class FacebookLoginActivity extends FragmentActivity {
 												MessageDialog
 														.showMessage(
 																FacebookLoginActivity.this,
-																"Datos incorrectos",
-																"El usuario o la contrase–a no existe");
+																getString(R.string.login_datos_incorrectos),
+																getString(R.string.login_el_usuario_o_la_contrasena_no_existe));
 											} else {
 												MessageDialog
 														.showMessage(
 																FacebookLoginActivity.this,
-																"Error",
-																"Error al hacer login");
+																getString(R.string.login_error),
+																getString(R.string.login_error_al_hacer_login));
 											}
 
 										}
@@ -199,8 +199,8 @@ public class FacebookLoginActivity extends FragmentActivity {
 
 					public void onSessionError(String error) {
 						LoadingDialog.hideLoading(FacebookLoginActivity.this);
-						MessageDialog.showMessage(FacebookLoginActivity.this, "Error",
-								"Error al entrar");
+						MessageDialog.showMessage(FacebookLoginActivity.this, getString(R.string.login_error),
+								getString(R.string.login_error_al_entrar));
 					}
 				});
     }

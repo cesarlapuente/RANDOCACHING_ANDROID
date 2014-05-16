@@ -48,7 +48,7 @@
                     android:maxLines="2"
                     android:ellipsize="end"
                     android:singleLine="false"
-                    android:text="Ponte cómodo y selecciona una historia. También puedes elegirla por ciudades o por ubicación"
+                    android:text="@string/historias_gully_frase_bocadillo"
                     android:textColor="@color/azul_principal_oscuro"
                     android:textSize="14sp" />
                 
@@ -72,7 +72,7 @@
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:singleLine="false"
-                    android:text="Historias"
+                    android:text="@string/historias_historias"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="35sp"
                     android:shadowColor="@color/blanco"
@@ -93,7 +93,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="21dp"
                 android:singleLine="true"
-                android:text="CIUDAD..."
+                android:text="@string/historias_ciudad"
                 android:textColor="@color/azul_principal_oscuro"
                 android:textSize="13sp" />
             
@@ -140,7 +140,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/gullyPanelVacio"
-                android:text=":( No hay elementos"
+                android:text="@string/historias_no_hay_elementos"
                 android:textSize="18sp"/>
             
             

@@ -88,7 +88,7 @@ public class GeocacheBattleResponseDialog extends Dialog {
 	  protected void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    requestWindowFeature(Window.FEATURE_NO_TITLE);
-	    setContentView(R.layout.mod_geocache_one__geocache_response_popup);
+	    setContentView(R.layout.mod_geocache_battle__geocache_response_popup);
 	    
 	    this.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 	    

@@ -43,7 +43,7 @@
                     android:maxLines="2"
                     android:ellipsize="end"
                     android:singleLine="false"
-                    android:text="EXPLORER"
+                    android:text="@string/full_explorer"
                     android:textColor="@color/azul_principal_oscuro"
                     android:textSize="25sp" />
             </LinearLayout>

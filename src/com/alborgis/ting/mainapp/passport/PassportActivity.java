@@ -209,7 +209,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 		btnLogout.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				
-				MessageDialog.showMessageWith2Buttons(PassportActivity.this, "Desconexi—n", "ÀDeseas desconectarte de Travel in Game?", "Desconectar",  "Cancelar", 
+				MessageDialog.showMessageWith2Buttons(PassportActivity.this, getString(R.string.pasaporte_desconexion), getString(R.string.pasaporte_deseas_desconectarte_de_travel_in_game), getString(R.string.pasaporte_desconectar),  getString(R.string.pasaporte_cancelar), 
 						new MessageDialogListener() {
 							public void onPositiveButtonClick(MessageDialog dialog) {
 								dialog.dismiss();
@@ -226,7 +226,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 									}
 									public void onLogoutError(String error) {
 										showLoading(false);
-										MessageDialog.showMessage(PassportActivity.this, "Error",	"No se puede desconectar la sesi—n actual");
+										MessageDialog.showMessage(PassportActivity.this, getString(R.string.pasaporte_error),	getString(R.string.pasaporte_no_se_puede_desconectar_la_sesion_actual));
 									}
 								});
 							}
@@ -243,7 +243,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 			public void onClick(View arg0) {
 				Intent intent = new Intent(PassportActivity.this, PassportGridActivity.class);
 				intent.putParcelableArrayListExtra(PassportGridActivity.PARAM_KEY_BADGES, passport.badges);
-				intent.putExtra(PassportGridActivity.PARAM_KEY_TITLE, "MEDALLAS");
+				intent.putExtra(PassportGridActivity.PARAM_KEY_TITLE, getString(R.string.pasaporte_medallas));
 				startActivity(intent);
 				overridePendingTransition(R.anim.anim_push_enter, R.anim.anim_push_exit);
 			}
@@ -253,7 +253,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 			public void onClick(View arg0) {
 				Intent intent = new Intent(PassportActivity.this, PassportGridActivity.class);
 				intent.putParcelableArrayListExtra(PassportGridActivity.PARAM_KEY_VISADOS, passport.visados);
-				intent.putExtra(PassportGridActivity.PARAM_KEY_TITLE, "VISADOS");
+				intent.putExtra(PassportGridActivity.PARAM_KEY_TITLE, getString(R.string.pasaporte_visados));
 				startActivity(intent);
 				overridePendingTransition(R.anim.anim_push_enter, R.anim.anim_push_exit);
 			}
@@ -263,7 +263,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 			public void onClick(View arg0) {
 				Intent intent = new Intent(PassportActivity.this, PassportGridActivity.class);
 				intent.putParcelableArrayListExtra(PassportGridActivity.PARAM_KEY_STAMPS, passport.stamps);
-				intent.putExtra(PassportGridActivity.PARAM_KEY_TITLE, "SELLOS");
+				intent.putExtra(PassportGridActivity.PARAM_KEY_TITLE, getString(R.string.pasaporte_sellos));
 				startActivity(intent);
 				overridePendingTransition(R.anim.anim_push_enter, R.anim.anim_push_exit);
 			}
@@ -324,7 +324,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 
 					public void onSessionError(String error) {
 						showLoading(false);
-						MessageDialog.showMessage(PassportActivity.this, "Error",	"Error al comprobar sesi—n");
+						MessageDialog.showMessage(PassportActivity.this, getString(R.string.pasaporte_error),	getString(R.string.pasaporte_error_al_comprobar_sesion));
 					}
 				});
 	}
@@ -406,7 +406,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 			}
 			public void onPassportError(String error) {
 				showLoading(false);
-				MessageDialog.showMessage(PassportActivity.this, "Error",	"Error al cargar pasaporte");
+				MessageDialog.showMessage(PassportActivity.this, getString(R.string.pasaporte_error),	getString(R.string.pasaporte_error_al_cargar_pasaporte));
 			}
 		});
 	}

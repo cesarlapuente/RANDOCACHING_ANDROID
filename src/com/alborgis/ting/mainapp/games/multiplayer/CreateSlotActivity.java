@@ -119,16 +119,16 @@ public class CreateSlotActivity extends Activity {
 		btnCrearPartida.setTypeface(tfGullyBold);
 		
 		// Configurar el formulario de entrada
-		btnJuegoSeleccionado.setText( "Juego: " + titleGame);
+		btnJuegoSeleccionado.setText( getString(R.string.multiplayer_juego) +": " + titleGame);
 		btnJuegoSeleccionado.setEnabled(false);
 		
 		seekBarNumMinJugadores.setMax(10);
 		seekBarNumMinJugadores.setProgress(2);
-		tvNumMinJugadores.setText(seekBarNumMinJugadores.getProgress() + " jugadores");
+		tvNumMinJugadores.setText(seekBarNumMinJugadores.getProgress() + " " + getString(R.string.multiplayer_jugadores));
 		
 		seekBarNumMaxJugadores.setMax(10);
 		seekBarNumMaxJugadores.setProgress(5);
-		tvNumMaxJugadores.setText(seekBarNumMaxJugadores.getProgress() + " jugadores");
+		tvNumMaxJugadores.setText(seekBarNumMaxJugadores.getProgress() + " " + getString(R.string.multiplayer_jugadores));
 		
 	}
 
@@ -151,14 +151,14 @@ public class CreateSlotActivity extends Activity {
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				if(seekBar.getProgress() < 2){
 					seekBar.setProgress(2);
-					Toast.makeText(CreateSlotActivity.this, "El nœmero m’nimo de jugadores debe ser de al menos 2", Toast.LENGTH_SHORT).show();
+					Toast.makeText(CreateSlotActivity.this, getString(R.string.multiplayer_el_numero_minimo_de_jugadores_debe_ser_de_al_menos_2), Toast.LENGTH_SHORT).show();
 				}
 			}
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				
 			}
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				tvNumMinJugadores.setText(progress + " jugadores");
+				tvNumMinJugadores.setText(progress + " " + getString(R.string.multiplayer_jugadores));
 			}
 		});
 		
@@ -166,14 +166,14 @@ public class CreateSlotActivity extends Activity {
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				if(seekBar.getProgress() < 2){
 					seekBar.setProgress(2);
-					Toast.makeText(CreateSlotActivity.this, "El nœmero m’nimo de jugadores debe ser de al menos 2", Toast.LENGTH_SHORT).show();
+					Toast.makeText(CreateSlotActivity.this, getString(R.string.multiplayer_el_numero_minimo_de_jugadores_debe_ser_de_al_menos_2), Toast.LENGTH_SHORT).show();
 				}
 			}
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				
 			}
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				tvNumMaxJugadores.setText(progress + " jugadores");
+				tvNumMaxJugadores.setText(progress + " " + getString(R.string.multiplayer_jugadores));
 			}
 		});
 		
@@ -214,7 +214,7 @@ public class CreateSlotActivity extends Activity {
 				public void onSlotCreateError(String error) {
 					Milog.d("Error al crear slot: " + error);
 					showLoading(false);
-					MessageDialog.showMessage(CreateSlotActivity.this, "Error", "Error al crear partida. " + error);
+					MessageDialog.showMessage(CreateSlotActivity.this, getString(R.string.multiplayer_error), getString(R.string.multiplayer_error_al_crear_partida) + " " + error);
 				}
 			});
 		}
@@ -224,7 +224,7 @@ public class CreateSlotActivity extends Activity {
 
 	private boolean validarCampos(){
 		if(tbTitle.getText().toString() == null || tbTitle.getText().toString().isEmpty()){
-			MessageDialog.showMessage(this, "T’tulo de la partida", "Por favor, introduce un t’tulo para la nueva partida");
+			MessageDialog.showMessage(this, getString(R.string.multiplayer_titulo_de_la_partida), getString(R.string.multiplayer_por_favor_introdice_titulo_para_la_partida));
 			return false;
 		}
 		return true;

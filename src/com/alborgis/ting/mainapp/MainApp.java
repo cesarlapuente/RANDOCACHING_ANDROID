@@ -1,5 +1,6 @@
 package com.alborgis.ting.mainapp;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import com.alborgis.ting.base.drupalsvcsapi.Drupal7ServicesClient;
 import com.alborgis.ting.base.log.Milog;
@@ -34,10 +35,10 @@ public class MainApp extends Application {
 	public int MAX_SESION_LIFETIME = 1296000000; // 15 d’as
 	
 	// Constante del radio maximo de distancia para buscar juegos y destinos en el home (en metros)
-	public int MAX_DISTANCE_SEARCH_HOME = 1000000 		/*50000*/;
+	public int MAX_DISTANCE_SEARCH_HOME = /*1000000*/ 		100000;
 	
 	// Constante del radio maximo de distancia para buscar historias
-	public int MAX_DISTANCE_SEARCH_STORIES = 1000000 		/*50000*/;
+	public int MAX_DISTANCE_SEARCH_STORIES = /*1000000*/ 		100000;
 	
 	// Constante de la distancia m‡xima a la que te tienes que encontrar para capturar un geocache (metros)
 	public int MAX_DISTANCE_CAPTURE_GEOCACHE = 20 		/*1000000*/;
@@ -59,6 +60,9 @@ public class MainApp extends Application {
 	// User id de Arcgis 
 	public String ARCGIS_USERID	=	"LY5rSp7PnAqA34EH";
 
+	// Idioma en el que esta configurado el telefono (se inicializa al arrancar con, P.E: 'es', 'en', 'de'...)
+	public String deviceLang;
+	
 	// Preferencias de la aplicaci—n
 	public SharedPreferences preferencias;
 
@@ -170,6 +174,10 @@ public class MainApp extends Application {
 			Milog.d("Push notifications client init...");
 			pushNotificationsClient = new PushNotificationsClient(this, preferencias, drupalClient, GCM_SENDER_ID);
 		}
+		
+		// Establecemos el idioma en el que està configurado el terminal
+		deviceLang = Locale.getDefault().getLanguage();
+		Milog.d("Idioma establecido: " + deviceLang);
 
 		// Poner el id de Arcgis
 		ArcGISRuntime.setClientId(ARCGIS_USERID);

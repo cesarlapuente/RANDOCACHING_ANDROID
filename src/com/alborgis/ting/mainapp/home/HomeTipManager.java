@@ -14,20 +14,20 @@ public class HomeTipManager {
 	// Muestra el asistente para el home
 	public static void showTipsForHomeStartup(Context ctx, SharedPreferences prefs, boolean forceShow){
 		TINGTip tip1 = new TINGTip();
-		tip1.title = "JUEGOS Y DESTINOS";
-		tip1.message = "Utiliza la cuadrícula para ver los distintos JUEGOS Y DESTINOS";
+		tip1.title = ctx.getString(R.string.home_tip_title_juegos_y_destinos);
+		tip1.message = ctx.getString(R.string.home_tip_message_utiliza_la_cuadricula_para_ver_los_juegos_y_destinos);
 		tip1.gravity = Gravity.BOTTOM;
 		
 		TINGTip tip2 = new TINGTip();
-		tip2.title = "AYUDA Y LOGROS";
-		tip2.message = "Pulsa este icono para ver tu PASAPORTE y más secciones";
+		tip2.title = ctx.getString(R.string.home_tip_title_ayuda_y_logros);
+		tip2.message = ctx.getString(R.string.home_tip_message_pulsa_este_icono_para_ver_mas_secciones);
 		tip2.resIdImage = R.drawable.btn_desliza_menu_inferior_normal;
 		tip2.gravity = Gravity.TOP;
 		
 		
 		TINGTip tip3 = new TINGTip();
-		tip3.title = "TOCA Y DIVIÉRTETE";
-		tip3.message = "Toca sobre un JUEGO para comenzar a jugar";
+		tip3.title = ctx.getString(R.string.home_tip_title_toca_y_diviertete);
+		tip3.message = ctx.getString(R.string.home_tip_message_toca_sobre_un_juego_para_comenzar_a_jugar);
 		tip3.gravity = Gravity.CENTER;
 		
 		

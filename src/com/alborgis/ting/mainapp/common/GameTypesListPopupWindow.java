@@ -142,7 +142,7 @@ public class GameTypesListPopupWindow implements GameTypesListListener {
 		
 		if(gameTypes != null){
 			// A–adir el elemento 'Mostrar' todos
-			BasicNameValuePair gameTypeTodos = new BasicNameValuePair("-1", "TODOS");
+			BasicNameValuePair gameTypeTodos = new BasicNameValuePair("-1", activity.getString(R.string.common_todos));
 			this.gameTypes.add(gameTypeTodos);
 			// A–adir los gameTypes al array general
 			this.gameTypes.addAll(listItems);

@@ -175,7 +175,7 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 				}else{
 					filtroDestinoSeleccionado = null;
 					// Establecer el nombre del filtro en el bot—n
-					btnSelCiudad.setText("CIUDAD...");
+					btnSelCiudad.setText(getString(R.string.home_ciudad));
 				}
 				
 				// Poner p‡gina inicial
@@ -197,7 +197,7 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 				}else{
 					filtroGameTypeSeleccionado = null;
 					// Establecer el nombre del filtro en el bot—n
-					btnSelJuego.setText("JUEGO...");
+					btnSelJuego.setText(getString(R.string.home_juego));
 				}
 				
 				// Poner p‡gina inicial

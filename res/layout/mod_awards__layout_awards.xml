@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="PREMIOS"
+                    android:text="@string/premios_premios"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -95,7 +95,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/gullyPanelVacio"
-                android:text=":( No hay elementos"
+                android:text="@string/premios_no_hay_elementos"
                 android:textSize="18sp"/>
             
             

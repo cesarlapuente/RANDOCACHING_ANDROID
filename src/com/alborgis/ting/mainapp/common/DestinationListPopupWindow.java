@@ -143,7 +143,7 @@ public class DestinationListPopupWindow implements DestinationListListener {
 			// A–adir el elemento 'Mostrar' todos
 			Destination destTodos = new Destination();
 			destTodos.nid = "-1";
-			destTodos.title = "TODAS";
+			destTodos.title = activity.getString(R.string.common_todas);
 			this.destinations.add(destTodos);
 			// A–adir los destinos al array general
 			this.destinations.addAll(destinations);

@@ -43,7 +43,7 @@
                     android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:singleLine="false"
-                    android:text="INFORMACIÓN"
+                    android:text="@string/about_informacion"
                     android:textColor="@color/naranja_challenger_principal"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -142,12 +142,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Travel in Game es un juego sobre viajes y para viajeros curiosos y audaces o simplemente una manera de entretenimiento entorno a los destinos viajeros. \n\n
-En Travel in Game el destino se convierte en un tablero de juegos. Se puede jugar a juegos geolocalizados, que se juegan directamente en el destino, visitando los lugares que aparecen en el juego. Pero se puede jugar también desde cualquier lado, antes o después del viaje, para reconocer lugares que ya hemos visitado o descubrir los lugares que nos gustaría visitar.\n\n
-Travel in Game se ha realizado gracias a la financiación del Ministerio de Industria, Energía y Turismo y la participación directa del Cluster de Turismo de Madrid Network.\n
-Patrocinan este juego viajero empresas lideres del sector turístico: Rumbo, Restaurante Botín y Anaya Touring.\n\n
-La selección de destinos y lugares de interés turístico, así como los contenidos se inspiran en la colección de guías de Anaya Touring 'Guías compact. Un corto viaje a...' Y de la colección 'Volver a...'\n\n
-Pulsa el play y disfruta del viaje."
+                    android:text="@string/about_text"
                     android:textColor="@color/negro"
                     android:textSize="17sp" />
             </ScrollView>

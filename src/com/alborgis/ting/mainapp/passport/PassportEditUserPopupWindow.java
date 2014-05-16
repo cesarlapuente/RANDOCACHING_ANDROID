@@ -256,11 +256,11 @@ public class PassportEditUserPopupWindow implements UserUpdateListener, FileUplo
 		}else{
 			// Si ha metido al menos una contrase–a, validar que introduza las 2
 			if(tbCurrentPass.getText().toString().length() < 3){
-				MessageDialog.showMessage(activity, "Contrase–a actual", "Por favor, introduce tu contrase–a actual");
+				MessageDialog.showMessage(activity, activity.getString(R.string.pasaporte_contrasena_actual), activity.getString(R.string.pasaporte_por_favor_introduce_tu_contrasena_actual));
 				return false;
 			}
 			if(tbNewPass.getText().toString().length() < 3){
-				MessageDialog.showMessage(activity, "Nueva contrase–a", "Por favor, introduce la nueva contrase–a para cambiarla");
+				MessageDialog.showMessage(activity, activity.getString(R.string.pasaporte_nueva_contrasena), activity.getString(R.string.pasaporte_por_favor_introduce_tu_nueva_contrasena));
 				return false;
 			}
 		}
@@ -382,7 +382,7 @@ public class PassportEditUserPopupWindow implements UserUpdateListener, FileUplo
 	public void onFileUploadError(String error) {
 		// Ha dado error al subir imagen
 		showLoading(false);
-		MessageDialog.showMessage(activity, "Error", "Error durante la subida de la imagen");
+		MessageDialog.showMessage(activity, activity.getString(R.string.pasaporte_error), activity.getString(R.string.pasaporte_error_durante_la_subida_de_la_imagen));
 	}
 
 
@@ -397,7 +397,7 @@ public class PassportEditUserPopupWindow implements UserUpdateListener, FileUplo
 		// Error al actualizar el usuario
 		showLoading(false);
 		Milog.d("Error al actualizar usuario: " + error);
-		MessageDialog.showMessage(activity, "Error", "Error al actualizar los datos del usuario");
+		MessageDialog.showMessage(activity, activity.getString(R.string.pasaporte_error), activity.getString(R.string.pasaporte_error_al_actualizar_los_datos_del_usuario));
 	}
 
 	

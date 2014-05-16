@@ -1,20 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
+	<!-- APP MAIN -->
     <string name="app_name">Travel in Game</string>
     <string name="app_id">398592920275073</string>
+    
+    <!-- COMMON -->
+    <string name="common_cargando">Loading...</string>
+    <string name="common_todas">ALL</string>
+    <string name="common_todos">ALL</string>
+    
+    <!-- TIPS -->
+    <string name="tips_ocultar_ayuda">Hide help</string>
+    <string name="tips_siguiente">Next</string>
+    <string name="tips_a_jugar">Let\'s play!</string>
+    
+    <!-- ABOUT -->
+    <string name="about_informacion">INFORMATION</string>
+    <string name="about_text">Travel in Game is a game about travel and curious and adventurous traveler or just a way to entertain travelers destinations around . \n \n
+In Game Travel in the destination becomes a game board . You can play geo games, which are played directly on the target, visiting the places that appear in the game . But you can also play from either side , before or after the trip , to recognize places already visited or discover the places we like to visit. \N \n
+Travel in Game has been made ​​possible by funding from the Ministry of Industry, Energy and Tourism and the direct involvement of Madrid Tourism Cluster Network. \N
+Sponsor this traveling game leading tourism businesses : Flights, Restaurante Botin and Anaya Touring \n\n .
+The selection of destinations and tourist attractions , as well as the contents are inspired by the collection of guides Anaya Touring \' Guide compact . A short drive to ... \'Y Collection \' Back to ... \'\n \n
+Press play and enjoy the ride .</string>
 
-    <string name="mod_global__sin_conexion_a_internet">Sin conexión a Internet</string>
-    <string name="mod_global__no_dispones_de_conexion_a_internet">No dispones de conexión a Internet. Conéctate a Internet e inténtalo de nuevo</string>
-    <string name="mod_global__cargando">Cargando...</string>
-    <string name="mod_global__buscando_ubicacion_gps">Buscando ubicación...</string>
-    <string name="mod_global__error">Error</string>
-    <string name="mod_global__ok">OK</string>
-    <string name="mod_global__cancelar">Cancelar</string>
-    <string name="mod_global__borrar_filtros">Borrar filtros</string>
-    <string name="mod_global__sin_datos">Sin datos</string>
-    <string name="mod_global__ver">Ver</string>
-    <string name="mod_global__no_se_pueden_recuperar_los_datos_del_servidor">No se pueden recuperar los datos del servidor</string>
-
+    <!-- HOME -->
+    <string name="home_gully_frase_bocadillo_1">Hi! I\'m Gully. Welcome to</string>
+    <string name="home_gully_frase_bocadillo_2">The game of audacious travelers. Explore the destinations of social geo-gaming</string>
+	<string name="home_ciudad">CITY...</string>
+	<string name="home_juego">GAME...</string>
+	<string name="home_mostrar_juegos">Show GAMES</string>
+	<string name="home_mostrar_solo_destinos">Show only DESTINATIONS</string>
+	<string name="home_no_hay_elementos">:( No items</string>
+	<string name="home_tip_title_juegos_y_destinos">GAMES AND DESTINATIONS</string>
+	<string name="home_tip_message_utiliza_la_cuadricula_para_ver_los_juegos_y_destinos">Use this grid to show different GAMES and DESTINATIONS</string>
+	<string name="home_tip_title_ayuda_y_logros">HELP AND ACHIEVEMENT</string>
+	<string name="home_tip_message_pulsa_este_icono_para_ver_mas_secciones">Press this icon to show your PASSPORT and other sections</string>
+	<string name="home_tip_title_toca_y_diviertete">TOUCH AND FUN</string>
+	<string name="home_tip_message_toca_sobre_un_juego_para_comenzar_a_jugar">Touch on a GAME to start playing</string>
+	
+	<!-- AWARDS -->
+	<string name="premios_premios">AWARDS</string>
+	<string name="premios_no_hay_elementos">:( No items</string>
+	<string name="premios_detalle_premio">AWARD DETAIL</string>
+	<string name="premios_sin_titulo">NO TITLE</string>
+	<string name="premios_sin_descripcion_disponible">No descrition is available</string>
+	<string name="premios_error_al_cargar">Error loading</string>
+	<string name="premios_no_se_puede_cargar_el_premio_en_estos_momentos">We can\'t load the award at this moment</string>
+	
+	<!-- STORIES -->
+	<string name="historias_historias">Stories</string>
+	<string name="historias_gully_frase_bocadillo">Stay comfortable and select a story. You can also choose it by city or location</string>
+	<string name="historias_ciudad">CITY...</string>
+	<string name="historias_no_hay_elementos">:( No items</string>
+	<string name="historias_detalle_historia">STORY DETAIL</string>
+	<string name="historias_sin_titulo">NO TITLE</string>
+	<string name="historias_sin_descripcion_disponible">No descrition is available</string>
+	<string name="historias_error_al_cargar">Error loading</string>
+	<string name="historias_no_se_puede_cargar_la_historia_en_estos_momentos">We can\'t load the story at this moment</string>
+	
+	<!-- DESTINATIONS -->
+	<string name="destinos_detalle_destino">DESTINATION DETAIL</string>
+	<string name="destinos_sin_titulo">NO TITLE</string>
+	<string name="destinos_sin_descripcion_disponible">No descrition is available</string>
+	<string name="destinos_error_al_cargar">Error loading</string>
+	<string name="destinos_no_se_puede_cargar_el_destino_en_estos_momentos">We can\'t load the destination at this moment</string>
+	
+	<!-- LOGIN -->
+	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Join the Travel in Game audacious players community</string>
+	<string name="login_si_solo_quieres_probar">If you only want to try it</string>
+	<string name="login_usa_tu_cuenta_de_facebook">Use your Facebook account</string>
+	<string name="login_usa_tu_cuenta_de_travel_in_game">Use your Travel in Game account</string>
+	<string name="login_correo_electronico">Email</string>
+	<string name="login_contrasena">Password</string>
+	<string name="login_entrar">Enter!</string>
+	<string name="login_cerrar">Close</string>
+	<string name="login_unirse">Join</string>
+	<string name="login_error">Error</string>
+	<string name="login_error_al_entrar">Error entering</string>
+	<string name="login_por_favor_introduce_tu_correo_electronico">Please, enter your email</string>
+	<string name="login_por_favor_introduce_tu_contrasena">Please, enter your password</string>
+	<string name="login_el_correo_electronico_especificado_no_es_valido">The entered email is no valid</string>
+	<string name="login_la_contrasena_es_demasiado_corta">The password is so short</string>
+	<string name="login_datos_incorrectos">Incorrect data</string>
+	<string name="login_el_usuario_o_la_contrasena_no_existe">The user or password doesn\'t exist</string>
+	<string name="login_error_al_hacer_login">Error on login</string>
+	
+	<!-- REGISTER -->
+	<string name="register_unete_a_la_comunidad_travel_in_game">Join the Travel in Game community</string>
+	<string name="register_correo_electronico">Email</string>
+	<string name="register_contrasena">Password</string>
+	<string name="register_repite_contrasena">Repeat password</string>
+	<string name="register_nombre_opcional">First Name (optional)</string>
+	<string name="register_apellidos_opcional">Last Name (optional)</string>
+	<string name="register_unete">Join!</string>
+	<string name="register_cerrar">Close</string>
+	<string name="register_crear_cuenta">Create account</string>
+	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">Do you want to create your account on Travel in Game?</string>
+	<string name="register_cancelar">Cancel</string>
+	<string name="register_por_favor_introduce_tu_correo_electronico">Please, enter your email</string>
+	<string name="register_el_correo_electronico_especificado_no_es_valido">The entered email is not valid</string>
+	<string name="register_por_favor_introduce_tu_contrasena">Please, enter your password</string>
+	<string name="register_por_favor_repite_tu_contrasena">Please, repeat your password</string>
+	<string name="register_la_contrasena_es_demasiado_corta">The password is so short</string>
+	<string name="register_contrasenas">Passwords</string>
+	<string name="register_las_contrasenas_no_coinciden">The passwords don\'t match</string>
+	<string name="register_error_al_crear_cuenta">Error on creating account</string>
+	
+	<!-- PASSPORT -->
+	<string name="pasaporte_pasaporte">PASSPORT</string>
+	<string name="pasaporte_anadir">ADD</string>
+	<string name="pasaporte_foto_avatar">PHOTO/AVATAR</string>
+	<string name="pasaporte_editar_datos_de_usuario">Edit user data</string>
+	<string name="pasaporte_puntos">POINTS</string>
+	<string name="pasaporte_medallas">BADGES</string>
+	<string name="pasaporte_visados">VISAS</string>
+	<string name="pasaporte_sellos">STAMPS</string>
+	<string name="pasaporte_ver">Show</string>
+	<string name="pasaporte_desconectar">Disconnect</string>
+	<string name="pasaporte_desconexion">Disconnection</string>
+	<string name="pasaporte_deseas_desconectarte_de_travel_in_game">Do you want to disconnect from Travel in Game?</string>
+	<string name="pasaporte_cancelar">Cancel</string>
+	<string name="pasaporte_error">Error</string>
+	<string name="pasaporte_no_se_puede_desconectar_la_sesion_actual">We can\'t disconnect your current session</string>
+	<string name="pasaporte_error_al_comprobar_sesion">Error checking session</string>
+	<string name="pasaporte_error_al_cargar_pasaporte">Error loading your passport</string>
+	<string name="pasaporte_agrega_tu_nombre">Add your first name</string>
+	<string name="pasaporte_agrega_tus_apellidos">Add your last name</string>
+	<string name="pasaporte_modificar_mi_contrasena">Change my password</string>
+	<string name="pasaporte_nueva_contrasena">New password</string>
+	<string name="pasaporte_contrasena_actual">Current password</string>
+	<string name="pasaporte_guardar">Save</string>
+	<string name="pasaporte_por_favor_introduce_tu_contrasena_actual">Please, enter your current password</string>
+	<string name="pasaporte_por_favor_introduce_tu_nueva_contrasena">Please, enter your new password in order to change it</string>
+	<string name="pasaporte_error_durante_la_subida_de_la_imagen">Error on upload image</string>
+	<string name="pasaporte_error_al_actualizar_los_datos_del_usuario">Error on user data update</string>
+	
+	<!-- GAME INTRO -->
+	<string name="game_intro_cargando_guia_del_juego">Loading game instructions...</string>
+	<string name="game_intro_error">Error</string>
+	<string name="game_intro_error_al_comprobar_sesion">Error checking session</string>
+	<string name="game_intro_error_al_cargar_juego">Error loading the game</string>
+	<string name="game_intro_no_se_puede_reiniciar_la_partida">We can\'t reset the game now</string>
+	
+	<!-- EXPLORER ONE -->
+	<string name="one_explorer">EXPLORER</string>
+	<string name="one_titulo">Title</string>
+	<string name="one_descripcion">Description</string>
+	<string name="one_logros_conseguidos">Earned achievements</string>
+	<string name="one_vota_este_juego">Vote this game</string>
+	<string name="one_continuar">Continue</string>
+	<string name="one_realidad_aumentada">Augmented reality</string>
+	<string name="one_no_hay_geocaches_que_mostrar">There are no geocaches to show</string>
+	<string name="one_error_en_la_carga_de_geocaches">Error loading geocaches</string>
+	<string name="one_juega_otra_vez">Play again</string>
+	<string name="one_prueba_otro_lugar">Try on other place</string>
+	<string name="one_has_agotado_los_intentos_para_encontrar_el_tesoro">You have spent all the attempts to find the treasure</string>
+	<string name="one_error">Error</string>
+	<string name="one_error_general">General error</string>
+	<string name="one_no_se_puede_capturar_el_geocache">Can\'t catch the treasure</string>
+	<string name="one_esperando_gps">Waiting GPS...</string>
+	<string name="one_no_hay_conexion">No connection</string>
+	<string name="one_no_dispones_de_conexion_a_internet_intentalo_de_nuevo">You have no Internet connection. Try again</string>
+	<string name="one_bravo_lo_has_encontrado_abre_el_cofre">Hurra! you found it. Open the chest</string>
+	<string name="one_aun_estas_lejos_este_cofre_esta_a">You are still far away from this chest, it\'s at</string>
+	<string name="one_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir">of your current location. Get near and you will can open it</string>
+	<string name="one_no_te_queda_mucho_solo_estas_a">You are near, only at</string>
+	<string name="one_sigue_buscando">still looking</string>
+	<string name="one_el_geocache_no_tiene_coordenadas">The geocache has no coordinates</string>
+	<string name="one_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Gully\'s treasure is inside</string>
+	<string name="one_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">It looks like your GPS is off. Do you want to turn it on?</string>
+	<string name="one_si">Yes</string>
+	<string name="one_no">No</string>
+	<string name="one_tip_title_modo_demo">DEMO MODE</string>
+	<string name="one_tip_message_estas_jugando_en_modo_demo">Welcome to the Geocaching One game! You are current playing on demo mode. Remember that you can play with your Travel in Game or Facebook account in order to earn achievements, awards and save your progress</string>
+	<string name="one_tip_title_objetivo">TARGET</string>
+	<string name="one_tip_message_tu_objetivo_es_encontrar_el_tesoro_escondido_por_gully">Your target is to find the treasure that Gully has hidden inside one of the chests you cant see all over the map</string>
+	<string name="one_tip_title_bienvenido_al_juego">¡WELCOME TO GAME!</string>
+	<string name="one_tip_message_bienvenido_al_juego_del_geocaching_one">Welcome to the Geocaching One game! Your target is to find the treasure that Gully has hidden inside one of the chests you cant see all over the map</string>
+	<string name="one_tip_title_juego_outdoor">OUTDOOR GAME</string>
+	<string name="one_tip_message_este_juego_es_outdoor">This game is \'Outdoor\'. It means that you will need to be near of the chests in order to open them</string>
+	<string name="one_tip_title_juego_indoor">INDOOR GAME</string>
+	<string name="one_tip_message_este_juego_es_indoor">This game is \'Indoor\'. It means that you can be anywhere in order to open the chests and find the treasure</string>
+	<string name="one_tip_title_intentos">ATTEMPTS</string>
+	<string name="one_tip_message_en_la_parte_inferior_veras_los_intentos">On the bottom of the screen you will see your remail attempts. Each time you open a chest, you will spend one attempt. The already opened chests don\'t take off attempts</string>
+	<string name="one_tip_title_brujula">COMPASS</string>
+	<string name="one_tip_message_si_te_sientes_perdido_puedes_consultar_la_brujula">If you feel lost, you can always see the compass. It will allow you to show the chests over the camera, and guide you on the way</string>
+	<string name="one_tip_title_seleccionar_un_cofre">SELECT A CHEST</string>
+	<string name="one_tip_message_para_abrir_un_cofre_toca_sobre_uno_de_los_iconos_del_mapa">In order to open a chest touch on one of the map icons</string>
+	<string name="one_tip_title_abrir_un_cofre">OPEN A CHEST</string>
+	<string name="one_tip_message_cuando_seleccionas_un_cofre_podras_abrirlo_desde_su_bocadillo">When you select a chest, a bubble will appear, where you can see a button that allow you to open the chest</string>
+	<string name="one_tip_message_si_el_boton_de_abrir_cofre_esta_desactivado_no_estas_cerca_del_lugar">If the \'Open Chest\' button is disabled, it means that you are not enough near from the place. You must get closer!</string>
+	<string name="one_tip_message_la_distancia_a_la_que_te_encuentras_de_un_cofre_aparece_sobre_el_boton_abrir_cofre">Over the \'Open Chest\' button you can see the the current distance to the chest. Your position on the map is indicated with the blue circle. When you are near the chest you will can open it</string>
+	
+	
+	<!-- EXPLORER FULL -->
+	<string name="full_explorer">EXPLORER</string>
+	<string name="full_titulo">Title</string>
+	<string name="full_descripcion">Description</string>
+	<string name="full_logros_conseguidos">Earned achievements</string>
+	<string name="full_vota_este_juego">Vote this game</string>
+	<string name="full_continuar">Continue</string>
+	<string name="full_realidad_aumentada">Augmented reality</string>
+	<string name="full_no_hay_geocaches_que_mostrar">No geocaches to show</string>
+	<string name="full_error_en_la_carga_de_geocaches">Error loading geocaches</string>
+	<string name="full_volver_a_jugar">Play again</string>
+	<string name="full_enhorabuena_has_encontrado_todos_los_tesoros">Congratulations! You found all treasures!</string>
+	<string name="full_has_encontrado_un_tesoro">You\'ve found a treasure!</string>
+	<string name="full_ir_a_otro_lugar">Go to other place</string>
+	<string name="full_debes_seguir_el_orden_para_abrir_los_geocaches_vuelves_a_empezar">You must follow the order while opening the geocaches. \nStarting again</string>
+	<string name="full_volver_a_empezar">Start again</string>
+	<string name="full_ya_has_abierto_este_geocache_antes">You have already opened this chest</string>
+	<string name="full_prueba_otro_lugar">Try other place</string>
+	<string name="full_dirigete_aqui">Go here</string>
+	<string name="full_inicio">Start</string>
+	<string name="full_final">End</string>
+	<string name="full_error">Error</string>
+	<string name="full_error_general">General error</string>
+	<string name="full_no_se_puede_capturar_el_geocache">Can\'t capture the geocache</string>
+	<string name="full_esperando_gps">Waiting GPS...</string>
+	<string name="full_no_hay_conexion">There is no connection</string>
+	<string name="full_no_dispones_de_conexion_a_internet_intentalo_de_nuevo">You have no Internet connection. Try again</string>
+	<string name="full_bravo_lo_has_encontrado_abre_el_cofre">Hurra! you found it. Open the chest</string>
+	<string name="full_aun_estas_lejos_este_cofre_esta_a">You are still far away from this chest, it\'s at</string>
+	<string name="full_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir">of your current location. Get near and you will can open it</string>
+	<string name="full_no_te_queda_mucho_solo_estas_a">You are near, only at</string>
+	<string name="full_sigue_buscando">still looking</string>
+	<string name="full_el_geocache_no_tiene_coordenadas">The geocache has no coordinates</string>
+	<string name="full_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Gully\'s treasure is inside</string>
+	<string name="full_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">It looks like your GPS is off. Do you want to turn it on?</string>
+	<string name="full_si">Yes</string>
+	<string name="full_no">No</string>
+	<string name="full_tip_title_modo_demo">DEMO MODE</string>
+	<string name="full_tip_message_estas_jugando_en_modo_demo">Welcome to the Geocaching Full game! You are current playing on demo mode. Remember that you can play with your Travel in Game or Facebook account in order to earn achievements, awards and save your progress</string>
+	<string name="full_tip_title_objetivo">TARGET</string>
+	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Your target is to found all the treasures that Gully has hidden all around the map</string>
+	<string name="full_tip_title_bienvenido_al_juego">¡WELCOME TO GAME!</string>
+	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">Welcome to the Geocaching Full game! Your target is to found all the treasures that Gully has hidden all around the map</string>
+	<string name="full_tip_title_juego_outdoor">OUTDOOR GAME</string>
+	<string name="full_tip_message_este_juego_es_outdoor">This game is \'Outdoor\'. It means that you will need to be near of the chests in order to open them</string>
+	<string name="full_tip_title_juego_indoor">INDOOR GAME</string>
+	<string name="full_tip_message_este_juego_es_indoor">This game is \'Indoor\'. It means that you can be anywhere in order to open the chests and find the treasure</string>
+	<string name="full_tip_title_intentos">ATTEMPTS</string>
+	<string name="full_tip_message_en_la_parte_inferior_veras_los_intentos">On the bottom of the screen you will see your remail attempts. Each time you open a chest, you will spend one attempt. The already opened chests don\'t take off attempts</string>
+	<string name="full_tip_title_brujula">COMPASS</string>
+	<string name="full_tip_message_si_te_sientes_perdido_puedes_consultar_la_brujula">If you feel lost, you can always see the compass. It will allow you to show the chests over the camera, and guide you on the way</string>
+	<string name="full_tip_title_seleccionar_un_cofre">SELECT A CHEST</string>
+	<string name="full_tip_message_para_abrir_un_cofre_toca_sobre_uno_de_los_iconos_del_mapa">In order to open a chest touch on one of the map icons</string>
+	<string name="full_tip_title_abrir_un_cofre">OPEN A CHEST</string>
+	<string name="full_tip_message_cuando_seleccionas_un_cofre_podras_abrirlo_desde_su_bocadillo">When you select a chest, a bubble will appear, where you can see a button that allow you to open the chest</string>
+	<string name="full_tip_message_si_el_boton_de_abrir_cofre_esta_desactivado_no_estas_cerca_del_lugar">If the \'Open Chest\' button is disabled, it means that you are not enough near from the place. You must get closer!</string>
+	<string name="full_tip_message_la_distancia_a_la_que_te_encuentras_de_un_cofre_aparece_sobre_el_boton_abrir_cofre">Over the \'Open Chest\' button you can see the the current distance to the chest. Your position on the map is indicated with the blue circle. When you are near the chest you will can open it</string>
+	
+	
+	<!-- EXPLORER BATTLE -->
+	<string name="battle_explorer">EXPLORER</string>
+	<string name="battle_abandonar">Leave</string>
+	<string name="battle_titulo">Title</string>
+	<string name="battle_descripcion">Description</string>
+	<string name="battle_logros_conseguidos">Earned achievements</string>
+	<string name="battle_vota_este_juego">Vote this game</string>
+	<string name="battle_continuar">Continue</string>
+	<string name="battle_finalizar">Finish</string>
+	<string name="battle_realidad_aumentada">Augmented reality</string>
+	<string name="battle_no_hay_geocaches_que_mostrar">No geocaches to show</string>
+	<string name="battle_error_en_la_carga_de_geocaches">Error loading geocaches</string>
+	<string name="battle_juega_otra_vez">Play again</string>
+	<string name="battle_prueba_otro_lugar">Try in other place</string>
+	<string name="battle_has_agotado_los_intentos_para_encontrar_el_tesoro">You have spent all the attempts to find the treasure</string>
+	<string name="battle_error">Error</string>
+	<string name="battle_error_general">General error</string>
+	<string name="battle_error_al_cargar_el_juego">Error loading the game</string>
+	<string name="battle_no_se_puede_capturar_el_geocache_puede_que_la_partida_haya_finalizado">Can\'t capture the geocache. Maybe the game slot is finished</string>
+	<string name="battle_no_se_puede_capturar_el_geocache">Can\'t capture the geocache</string>
+	<string name="battle_esperando_gps">Waiting GPS...</string>
+	<string name="battle_no_hay_conexion">No connection</string>
+	<string name="battle_no_dispones_de_conexion_a_internet_intentalo_de_nuevo">You have not Internet connection. Try again</string>
+	<string name="battle_bravo_lo_has_encontrado_abre_el_cofre">Hurra! you found it. Open the chest</string>
+	<string name="battle_aun_estas_lejos_este_cofre_esta_a">You are still far away from this chest, it\'s at</string>
+	<string name="battle_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir">of your current location. Get near and you will can open it</string>
+	<string name="battle_no_te_queda_mucho_solo_estas_a">You are near, only at</string>
+	<string name="battle_sigue_buscando">still looking</string>
+	<string name="battle_el_geocache_no_tiene_coordenadas">The geocache has no coordinates</string>
+	<string name="battle_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Gully\'s treasure is inside</string>
+	<string name="battle_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">It looks like your GPS is off. Do you want to turn it on?</string>
+	<string name="battle_si">Yes</string>
+	<string name="battle_no">No</string>
+	
+	<!-- MULTIPLAYER -->
+	<string name="multiplayer_unirse_a_partida">JOIN GAME</string>
+	<string name="multiplayer_no_hay_partidas_creadas">:( No games created</string>
+	<string name="multiplayer_crear_nueva_partida">Create new game</string>
+	<string name="multiplayer_actualizar">Refresh</string>
+	<string name="multiplayer_partida_sin_nombre">Unnamed game</string>
+	<string name="multiplayer_juego">Game</string>
+	<string name="multiplayer_sin_juego">No game</string>
+	<string name="multiplayer_jugadores">players</string>
+	<string name="multiplayer_creada_por">Created by</string>
+	<string name="multiplayer_sin_creador">No creator</string>
+	<string name="multiplayer_estado_en_curso_aun_queda_hueco">State: ongoing (with free gaps)</string>
+	<string name="multiplayer_estado_en_curso">State: ongoing</string>
+	<string name="multiplayer_estado_finalizada">State: finished</string>
+	<string name="multiplayer_estado_lista_para_jugar">State: ready to play</string>
+	<string name="multiplayer_estado_esperando_jugadores">State: waiting for players</string>
+	<string name="multiplayer_nueva_partida">NEW GAME</string>
+	<string name="multiplayer_nombre_de_la_partida">Game title</string>
+	<string name="multiplayer_juego_seleccionado">Selected game</string>
+	<string name="multiplayer_numero_minimo_de_jugadores_para_comenzar">Minimum number of players to start the game</string>
+	<string name="multiplayer_numero_maximo_de_jugadores_admitidos">Maximum permitted players</string>
+	<string name="multiplayer_entrar_en_la_partida">Enter game</string>
+	<string name="multiplayer_el_numero_minimo_de_jugadores_debe_ser_de_al_menos_2">The minimun number of players must be at least 2</string>
+	<string name="multiplayer_error">Error</string>
+	<string name="multiplayer_error_al_crear_partida">Error creating the game</string>
+	<string name="multiplayer_titulo_de_la_partida">Game title</string>
+	<string name="multiplayer_por_favor_introdice_titulo_para_la_partida">Please, enter a title for the new game</string>
+	<string name="multiplayer_unirse_a_partida">JOIN GAME</string>
+	<string name="multiplayer_jugadores_en_esta_partida">Players on this game:</string>
+	<string name="multiplayer_abandonar_la_partida">¿Leave the game?</string>
+	<string name="multiplayer_seguro_que_deseas_abandonar_la_partida">¿Sure do you want to leave this game?</string>
+	<string name="multiplayer_si">Yes</string>
+	<string name="multiplayer_no">No</string>
+	<string name="multiplayer_abandonaste_la_partida">You left the game</string>
+	<string name="multiplayer_error_al_comprobar_sesion">Error checkin session</string>
+	<string name="multiplayer_error_al_obtener_datos_de_la_partida">Error getting game data</string>
+	<string name="multiplayer_unirse_a_partida">¿Join game?</string>
+	<string name="multiplayer_quieres_unirte_a_esta_partida">¿Do you want to join game?</string>
+	<string name="multiplayer_unirme">Join</string>
+	<string name="multiplayer_cancelar">Cancel</string>
+	<string name="multiplayer_datos_erroneos_en_la_partida">Incorrect data on the game</string>
+	<string name="multiplayer_yo">(Me)</string>
+	<string name="multiplayer_jugador_sin_nombre">Unnamed player</string>
+	<string name="multiplayer_abandonar">Leave</string>
+	
+	
+	
 </resources>

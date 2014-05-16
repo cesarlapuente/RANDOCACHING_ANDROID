@@ -3,6 +3,7 @@ package com.alborgis.ting.mainapp.common.help;
 import java.util.ArrayList;
 
 import com.alborgis.ting.base.utils.Util;
+import com.alborgis.ting.mainapp.R;
 import com.alborgis.ting.mainapp.common.help.TINGTipDialog.TipDialogListener;
 
 import android.content.Context;
@@ -90,13 +91,13 @@ public class TINGTipWizard {
 	private void showTip(TINGTip tip, int index){
 		
 		// Configurar el mensaje en funci—n del ’ndice
-		String txtSiguiente = "Siguiente";
+		String txtSiguiente = context.getString(R.string.tips_siguiente);
 		if(index == (tips.size() - 1) ){
 			// Si es el œltimo consejo
-			txtSiguiente = "ÁA jugar!";
+			txtSiguiente = context.getString(R.string.tips_a_jugar);
 		}
 		
-		TINGTipDialog.showMessageWith2Buttons(context, tip.title, tip.message, txtSiguiente, "Ocultar ayuda", tip.resIdIcon, tip.resIdImage, tip.gravity, new TipDialogListener() {
+		TINGTipDialog.showMessageWith2Buttons(context, tip.title, tip.message, txtSiguiente, context.getString(R.string.tips_ocultar_ayuda), tip.resIdIcon, tip.resIdImage, tip.gravity, new TipDialogListener() {
 			@Override
 			public void onPositiveButtonClick(TINGTipDialog dialog) {
 				dialog.dismiss();

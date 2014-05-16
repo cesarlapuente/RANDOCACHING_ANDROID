@@ -142,13 +142,13 @@ public class AwardDetailActivity extends Activity implements AwardItemListener {
 			if(award.title != null && !award.title.equals("")){
 				tvTitle.setText(award.title.toUpperCase());
 			}else{
-				tvTitle.setText("SIN TÍTULO");
+				tvTitle.setText(getString(R.string.premios_sin_titulo));
 			}
 
 			if(award.body != null && !award.body.equals("") && !award.body.equals("null")){
 				tvBody.setText( Html.fromHtml(award.body), BufferType.SPANNABLE );
 			}else{
-				tvBody.setText("Sin descripción disponible");
+				tvBody.setText(getString(R.string.premios_sin_descripcion_disponible));
 			}
 			
 			Util.loadBitmapOnImageView(this, imageView, award.featuredImage, null, 0, R.anim.anim_fade_in_300, 0, 0);
@@ -158,7 +158,7 @@ public class AwardDetailActivity extends Activity implements AwardItemListener {
 
 	public void onAwardItemError(String error) {
 		showLoading(false);
-		MessageDialog.showMessage(this, "Error al cargar", "No se puede cargar el premio en estos momentos");
+		MessageDialog.showMessage(this, getString(R.string.premios_error_al_cargar), getString(R.string.premios_no_se_puede_cargar_el_premio_en_estos_momentos));
 	}
 
 

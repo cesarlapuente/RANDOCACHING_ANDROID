@@ -43,7 +43,7 @@
                     android:maxLines="2"
                     android:ellipsize="end"
                     android:singleLine="false"
-                    android:text="CARGANDO..."
+                    android:text="@string/common_cargando"
                     android:textColor="@color/azul_principal_oscuro"
                     android:textSize="25sp" />
             </LinearLayout>
@@ -142,7 +142,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Cargando guía del juego..."
+                    android:text="@string/game_intro_cargando_guia_del_juego"
                     android:textColor="@color/negro"
                     android:textSize="15sp" />
             </ScrollView>

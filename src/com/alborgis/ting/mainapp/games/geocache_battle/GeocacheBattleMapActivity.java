@@ -134,7 +134,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 		               		// Si el evento es que un usuario ha encontrado el tesoro...
 		               		// Mostrar mensaje de que ha perdido la partida, sólo si el activity está visible
 		               		if(isVisible){
-		               			MessageDialog.showMessageWith1Buttons(GeocacheBattleMapActivity.this, title, message, "Finalizar", new MessageDialogListener() {
+		               			MessageDialog.showMessageWith1Buttons(GeocacheBattleMapActivity.this, title, message, getString(R.string.battle_finalizar), new MessageDialogListener() {
 									public void onPositiveButtonClick(MessageDialog dialog) {
 										dialog.dismiss();
 									}
@@ -276,33 +276,33 @@ public class GeocacheBattleMapActivity extends Activity implements
 					}
 					String poisJSON = JSONPOIParser.parseToJSONArray(app, pois).toString();
 					Intent intent = new Intent(GeocacheBattleMapActivity.this, RAActivity.class);
-					intent.putExtra(RAActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, "Realidad aumentada");
+					intent.putExtra(RAActivity.EXTRAS_KEY_ACTIVITY_TITLE_STRING, getString(R.string.battle_realidad_aumentada));
 					intent.putExtra(RAActivity.EXTRAS_KEY_ACTIVITY_ARCHITECT_WORLD_URL, "wikitudeWorld" + File.separator + "index.html");
 					intent.putExtra(RAActivity.PARAM_KEY_JSON_POI_DATA, poisJSON );
 					startActivity(intent);
 					overridePendingTransition(R.anim.anim_push_enter, R.anim.anim_push_exit);
 				}else{
-					Toast.makeText(GeocacheBattleMapActivity.this, "No hay geocachés que mostrar", Toast.LENGTH_SHORT).show();
+					Toast.makeText(GeocacheBattleMapActivity.this, getString(R.string.battle_no_hay_geocaches_que_mostrar), Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
 		
 		btnAbandonar.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				MessageDialog.showMessageWith2Buttons(GeocacheBattleMapActivity.this, "¿Abandonar la partida?", "¿Seguro que deseas abandonar esta partida?", "Si",  "No", new MessageDialogListener() {
+				MessageDialog.showMessageWith2Buttons(GeocacheBattleMapActivity.this, getString(R.string.multiplayer_abandonar_la_partida), getString(R.string.multiplayer_seguro_que_deseas_abandonar_la_partida), getString(R.string.battle_si),  getString(R.string.battle_no), new MessageDialogListener() {
 					public void onPositiveButtonClick(final MessageDialog dialog) {
 						LoadingDialog.showLoading(GeocacheBattleMapActivity.this);
 						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
 							public void onSlotUserLeaved(String uid, String nidSlot) {
 								LoadingDialog.hideLoading(GeocacheBattleMapActivity.this);
 								dialog.dismiss();
-								Toast.makeText(GeocacheBattleMapActivity.this, "Abandonaste la partida", Toast.LENGTH_SHORT).show();
+								Toast.makeText(GeocacheBattleMapActivity.this, getString(R.string.multiplayer_abandonaste_la_partida), Toast.LENGTH_SHORT).show();
 								finish();
 							}
 							public void onSlotUserLeaveError(String error) {
 								LoadingDialog.hideLoading(GeocacheBattleMapActivity.this);
 								dialog.dismiss();
-								MessageDialog.showMessage(GeocacheBattleMapActivity.this, "Error", error);
+								MessageDialog.showMessage(GeocacheBattleMapActivity.this, getString(R.string.battle_error), error);
 							}
 						});
 					}
@@ -470,7 +470,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			@Override
 			public void onGeocacheGameItemError(String error) {
 				showLoading(false);
-				MessageDialog.showMessage(GeocacheBattleMapActivity.this, "Error", "Error al cargar el juego");
+				MessageDialog.showMessage(GeocacheBattleMapActivity.this, getString(R.string.battle_error), getString(R.string.battle_error_al_cargar_el_juego));
 			}
 		});
 		
@@ -512,7 +512,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 	}
 
 	public void onGeocacheBattleListError(String error) {
-		Toast.makeText(this, "Error en la carga de geocaches",
+		Toast.makeText(this, getString(R.string.battle_error_en_la_carga_de_geocaches),
 				Toast.LENGTH_SHORT).show();
 		showLoading(false);
 	}
@@ -527,7 +527,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			Geocache geo = getGeocache(nidGeocache);
 			String title = geo.title;
 			String body = geo.body;
-			String buttonText = "Finalizar";
+			String buttonText = getString(R.string.battle_finalizar);
 			GeocacheBattleResponseDialog popup = new GeocacheBattleResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheBattleResponseDialog.STATE_GULLY_TESORO_ENCONTRADO, true, nidGame, new GeocacheBattleResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					finish();
@@ -544,7 +544,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			Geocache geo = getGeocache(nidGeocache);
 			String title = geo.title;
 			String body = geo.body;
-			String buttonText = "Prueba otro lugar";
+			String buttonText = getString(R.string.battle_prueba_otro_lugar);
 			GeocacheBattleResponseDialog popup = new GeocacheBattleResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheBattleResponseDialog.STATE_GULLY_COFRE_VACIO, false, nidGame, new GeocacheBattleResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					
@@ -558,8 +558,8 @@ public class GeocacheBattleMapActivity extends Activity implements
 		} else if (statusCode == 3) {
 			Geocache geo = getGeocache(nidGeocache);
 			String title = geo.title;
-			String body = "Has agotado los intentos para encontrar el tesoro.\n" + geo.body;
-			String buttonText = "Finalizar";
+			String body = getString(R.string.battle_has_agotado_los_intentos_para_encontrar_el_tesoro) + "\n" + geo.body;
+			String buttonText = getString(R.string.battle_finalizar);
 			GeocacheBattleResponseDialog popup = new GeocacheBattleResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheBattleResponseDialog.STATE_GULLY_AGOTADOS_INTENTOS, true, nidGame, new GeocacheBattleResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					finish();
@@ -574,7 +574,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			Geocache geo = getGeocache(nidGeocache);
 			String title = geo.title;
 			String body = geo.body;
-			String buttonText = "Prueba otro lugar";
+			String buttonText = getString(R.string.battle_prueba_otro_lugar);
 			GeocacheBattleResponseDialog popup = new GeocacheBattleResponseDialog(this, this, app, title, body, buttonText, bundleEarned, GeocacheBattleResponseDialog.STATE_GULLY_COFRE_VACIO, false, nidGame, new GeocacheBattleResponseDialog.GeocacheOneResponseDialogListener() {
 				public void onGeocacheOneResponseDialogDismiss() {
 					
@@ -586,7 +586,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 					"Ya has consultado este geocache y no tenía el tesoro. Te quedan "
 							+ remainAttempts);*/
 		} else {
-			MessageDialog.showMessage(this, "Error", "Error desconocido");
+			MessageDialog.showMessage(this, getString(R.string.battle_error), getString(R.string.battle_error_general));
 		}
 
 		showLoading(false);
@@ -594,7 +594,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 
 	public void onGeocacheBattleCaptureError(String error) {
 		Milog.d("Error al capturar geocache: " + error);
-		MessageDialog.showMessage(this, "Error", "No se puede capturar el geocache. Es posible que la partida haya finalizado");
+		MessageDialog.showMessage(this, getString(R.string.battle_error), getString(R.string.battle_no_se_puede_capturar_el_geocache_puede_que_la_partida_haya_finalizado));
 		showLoading(false);
 	}
 
@@ -730,7 +730,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			btnCaptureCallout.setEnabled(false);
 
 			// Poner un mensaje de espera
-			lblMessageCallout.setText("Esperando GPS...");
+			lblMessageCallout.setText(getString(R.string.battle_esperando_gps));
 			
 			// Recalcular la distancia
 			recalcularDistancia();
@@ -746,8 +746,8 @@ public class GeocacheBattleMapActivity extends Activity implements
 					callout.animatedHide();
 				} else {
 					MessageDialog.showMessage(GeocacheBattleMapActivity.this,
-							"No hay conexión",
-							"No dispones de conexión a Internet. Inténtalo de nuevo");
+							getString(R.string.battle_no_hay_conexion),
+							getString(R.string.battle_no_dispones_de_conexion_a_internet_intentalo_de_nuevo));
 				}
 
 			}
@@ -813,17 +813,17 @@ public class GeocacheBattleMapActivity extends Activity implements
 						if (distMetros <= app.MAX_DISTANCE_CAPTURE_GEOCACHE) {
 							// Se cumple la distancia
 							btnCaptureCallout.setEnabled(true); // Habilitar el botón de capturar
-							this.lblMessageCallout.setText("Bravo, lo has encontrado, Abre el cofre"); // Poner mensaje
+							this.lblMessageCallout.setText(getString(R.string.battle_bravo_lo_has_encontrado_abre_el_cofre)); // Poner mensaje
 
 						} else {
 							// No se cumple la distancia
 							btnCaptureCallout.setEnabled(false); // Deshabilitar el botón de capturar
 							if(distMetros > 3000){
 								// Si la distancia es mayor a 3 kms, decirle que se acerque más
-								this.lblMessageCallout.setText("Aún estás lejos, este cofre está a " + getDistanceString(distMetros) + " de donde te encuentras. Aproxímate a este lugar y lo podrás abrir"); // Poner mensaje
+								this.lblMessageCallout.setText(getString(R.string.battle_aun_estas_lejos_este_cofre_esta_a) + " " + getDistanceString(distMetros) + " " + getString(R.string.battle_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir)); // Poner mensaje
 							}else{
 								// Si la distancia es inferior a 3 km, decirle que no le queda mucho
-								this.lblMessageCallout.setText("No te queda mucho, solo estás a " + getDistanceString(distMetros) + ", sigue buscando"); // Poner mensaje
+								this.lblMessageCallout.setText(getString(R.string.battle_no_te_queda_mucho_solo_estas_a) + " " + getDistanceString(distMetros) + ", " + getString(R.string.battle_sigue_buscando)); // Poner mensaje
 							}
 							
 							
@@ -834,7 +834,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 																// botón de
 																// capturar
 						this.lblMessageCallout
-								.setText("El cache no tiene coordenadas"); // Poner
+								.setText(getString(R.string.battle_el_geocache_no_tiene_coordenadas)); // Poner
 																			// que
 																			// el
 																			// geocache
@@ -846,7 +846,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 					// No hay coordenadas aún
 					btnCaptureCallout.setEnabled(false); // Deshabilito botón de
 															// capturar
-					this.lblMessageCallout.setText("Esperando al gps..."); // Poner que no hay coordenadas aún
+					this.lblMessageCallout.setText(getString(R.string.battle_esperando_gps)); // Poner que no hay coordenadas aún
 				}
 
 			} else {
@@ -854,7 +854,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 				btnCaptureCallout.setEnabled(true); // Habilitar el botón de
 													// capturar
 				this.lblMessageCallout
-						.setText("Abre el cofre y descubre si esconde el tesoro de Gully"); // Poner
+						.setText(getString(R.string.battle_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully)); // Poner
 																					// que
 																					// el
 																					// geocache
@@ -890,14 +890,14 @@ public class GeocacheBattleMapActivity extends Activity implements
 	
 	private void mostrarMensajeNoTieneGPSActivado() {
 	    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	    builder.setMessage("Parece que no tienes encendido el GPS. ¿Quieres habilitarlo?")
+	    builder.setMessage(getString(R.string.battle_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo))
 	           .setCancelable(false)
-	           .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+	           .setPositiveButton(getString(R.string.battle_si), new DialogInterface.OnClickListener() {
 	               public void onClick(final DialogInterface dialog, final int id) {
 	                   startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
 	               }
 	           })
-	           .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	           .setNegativeButton(getString(R.string.battle_no), new DialogInterface.OnClickListener() {
 	               public void onClick(final DialogInterface dialog, final int id) {
 	                    dialog.cancel();
 	               }

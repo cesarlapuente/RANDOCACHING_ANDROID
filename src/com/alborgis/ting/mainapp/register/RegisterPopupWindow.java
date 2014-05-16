@@ -88,7 +88,7 @@ public class RegisterPopupWindow extends Dialog {
 			public void onClick(View v) {
 				if(validarCampos()){
 					
-					MessageDialog.showMessageWith2Buttons(ctx, "Crear cuenta", "ÀDeseas crear tu cuenta en Travel in Game?", "Crear cuenta",  "Cancelar", 
+					MessageDialog.showMessageWith2Buttons(ctx, ctx.getString(R.string.register_crear_cuenta), ctx.getString(R.string.register_deseas_crear_tu_cuenta_en_travel_in_game), ctx.getString(R.string.register_crear_cuenta),  ctx.getString(R.string.register_cancelar), 
 						new MessageDialogListener() {
 							public void onPositiveButtonClick(MessageDialog dialog) {
 								dialog.dismiss();
@@ -120,27 +120,27 @@ public class RegisterPopupWindow extends Dialog {
 	
 	private boolean validarCampos(){
 		if(TextUtils.isEmpty(tbCorreo.getText().toString())){
-			MessageDialog.showMessage(ctx, "Correo electr—nico", "Por favor, introduce tu correo electr—nico");
+			MessageDialog.showMessage(ctx, ctx.getString(R.string.register_correo_electronico), ctx.getString(R.string.register_por_favor_introduce_tu_correo_electronico));
 			return false;
 		}
 		if(!tbCorreo.getText().toString().contains("@")){
-			MessageDialog.showMessage(ctx, "Correo electr—nico", "El correo electr—nico especificado no es v‡lido");
+			MessageDialog.showMessage(ctx, ctx.getString(R.string.register_correo_electronico), ctx.getString(R.string.register_el_correo_electronico_especificado_no_es_valido));
 			return false;
 		}
 		if(TextUtils.isEmpty(tbPass.getText().toString())){
-			MessageDialog.showMessage(ctx, "Contrase–a", "Por favor, introduce tu contrase–a");
+			MessageDialog.showMessage(ctx, ctx.getString(R.string.register_contrasena), ctx.getString(R.string.register_por_favor_introduce_tu_contrasena));
 			return false;
 		}
 		if(TextUtils.isEmpty(tbRepeatPass.getText().toString())){
-			MessageDialog.showMessage(ctx, "Contrase–a", "Por favor, repite tu contrase–a");
+			MessageDialog.showMessage(ctx, ctx.getString(R.string.register_contrasena), ctx.getString(R.string.register_por_favor_repite_tu_contrasena));
 			return false;
 		}
 		if(tbPass.getText().toString().length() < 3){
-			MessageDialog.showMessage(ctx, "Contrase–a", "La contrase–a es demasiado corta");
+			MessageDialog.showMessage(ctx, ctx.getString(R.string.register_contrasena), ctx.getString(R.string.register_la_contrasena_es_demasiado_corta));
 			return false;
 		}
 		if(!tbPass.getText().toString().equals(tbRepeatPass.getText().toString())){
-			MessageDialog.showMessage(ctx, "Contrase–as", "Las contrase–as no coinciden");
+			MessageDialog.showMessage(ctx, ctx.getString(R.string.register_contrasenas), ctx.getString(R.string.register_las_contrasenas_no_coinciden));
 			return false;
 		}
 		return true;
@@ -173,14 +173,14 @@ public class RegisterPopupWindow extends Dialog {
 									}
 									public void onRegisterError(String error) {
 										LoadingDialog.hideLoading(ctx);
-										MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
+										MessageDialog.showMessage(ctx, ctx.getString(R.string.register_error_al_crear_cuenta), error);
 									}
 								});
 							}
 							public void onLogoutError(String error) {
 								Milog.d("Error al desloguear el usuario actual");
 								LoadingDialog.hideLoading(ctx);
-								MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
+								MessageDialog.showMessage(ctx, ctx.getString(R.string.register_error_al_crear_cuenta), error);
 							}
 						});
 					}else{
@@ -193,7 +193,7 @@ public class RegisterPopupWindow extends Dialog {
 							}
 							public void onRegisterError(String error) {
 								LoadingDialog.hideLoading(ctx);
-								MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
+								MessageDialog.showMessage(ctx, ctx.getString(R.string.register_error_al_crear_cuenta), error);
 							}
 						});
 					}
@@ -201,7 +201,7 @@ public class RegisterPopupWindow extends Dialog {
 				}
 				public void onSessionError(String error) {
 					LoadingDialog.hideLoading(ctx);
-					MessageDialog.showMessage(ctx, "Error al crear cuenta", error);
+					MessageDialog.showMessage(ctx, ctx.getString(R.string.register_error_al_crear_cuenta), error);
 				}
 			});
 			

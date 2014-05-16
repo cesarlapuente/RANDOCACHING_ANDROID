@@ -46,7 +46,7 @@
 			        android:layout_height="wrap_content"
 			        android:layout_marginLeft="20dp"
 			        android:layout_marginRight="20dp"
-			        android:text="Title"
+			        android:text="@string/one_titulo"
 			        android:textColor="@color/azul_principal_oscuro"
 			        android:textSize="20sp" />
 	            <TextView
@@ -55,7 +55,7 @@
 	                android:layout_height="wrap_content"
 	                android:layout_marginLeft="20dp"
 			        android:layout_marginRight="20dp"
-	                android:text="Description"
+	                android:text="@string/one_descripcion"
 	                android:textColor="@color/azul_principal_oscuro"
 	                android:textSize="15sp" />
 	            <LinearLayout
@@ -71,7 +71,7 @@
 			            android:id="@+id/tvLogrosObtenidos"
 			            android:layout_width="fill_parent"
 			            android:layout_height="wrap_content"
-			            android:text="Logros conseguidos"
+			            android:text="@string/one_logros_conseguidos"
 			            android:textColor="@color/negro"
 			            android:textSize="15sp" />
 			        <Button
@@ -111,7 +111,7 @@
 			        android:layout_height="wrap_content"
 			        android:layout_marginLeft="20dp"
 			        android:layout_marginRight="20dp"
-			        android:text="VOTA ESTE JUEGO"
+			        android:text="@string/one_vota_este_juego"
 			        android:textColor="@color/azul_principal_oscuro"
 			        android:textSize="16sp" />
 	            
@@ -131,7 +131,7 @@
 			        android:layout_width="150dp"
 			        android:layout_height="40dp"
 			        android:background="@drawable/btn_state_general"
-			        android:text="Continuar"
+			        android:text="@string/one_continuar"
 			        android:textColor="@color/azul_principal_oscuro" />
             
         </LinearLayout>

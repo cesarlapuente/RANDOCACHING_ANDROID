@@ -220,20 +220,20 @@ public class JoinSlotActivity extends Activity {
 		
 		btnAbandonar.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				MessageDialog.showMessageWith2Buttons(JoinSlotActivity.this, "¿Abandonar la partida?", "¿Seguro que deseas abandonar esta partida?", "Si",  "No", new MessageDialogListener() {
+				MessageDialog.showMessageWith2Buttons(JoinSlotActivity.this, getString(R.string.multiplayer_abandonar_la_partida), getString(R.string.multiplayer_seguro_que_deseas_abandonar_la_partida), getString(R.string.multiplayer_si),  getString(R.string.multiplayer_no), new MessageDialogListener() {
 					public void onPositiveButtonClick(final MessageDialog dialog) {
 						LoadingDialog.showLoading(JoinSlotActivity.this);
 						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
 							public void onSlotUserLeaved(String uid, String nidSlot) {
 								LoadingDialog.hideLoading(JoinSlotActivity.this);
 								dialog.dismiss();
-								Toast.makeText(JoinSlotActivity.this, "Abandonaste la partida", Toast.LENGTH_SHORT).show();
+								Toast.makeText(JoinSlotActivity.this, getString(R.string.multiplayer_abandonaste_la_partida), Toast.LENGTH_SHORT).show();
 								finish();
 							}
 							public void onSlotUserLeaveError(String error) {
 								LoadingDialog.hideLoading(JoinSlotActivity.this);
 								dialog.dismiss();
-								MessageDialog.showMessage(JoinSlotActivity.this, "Error", error);
+								MessageDialog.showMessage(JoinSlotActivity.this, getString(R.string.multiplayer_error), error);
 							}
 						});
 					}
@@ -259,14 +259,14 @@ public class JoinSlotActivity extends Activity {
 			if(currentSlot.title != null && !currentSlot.title.isEmpty()){
 				tvTitle.setText(currentSlot.title.toUpperCase());
 			}else{
-				tvTitle.setText("PARTIDA SIN TÍTULO");
+				tvTitle.setText(getString(R.string.multiplayer_partida_sin_nombre));
 			}
 			
 			// Actualizar el titulo del juego
 			if(currentSlot.game != null && currentSlot.game.title != null && !currentSlot.game.title.isEmpty()){
 				tvGameTitle.setText(currentSlot.game.title.toUpperCase());
 			}else{
-				tvGameTitle.setText("JUEGO SIN TÍTULO");
+				tvGameTitle.setText(getString(R.string.multiplayer_jugador_sin_nombre));
 			}
 			
 			// Actualizar los jugadores
@@ -285,23 +285,23 @@ public class JoinSlotActivity extends Activity {
 			// Actualizar el estado de la partida
 			if(currentSlot.active){
 				if(currentSlot.numCurrentPlayers < currentSlot.numMaxPlayers){
-					tvSlotState.setText("Partida en curso (aún queda hueco)");
+					tvSlotState.setText(getString(R.string.multiplayer_estado_en_curso_aun_queda_hueco));
 				}else{
-					tvSlotState.setText("Partida en curso");
+					tvSlotState.setText(getString(R.string.multiplayer_estado_en_curso));
 				}
 				btnJugar.setVisibility(View.VISIBLE);
 			}else{
 				if(currentSlot.numCurrentPlayers >= currentSlot.numMinPlayers){
-					tvSlotState.setText("¡Todo listo para jugar!");
+					tvSlotState.setText(getString(R.string.multiplayer_estado_lista_para_jugar));
 					btnJugar.setVisibility(View.VISIBLE);
 				}else{
-					tvSlotState.setText("Esperando a que se unan los jugadores...");
+					tvSlotState.setText(getString(R.string.multiplayer_estado_esperando_jugadores));
 					btnJugar.setVisibility(View.INVISIBLE);
 				}
 			}
 			
 			if(currentSlot.finished){
-				tvSlotState.setText("PARTIDA FINALIZADA");
+				tvSlotState.setText(getString(R.string.multiplayer_estado_finalizada));
 				btnJugar.setVisibility(View.INVISIBLE);
 				btnAbandonar.setVisibility(View.INVISIBLE);
 			}
@@ -357,8 +357,8 @@ public class JoinSlotActivity extends Activity {
 					public void onSessionError(String error) {
 						LoadingDialog.hideLoading(JoinSlotActivity.this);
 						MessageDialog.showMessage(
-								JoinSlotActivity.this, "Error",
-								"Error al comprobar sesión");
+								JoinSlotActivity.this, getString(R.string.multiplayer_error),
+								getString(R.string.multiplayer_error_al_comprobar_sesion));
 					}
 				});
 	}
@@ -376,8 +376,8 @@ public class JoinSlotActivity extends Activity {
 			public void onSlotItemError(String error) {
 				showLoading(false);
 				MessageDialog.showMessage(
-						JoinSlotActivity.this, "Error",
-						"Error al obtener datos del slot");
+						JoinSlotActivity.this, getString(R.string.multiplayer_error),
+						getString(R.string.multiplayer_error_al_obtener_datos_de_la_partida));
 			}
 
 		});
@@ -403,7 +403,7 @@ public class JoinSlotActivity extends Activity {
 				Milog.d("Error al comprobar si el usuario está unido");
 				showLoading(false);
 				
-				MessageDialog.showMessage(JoinSlotActivity.this, "Error", error);
+				MessageDialog.showMessage(JoinSlotActivity.this, getString(R.string.multiplayer_error), error);
 			}
 		});
 	}
@@ -411,7 +411,7 @@ public class JoinSlotActivity extends Activity {
 	
 	private void joinSlot(){
 		// Preguntar si quiere unirse a la partida
-		MessageDialog.showMessageWith2Buttons(this, "¿Unirse a partida?", "¿Quieres unirte a esta partida?", "Unirme", "Cancelar", new MessageDialogListener() {
+		MessageDialog.showMessageWith2Buttons(this, getString(R.string.multiplayer_unirse_a_partida), getString(R.string.multiplayer_quieres_unirte_a_esta_partida), getString(R.string.multiplayer_unirme), getString(R.string.multiplayer_cancelar), new MessageDialogListener() {
 			public void onPositiveButtonClick(MessageDialog dialog) {
 				dialog.dismiss();
 				showLoading(true);
@@ -425,7 +425,7 @@ public class JoinSlotActivity extends Activity {
 					public void onSlotUserJoinError(String error) {
 						Milog.d("Error al unirse a slot: " + error);
 						showLoading(false);
-						MessageDialog.showMessage(JoinSlotActivity.this, "Error", error);
+						MessageDialog.showMessage(JoinSlotActivity.this, getString(R.string.multiplayer_error), error);
 					}
 				});
 			}
@@ -473,8 +473,8 @@ public class JoinSlotActivity extends Activity {
 					public void onSessionError(String error) {
 						LoadingDialog.hideLoading(JoinSlotActivity.this);
 						MessageDialog.showMessage(
-								JoinSlotActivity.this, "Error",
-								"Error al comprobar sesión");
+								JoinSlotActivity.this, getString(R.string.multiplayer_error),
+								getString(R.string.multiplayer_error_al_comprobar_sesion));
 					}
 				});
 	}
@@ -490,7 +490,7 @@ public class JoinSlotActivity extends Activity {
 			public void onSlotUserStartError(String error) {
 				Milog.d("Error al unirse a slot: " + error);
 				showLoading(false);
-				MessageDialog.showMessage(JoinSlotActivity.this, "Error", error);
+				MessageDialog.showMessage(JoinSlotActivity.this, getString(R.string.multiplayer_error), error);
 				
 			}
 		});
@@ -515,7 +515,7 @@ public class JoinSlotActivity extends Activity {
 				}
 			}
 		}else{
-			MessageDialog.showMessage(JoinSlotActivity.this, "Error", "Datos erróneos en la partida");
+			MessageDialog.showMessage(JoinSlotActivity.this, getString(R.string.multiplayer_error), getString(R.string.multiplayer_datos_erroneos_en_la_partida));
 		}
 	}
 	
@@ -607,11 +607,11 @@ public class JoinSlotActivity extends Activity {
 			if(user.mail != null && !user.mail.isEmpty()){
 				String userTxt = user.mail;
 				if(currentUser != null && currentUser.uid.equals(user.uid)){
-					userTxt += " (Yo)";
+					userTxt += " " + getString(R.string.multiplayer_yo);
 				}
 				holder.tvPlayerName.setText(userTxt);
 			}else{
-				holder.tvPlayerName.setText("Usuario sin nombre");
+				holder.tvPlayerName.setText(getString(R.string.multiplayer_jugador_sin_nombre));
 			}
 			
 		

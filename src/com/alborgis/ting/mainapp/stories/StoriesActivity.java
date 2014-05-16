@@ -148,7 +148,7 @@ public class StoriesActivity extends Activity implements InfoListListener, Endle
 				}else{
 					filtroDestinoSeleccionado = null;
 					// Establecer el nombre del filtro en el bot—n
-					btnSelCiudad.setText("CIUDAD...");
+					btnSelCiudad.setText(getString(R.string.historias_ciudad));
 				}
 				
 				// Poner p‡gina inicial

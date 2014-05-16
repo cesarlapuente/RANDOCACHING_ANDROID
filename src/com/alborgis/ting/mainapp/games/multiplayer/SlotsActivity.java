@@ -363,41 +363,41 @@ public class SlotsActivity extends Activity implements SlotsListListener, Endles
 			if(slot.title != null && !slot.title.isEmpty()){
 				holder.tvTitle.setText(slot.title.toUpperCase());
 			}else{
-				holder.tvTitle.setText("Slot sin nombre");
+				holder.tvTitle.setText(getString(R.string.multiplayer_partida_sin_nombre));
 			}
 			
 			// Poner juego
 			if(slot.game != null && slot.game.title != null){
-				holder.tvGame.setText("Juego: " + slot.game.title);
+				holder.tvGame.setText(getString(R.string.multiplayer_juego) + ": " + slot.game.title);
 			}else{
-				holder.tvGame.setText("Sin juego");
+				holder.tvGame.setText(getString(R.string.multiplayer_sin_juego));
 			}
 			
 			// Poner jugadores
-			holder.tvPlayers.setText( String.format("%d / %d jugadores", slot.numCurrentPlayers, slot.numMaxPlayers) );
+			holder.tvPlayers.setText( String.format("%d / %d %s", slot.numCurrentPlayers, getString(R.string.multiplayer_jugadores), slot.numMaxPlayers) );
 			
 			// Poner creador
 			if(slot.owner != null){
-				holder.tvOwner.setText("Creada por " + slot.owner.mail);
+				holder.tvOwner.setText(getString(R.string.multiplayer_creada_por) + " " + slot.owner.mail);
 			}else{
-				holder.tvOwner.setText("Sin creador");
+				holder.tvOwner.setText(getString(R.string.multiplayer_sin_creador));
 			}
 			
 			// Poner estado de la partida
 			if(slot.active){
 				if(slot.numCurrentPlayers < slot.numMaxPlayers){
-					holder.tvState.setText("Estado: en curso (aœn queda hueco)");
+					holder.tvState.setText(getString(R.string.multiplayer_estado_en_curso_aun_queda_hueco));
 				}else{
-					holder.tvState.setText("Estado: en curso");
+					holder.tvState.setText(getString(R.string.multiplayer_estado_en_curso));
 				}
 			}else{
 				if(slot.finished){
-					holder.tvState.setText("Estado: finalizada");
+					holder.tvState.setText(getString(R.string.multiplayer_estado_finalizada));
 				}else{
 					if(slot.numCurrentPlayers >= slot.numMinPlayers){
-						holder.tvState.setText("Estado: lista para jugar");
+						holder.tvState.setText(getString(R.string.multiplayer_estado_lista_para_jugar));
 					}else{
-						holder.tvState.setText("Estado: esperando jugadores");
+						holder.tvState.setText(getString(R.string.multiplayer_estado_esperando_jugadores));
 					}
 				}
 				
