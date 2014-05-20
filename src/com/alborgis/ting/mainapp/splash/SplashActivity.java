@@ -161,7 +161,7 @@ public class SplashActivity extends Activity {
 		setCarouselSpeed(SPEED_CARROUSEL_TRANSITION);
 		
 		// Inicializar el adaptador del carrusel
-		Misc.listImageCarrousel(app.drupalClient, app.drupalSecurity, new SplashImageListListener() {
+		Misc.listImageCarrousel(app.deviceLang, app.drupalClient, app.drupalSecurity, new SplashImageListListener() {
 			public void onSplashImageListLoad(ArrayList<String> listItems) {
 				images = listItems;
 				// Crear el adapter con los elementos

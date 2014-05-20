@@ -367,7 +367,7 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 						
 			// Hago la llamada al servicio con los parametros
 			Milog.d("P‡gina que voy a pedir: " + gridViewNextPageToAsk);
-			Destination.listDestinationsPaginated(lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, null, app.drupalClient, app.drupalSecurity, this);
+			Destination.listDestinationsPaginated(lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, app.deviceLang, app.drupalClient, app.drupalSecurity, this);
 		}else{
 			// Recojo los filtros que ha seleccionado
 			String destNid = null;
@@ -389,7 +389,7 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 						
 			// Hago la llamada al servicio con los parametros
 			Milog.d("P‡gina que voy a pedir: " + gridViewNextPageToAsk);
-			Game.listGames(destNid, gameType, lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, null, app.drupalClient, app.drupalSecurity, this);
+			Game.listGames(destNid, gameType, lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, app.deviceLang, app.drupalClient, app.drupalSecurity, this);
 		}
 		
 		

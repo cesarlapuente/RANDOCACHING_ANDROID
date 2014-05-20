@@ -245,7 +245,7 @@ public class StoriesActivity extends Activity implements InfoListListener, Endle
 		
 		// Hago la llamada al servicio con los parametros
 		Milog.d("P‡gina que voy a pedir: " + gridViewNextPageToAsk);
-		Info.listInfos(destNid, lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, null, app.drupalClient, app.drupalSecurity, this);	
+		Info.listInfos(destNid, lat, lon, radio, ITEMS_BY_PAGE, gridViewNextPageToAsk, app.deviceLang, app.drupalClient, app.drupalSecurity, this);	
 	}
 
 	

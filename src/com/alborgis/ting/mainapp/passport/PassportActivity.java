@@ -331,7 +331,7 @@ public class PassportActivity extends Activity implements LoginPopupWindowListen
 
 	private void cargarDatosPasaporte(){
 		showLoading(true);
-		Passport.getPassport(app.drupalClient, new PassportListener() {
+		Passport.getPassport(app.deviceLang, app.drupalClient, new PassportListener() {
 			public void onPassportLoad(Passport _passport) {
 				showLoading(false);
 				passport = _passport;

@@ -118,7 +118,7 @@ public class AwardDetailActivity extends Activity implements AwardItemListener {
 		showLoading(true);
 
 		// Hago la llamada al servicio con los parametros
-		Award.getAward(nid, null, app.drupalClient, app.drupalSecurity, this);
+		Award.getAward(nid, app.deviceLang, app.drupalClient, app.drupalSecurity, this);
 	}
 
 	

@@ -223,7 +223,7 @@ public class JoinSlotActivity extends Activity {
 				MessageDialog.showMessageWith2Buttons(JoinSlotActivity.this, getString(R.string.multiplayer_abandonar_la_partida), getString(R.string.multiplayer_seguro_que_deseas_abandonar_la_partida), getString(R.string.multiplayer_si),  getString(R.string.multiplayer_no), new MessageDialogListener() {
 					public void onPositiveButtonClick(final MessageDialog dialog) {
 						LoadingDialog.showLoading(JoinSlotActivity.this);
-						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
+						Slot.leaveSlot(nidSlot, app.deviceLang, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
 							public void onSlotUserLeaved(String uid, String nidSlot) {
 								LoadingDialog.hideLoading(JoinSlotActivity.this);
 								dialog.dismiss();
@@ -367,7 +367,7 @@ public class JoinSlotActivity extends Activity {
 	
 	private void retrieveSlotData(){
 		showLoading(true);
-		Slot.getSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotItemListener() {
+		Slot.getSlot(nidSlot, app.deviceLang, app.drupalClient, app.drupalSecurity, new SlotItemListener() {
 			public void onSlotItemLoad(Slot slot) {
 				showLoading(false);
 				currentSlot = slot;
@@ -386,7 +386,7 @@ public class JoinSlotActivity extends Activity {
 	
 	private void checkIfUserIsAlreadyJoinedOnThisSlot(){
 		showLoading(true);
-		Slot.isJoined(nidSlot, app.drupalClient, app.drupalSecurity, new SlotUserIsJoinedListener() {
+		Slot.isJoined(nidSlot, app.deviceLang, app.drupalClient, app.drupalSecurity, new SlotUserIsJoinedListener() {
 			public void onSlotUserIsJoined(boolean alreadyJoined) {
 				Milog.d("Check user is joined successfull");
 				if(!alreadyJoined){
@@ -415,7 +415,7 @@ public class JoinSlotActivity extends Activity {
 			public void onPositiveButtonClick(MessageDialog dialog) {
 				dialog.dismiss();
 				showLoading(true);
-				Slot.joinSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotJoinListener() {
+				Slot.joinSlot(nidSlot, app.deviceLang, app.drupalClient, app.drupalSecurity, new SlotJoinListener() {
 					public void onSlotUserJoined(String uid, String nidSlot) {
 						Milog.d("Unido a slot: " + nidSlot);
 						
@@ -480,7 +480,7 @@ public class JoinSlotActivity extends Activity {
 	}
 	
 	private void startPlayingSlot(){
-		Slot.startSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotStartListener() {
+		Slot.startSlot(nidSlot, app.deviceLang, app.drupalClient, app.drupalSecurity, new SlotStartListener() {
 			public void onSlotUserStart(String uid, String nidSlot) {
 				showLoading(false);
 				

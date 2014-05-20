@@ -118,7 +118,7 @@ public class DestinationDetailActivity extends Activity implements DestinationIt
 		showLoading(true);
 
 		// Hago la llamada al servicio con los parametros
-		Destination.getDestination(nid, null, app.drupalClient, app.drupalSecurity, this);
+		Destination.getDestination(nid, app.deviceLang, app.drupalClient, app.drupalSecurity, this);
 	}
 
 	

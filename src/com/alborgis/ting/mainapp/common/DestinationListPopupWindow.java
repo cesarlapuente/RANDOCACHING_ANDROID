@@ -113,7 +113,7 @@ public class DestinationListPopupWindow implements DestinationListListener {
 			// Mostrar el panel de cargando
 			showLoading(true);
 			// Cargar los datos en la lista
-			Destination.loadList(app.drupalClient, this);
+			Destination.loadList(app.deviceLang, app.drupalClient, app.drupalSecurity, this);
 		}
 
 		// Mostrar el popup

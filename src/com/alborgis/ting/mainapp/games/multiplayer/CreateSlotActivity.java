@@ -200,7 +200,7 @@ public class CreateSlotActivity extends Activity {
 			Milog.d("Game nid: " + nidGame);
 			
 			showLoading(true);
-			Slot.createSlot(slot, app.drupalClient, app.drupalSecurity, new SlotCreateListener() {
+			Slot.createSlot(slot, app.deviceLang, app.drupalClient, app.drupalSecurity, new SlotCreateListener() {
 				public void onSlotCreated(String nidSlot) {
 					Milog.d("Creado slot: " + nidSlot);
 					showLoading(false);

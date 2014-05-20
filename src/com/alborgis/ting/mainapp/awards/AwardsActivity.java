@@ -138,7 +138,7 @@ public class AwardsActivity extends Activity implements AwardListListener, Endle
 		
 		// Hago la llamada al servicio con los parametros
 		Milog.d("P‡gina que voy a pedir: " + gridViewNextPageToAsk);
-		Award.listAwards(ITEMS_BY_PAGE, gridViewNextPageToAsk, null, app.drupalClient, app.drupalSecurity, this);		
+		Award.listAwards(ITEMS_BY_PAGE, gridViewNextPageToAsk, app.deviceLang, app.drupalClient, app.drupalSecurity, this);		
 	}
 
 	

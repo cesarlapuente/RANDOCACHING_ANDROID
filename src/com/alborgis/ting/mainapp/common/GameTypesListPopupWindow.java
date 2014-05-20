@@ -115,7 +115,7 @@ public class GameTypesListPopupWindow implements GameTypesListListener {
 			// Mostrar el panel de cargando
 			showLoading(true);
 			// Cargar los datos en la lista
-			Game.listGameTypes(app.drupalClient, app.drupalSecurity, this);
+			Game.listGameTypes(app.deviceLang, app.drupalClient, app.drupalSecurity, this);
 		}
 
 		// Mostrar el popup

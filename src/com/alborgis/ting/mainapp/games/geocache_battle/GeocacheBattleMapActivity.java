@@ -292,7 +292,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 				MessageDialog.showMessageWith2Buttons(GeocacheBattleMapActivity.this, getString(R.string.multiplayer_abandonar_la_partida), getString(R.string.multiplayer_seguro_que_deseas_abandonar_la_partida), getString(R.string.battle_si),  getString(R.string.battle_no), new MessageDialogListener() {
 					public void onPositiveButtonClick(final MessageDialog dialog) {
 						LoadingDialog.showLoading(GeocacheBattleMapActivity.this);
-						Slot.leaveSlot(nidSlot, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
+						Slot.leaveSlot(nidSlot, app.deviceLang, app.drupalClient, app.drupalSecurity, new SlotLeaveListener() {
 							public void onSlotUserLeaved(String uid, String nidSlot) {
 								LoadingDialog.hideLoading(GeocacheBattleMapActivity.this);
 								dialog.dismiss();
@@ -454,7 +454,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 		}
 		
 		// Cargar el  geocache Game
-		GeocachesGame.getGame(nidGame, nidSlot, app.drupalClient, app.drupalSecurity, new GeocacheGameItemListener() {
+		GeocachesGame.getGame(nidGame, nidSlot, app.deviceLang, app.drupalClient, app.drupalSecurity, new GeocacheGameItemListener() {
 			public void onGeocacheGameItemLoad(GeocachesGame geocachesGame) {
 				// Asigno el geocacheGame
 				game = geocachesGame;
@@ -463,7 +463,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 				// Actualizar el view
 				updateView();
 				// Cargar los geocaches una vez que tengo conexi—n
-				Geocache.battleList(nidGame, nidSlot, 0, 0, 300000, 0, 0, app.drupalClient,
+				Geocache.battleList(nidGame, nidSlot, 0, 0, 300000, 0, 0, app.deviceLang, app.drupalClient,
 						app.drupalSecurity, GeocacheBattleMapActivity.this);
 			}
 			
@@ -741,7 +741,7 @@ public class GeocacheBattleMapActivity extends Activity implements
 			public void onClick(View v) {
 				if (DataConection.hayConexion(GeocacheBattleMapActivity.this)) {
 					showLoading(true);
-					Geocache.battleCapture(nid, nidGame, nidSlot, app.drupalClient,
+					Geocache.battleCapture(nid, nidGame, nidSlot, app.deviceLang, app.drupalClient,
 							app.drupalSecurity, GeocacheBattleMapActivity.this);
 					callout.animatedHide();
 				} else {

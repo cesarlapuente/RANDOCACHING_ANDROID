@@ -338,7 +338,7 @@ public class GeocacheOneMapActivity extends Activity implements
 			// Mientras no haya conexi—n espero...
 		}
 		// Cargar los geocaches una vez que tengo conexi—n
-		Geocache.oneList(nidGame, 0, 0, 300000, 0, 0, app.drupalClient,
+		Geocache.oneList(nidGame, 0, 0, 300000, 0, 0, app.deviceLang, app.drupalClient,
 				app.drupalSecurity, this);
 	}
 
@@ -606,7 +606,7 @@ public class GeocacheOneMapActivity extends Activity implements
 			public void onClick(View v) {
 				if (DataConection.hayConexion(GeocacheOneMapActivity.this)) {
 					showLoading(true);
-					Geocache.oneCapture(nid, nidGame, app.drupalClient,
+					Geocache.oneCapture(nid, nidGame, app.deviceLang, app.drupalClient,
 							app.drupalSecurity, GeocacheOneMapActivity.this);
 					callout.animatedHide();
 				} else {

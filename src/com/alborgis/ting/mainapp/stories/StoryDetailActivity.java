@@ -118,7 +118,7 @@ public class StoryDetailActivity extends Activity implements InfoItemListener {
 		showLoading(true);
 
 		// Hago la llamada al servicio con los parametros
-		Info.getInfo(nid, null, app.drupalClient, app.drupalSecurity, this);
+		Info.getInfo(nid, app.deviceLang, app.drupalClient, app.drupalSecurity, this);
 	}
 
 	

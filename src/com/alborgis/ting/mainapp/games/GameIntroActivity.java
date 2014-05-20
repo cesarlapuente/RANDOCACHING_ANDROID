@@ -146,7 +146,7 @@ public class GameIntroActivity extends Activity implements
 		// Cargar los datos del juego en funci—n del tipo
 		if (typeGame.equalsIgnoreCase(GeocachesGame.DRUPAL_TYPE)) {
 			LoadingDialog.showLoading(this);
-			GeocachesGame.getGame(nidGame, null, app.drupalClient,
+			GeocachesGame.getGame(nidGame, null, app.deviceLang, app.drupalClient,
 					app.drupalSecurity, this);
 		}
 	}
@@ -320,12 +320,12 @@ public class GameIntroActivity extends Activity implements
 		if (typeGame.equals(GeocachesGame.DRUPAL_TYPE)) {
 			if (modalityGame != null && modalityGame.equals(GeocachesGame.MODALITY.ONE)) {
 
-				GeocachesGame.oneReset(nidGame, app.drupalClient,
+				GeocachesGame.oneReset(nidGame, app.deviceLang, app.drupalClient,
 						app.drupalSecurity,
 						new GeocachesGame.GeocacheGameOneResetListener() {
 							public void onGeocacheOneResetSuccess(
 									String nidGeocacheGame) {
-								GeocachesGame.getGame(nidGame, null,
+								GeocachesGame.getGame(nidGame, null, app.deviceLang,
 										app.drupalClient, app.drupalSecurity,
 										new GeocacheGameItemListener() {
 											public void onGeocacheGameItemLoad(
@@ -358,12 +358,12 @@ public class GameIntroActivity extends Activity implements
 				
 			}else if (modalityGame != null && modalityGame.equals(GeocachesGame.MODALITY.FULL)) {
 
-				GeocachesGame.fullReset(nidGame, app.drupalClient,
+				GeocachesGame.fullReset(nidGame, app.deviceLang, app.drupalClient,
 						app.drupalSecurity,
 						new GeocachesGame.GeocacheGameFullResetListener() {
 							public void onGeocacheFullResetSuccess(
 									String nidGeocacheGame) {
-								GeocachesGame.getGame(nidGame, null, 
+								GeocachesGame.getGame(nidGame, null, app.deviceLang, 
 										app.drupalClient, app.drupalSecurity,
 										new GeocacheGameItemListener() {
 											public void onGeocacheGameItemLoad(
@@ -409,7 +409,7 @@ public class GameIntroActivity extends Activity implements
 			// Cargar los datos del juego en funci—n del tipo
 			if (typeGame.equalsIgnoreCase(GeocachesGame.DRUPAL_TYPE)) {
 				LoadingDialog.showLoading(this);
-				GeocachesGame.getGame(nidGame, null, app.drupalClient,
+				GeocachesGame.getGame(nidGame, null, app.deviceLang, app.drupalClient,
 						app.drupalSecurity, new GeocacheGameItemListener() {
 							public void onGeocacheGameItemLoad(
 									GeocachesGame _geocachesGame) {

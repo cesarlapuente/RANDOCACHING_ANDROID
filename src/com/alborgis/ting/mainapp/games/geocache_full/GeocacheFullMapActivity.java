@@ -344,7 +344,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			// Mientras no haya conexi—n espero...
 		}
 		// Cargar los geocaches una vez que tengo conexi—n
-		Geocache.fullList(nidGame, 0, 0, 300000, 0, 0, app.drupalClient,
+		Geocache.fullList(nidGame, 0, 0, 300000, 0, 0, app.deviceLang, app.drupalClient,
 				app.drupalSecurity, this);
 	}
 
@@ -718,7 +718,7 @@ public class GeocacheFullMapActivity extends Activity implements LocationListene
 			public void onClick(View v) {
 				if (DataConection.hayConexion(GeocacheFullMapActivity.this)) {
 					showLoading(true);
-					Geocache.fullCapture(nid, nidGame, app.drupalClient,
+					Geocache.fullCapture(nid, nidGame, app.deviceLang, app.drupalClient,
 							app.drupalSecurity, GeocacheFullMapActivity.this);
 					callout.animatedHide();
 				} else {
