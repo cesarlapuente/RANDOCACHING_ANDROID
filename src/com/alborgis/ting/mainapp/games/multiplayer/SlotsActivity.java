@@ -374,7 +374,7 @@ public class SlotsActivity extends Activity implements SlotsListListener, Endles
 			}
 			
 			// Poner jugadores
-			holder.tvPlayers.setText( String.format("%d / %d %s", slot.numCurrentPlayers, getString(R.string.multiplayer_jugadores), slot.numMaxPlayers) );
+			holder.tvPlayers.setText( String.format("%d / %d %s", slot.numCurrentPlayers, slot.numMaxPlayers, getString(R.string.multiplayer_jugadores)) );
 			
 			// Poner creador
 			if(slot.owner != null){

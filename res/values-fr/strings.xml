@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Lo único que hay que cambiar es el texto que va entre las etiquetas respetando mayúsculas y minúsculas 
+    y anteponiendo la barra invertida si utilizamos el símbolo apóstrofe -->
+
+	<!-- APP MAIN -->
+    <string name="app_name">Travel in Game</string>
+    <string name="app_id">398592920275073</string>
+    
+    <!-- COMMON -->
+    <string name="common_cargando">Chargement en cours...</string>
+    <string name="common_todas">TOUTES</string>
+    <string name="common_todos">TOUS</string>
+    
+    <!-- TIPS -->
+    <string name="tips_ocultar_ayuda">Oculter l\'Aide</string>
+    <string name="tips_siguiente">Suivant</string>
+    <string name="tips_a_jugar">¡Jouez!</string>
+    
+    <!-- ABOUT -->
+    <string name="about_informacion">INFORMATION</string>
+    <string name="about_text">Travel in Game es un juego sobre viajes y para viajeros curiosos y audaces o simplemente una manera de entretenimiento entorno a los destinos viajeros. \n\n
+En Travel in Game el destino se convierte en un tablero de juegos. Se puede jugar a juegos geolocalizados, que se juegan directamente en el destino, visitando los lugares que aparecen en el juego. Pero se puede jugar también desde cualquier lado, antes o después del viaje, para reconocer lugares que ya hemos visitado o descubrir los lugares que nos gustaría visitar.\n\n
+Travel in Game se ha realizado gracias a la financiación del Ministerio de Industria, Energía y Turismo y la participación directa del Cluster de Turismo de Madrid Network.\n
+Patrocinan este juego viajero empresas lideres del sector turístico: Rumbo, Restaurante Botín y Anaya Touring.\n\n
+La selección de destinos y lugares de interés turístico, así como los contenidos se inspiran en la colección de guías de Anaya Touring \'Guías compact. Un corto viaje a...\' Y de la colección \'Volver a...\'\n\n
+Pulsa el play y disfruta del viaje.</string>
+
+    <!-- HOME -->
+    <string name="home_gully_frase_bocadillo_1">¡Bonjour! Je m\'appelle Gully. Bienvenue au</string>
+    <string name="home_gully_frase_bocadillo_2">Le jeu des randonneurs. Un jeu social de découverte des territoires sur des itinéraires thématiques</string>
+	<string name="home_ciudad">TERRITOIRE...</string>
+	<string name="home_juego">JEU...</string>
+	<string name="home_mostrar_juegos">Montrer jeux</string>
+	<string name="home_mostrar_solo_destinos">Montrer les territoires</string>
+	<string name="home_no_hay_elementos">:( Pas de contenus</string>
+	<string name="home_tip_title_juegos_y_destinos">JEUX ET TERRITOIRES</string>
+	<string name="home_tip_message_utiliza_la_cuadricula_para_ver_los_juegos_y_destinos">Utilise les carrés pour consulter tous nos JEUX et TERRITOIRES</string>
+	<string name="home_tip_title_ayuda_y_logros">AIDE ET RÉALISATIONS</string>
+	<string name="home_tip_message_pulsa_este_icono_para_ver_mas_secciones">Click ici pour voir ton PASSEPORT et d\'autres options</string>
+	<string name="home_tip_title_toca_y_diviertete">TOUCHER ET S\'AMUSER</string>
+	<string name="home_tip_message_toca_sobre_un_juego_para_comenzar_a_jugar">Click sur un JEU et demarre ta partie</string>
+	
+	<!-- AWARDS -->
+	<string name="premios_premios">RÉCOMPENSES</string>
+	<string name="premios_no_hay_elementos">:( Pas de contenus</string>
+	<string name="premios_detalle_premio">DETAIL RECOMPENSE</string>
+	<string name="premios_sin_titulo">SANS TITRE</string>
+	<string name="premios_sin_descripcion_disponible">Sans description disponible</string>
+	<string name="premios_error_al_cargar">Erreur de charge</string>
+	<string name="premios_no_se_puede_cargar_el_premio_en_estos_momentos">La récompense ne peut pas être montrer maintenant</string>
+	
+	<!-- STORIES -->
+	<string name="historias_historias">Histoires</string>
+	<string name="historias_gully_frase_bocadillo">Installe-toi et sélectionne une histoire. Il est possible aussi de sélectionner par territoire ou par localisation GPS</string>
+	<string name="historias_ciudad">TERRITOIRE...</string>
+	<string name="historias_no_hay_elementos">:( Pas de contenus</string>
+	<string name="historias_detalle_historia">DETAIL HISTOIRE</string>
+	<string name="historias_sin_titulo">SANS TITRE</string>
+	<string name="historias_sin_descripcion_disponible">Sans description disponible</string>
+	<string name="historias_error_al_cargar">Erreur de charge</string>
+	<string name="historias_no_se_puede_cargar_la_historia_en_estos_momentos">L\'histoire ne peut pas être montrer maintenant</string>
+	
+	<!-- DESTINATIONS -->
+	<string name="destinos_detalle_destino">DETAIL TERRITOIRE</string>
+	<string name="destinos_sin_titulo">SANS TITRE</string>
+	<string name="destinos_sin_descripcion_disponible">Sans description disponible</string>
+	<string name="destinos_error_al_cargar">Erreur de charge</string>
+	<string name="destinos_no_se_puede_cargar_el_destino_en_estos_momentos">Le territoire ne peut pas être montrer maintenant</string>
+	
+	<!-- LOGIN -->
+	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Rejoignez la communauté Travel in Game</string>
+	<string name="login_si_solo_quieres_probar">Si tu veux juste essayer</string>
+	<string name="login_usa_tu_cuenta_de_facebook">utilise ton compte Facebook</string>
+	<string name="login_usa_tu_cuenta_de_travel_in_game">Utilise ton compte Travel in Game</string>
+	<string name="login_correo_electronico">e-mail</string>
+	<string name="login_contrasena">môt de passe</string>
+	<string name="login_entrar">Acceder!</string>
+	<string name="login_cerrar">Fermer</string>
+	<string name="login_unirse">Rejoindre</string>
+	<string name="login_error">Erreur</string>
+	<string name="login_error_al_entrar">Erreur d\'accès</string>
+	<string name="login_por_favor_introduce_tu_correo_electronico">S\'il te plaît, tape ton e-mail</string>
+	<string name="login_por_favor_introduce_tu_contrasena">S\'il te plaît, tape ton môt de passe</string>
+	<string name="login_el_correo_electronico_especificado_no_es_valido">Cet e-mail n\'est pas correct</string>
+	<string name="login_la_contrasena_es_demasiado_corta">Le môt de passe est très court</string>
+	<string name="login_datos_incorrectos">Données érronées</string>
+	<string name="login_el_usuario_o_la_contrasena_no_existe">L\'identifiant ou le môt de passe ne sont pas valables</string>
+	<string name="login_error_al_hacer_login">Erreur d\'identifiant</string>
+	
+	<!-- REGISTER -->
+	<string name="register_unete_a_la_comunidad_travel_in_game">Rejoignez la communauté Travel in Game</string>
+	<string name="register_correo_electronico">e-mail</string>
+	<string name="register_contrasena">Môt de passe</string>
+	<string name="register_repite_contrasena">Reintroduire le môt de passe</string>
+	<string name="register_nombre_opcional">Prénom (optionnel)</string>
+	<string name="register_apellidos_opcional">Nom (optionnel)</string>
+	<string name="register_unete">Rejoindre!</string>
+	<string name="register_cerrar">Fermer</string>
+	<string name="register_crear_cuenta">Créer son compte</string>
+	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">Souhaitez créer un compte Travel in Game?</string>
+	<string name="register_cancelar">Annuler</string>
+	<string name="register_por_favor_introduce_tu_correo_electronico">Introduire e-mail</string>
+	<string name="register_el_correo_electronico_especificado_no_es_valido">e-mail pas valable</string>
+	<string name="register_por_favor_introduce_tu_contrasena">S\'il te plaît, tape ton môt de passe</string>
+	<string name="register_por_favor_repite_tu_contrasena">S\'il te plaît, retape ton môt de passe</string>
+	<string name="register_la_contrasena_es_demasiado_corta">Le môt de passe est très court</string>
+	<string name="register_contrasenas">Mòt de passe</string>
+	<string name="register_las_contrasenas_no_coinciden">Môt de passe pas valable</string>
+	<string name="register_error_al_crear_cuenta">Erreur de création de compte</string>
+	
+	<!-- PASSPORT -->
+	<string name="pasaporte_pasaporte">PASSEPORT</string>
+	<string name="pasaporte_anadir">AJOUTER</string>
+	<string name="pasaporte_foto_avatar">PHOTO/AVATAR</string>
+	<string name="pasaporte_editar_datos_de_usuario">Modifier les infos utilisateur</string>
+	<string name="pasaporte_puntos">POINTS</string>
+	<string name="pasaporte_medallas">MEDAILLES</string>
+	<string name="pasaporte_visados">VISAS</string>
+	<string name="pasaporte_sellos">TAMPONS</string>
+	<string name="pasaporte_ver">VOIR</string>
+	<string name="pasaporte_desconectar">Déconnecter</string>
+	<string name="pasaporte_desconexion">Déconnexion</string>
+	<string name="pasaporte_deseas_desconectarte_de_travel_in_game">Se déconnecter?</string>
+	<string name="pasaporte_cancelar">Annuler</string>
+	<string name="pasaporte_error">Erreur</string>
+	<string name="pasaporte_no_se_puede_desconectar_la_sesion_actual">Déconnexion impossible</string>
+	<string name="pasaporte_error_al_comprobar_sesion">Erreur de connexion</string>
+	<string name="pasaporte_error_al_cargar_pasaporte">Erreur de passeport</string>
+	<string name="pasaporte_agrega_tu_nombre">Ajouter un prénom</string>
+	<string name="pasaporte_agrega_tus_apellidos">Ajouter un nom</string>
+	<string name="pasaporte_modificar_mi_contrasena">Modifier môt de passe</string>
+	<string name="pasaporte_nueva_contrasena">Nouveau môt de passe</string>
+	<string name="pasaporte_contrasena_actual">Môt de passe actuel</string>
+	<string name="pasaporte_guardar">Sauvegarder</string>
+	<string name="pasaporte_por_favor_introduce_tu_contrasena_actual">S\'il te plaît, tape ton môt de passe actuel</string>
+	<string name="pasaporte_por_favor_introduce_tu_nueva_contrasena">S\'il te plaît, tape ton nouveau môt de passe</string>
+	<string name="pasaporte_error_durante_la_subida_de_la_imagen">Erreur de charge de l\'image</string>
+	<string name="pasaporte_error_al_actualizar_los_datos_del_usuario">Erreur d\'actualisation des infos utilisateur</string>
+	
+	<!-- GAME INTRO -->
+	<string name="game_intro_cargando_guia_del_juego">Chargement du guide du jeu...</string>
+	<string name="game_intro_error">Erreur</string>
+	<string name="game_intro_error_al_comprobar_sesion">Erreur de connexion</string>
+	<string name="game_intro_error_al_cargar_juego">Erreur de chargement du jeu</string>
+	<string name="game_intro_no_se_puede_reiniciar_la_partida">Réinisialisation de la partie impossible</string>
+	
+	<!-- EXPLORER ONE -->
+	<string name="one_explorer">EXPLORER</string>
+	<string name="one_titulo">Titre</string>
+	<string name="one_descripcion">Description</string>
+	<string name="one_logros_conseguidos">Performances</string>
+	<string name="one_vota_este_juego">Voter ce jeu</string>
+	<string name="one_continuar">Continuer</string>
+	<string name="one_realidad_aumentada">Réalité Augmentée</string>
+	<string name="one_no_hay_geocaches_que_mostrar">Pas de caches à montrer</string>
+	<string name="one_error_en_la_carga_de_geocaches">Erreur de charge des caches</string>
+	<string name="one_juega_otra_vez">Rejouer</string>
+	<string name="one_prueba_otro_lugar">Essayer un autre territoire</string>
+	<string name="one_has_agotado_los_intentos_para_encontrar_el_tesoro">Essais épuisés</string>
+	<string name="one_error">Erreur</string>
+	<string name="one_error_general">Erreur générale</string>
+	<string name="one_no_se_puede_capturar_el_geocache">La cache ne peut pas être capturée</string>
+	<string name="one_esperando_gps">En attente du GPS...</string>
+	<string name="one_no_hay_conexion">Pas de connexion</string>
+	<string name="one_no_dispones_de_conexion_a_internet_intentalo_de_nuevo">Pas de connexion Internet. Essayer plus tard</string>
+	<string name="one_bravo_lo_has_encontrado_abre_el_cofre">Bravo, Tu l\'as trouvé, Ouvre le coffre</string>
+	<string name="one_aun_estas_lejos_este_cofre_esta_a">Tu es encore loin, ce coffre est à</string>
+	<string name="one_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir">de ta position. Approche-toi pour l\'ouvrir</string>
+	<string name="one_no_te_queda_mucho_solo_estas_a">Pas très loin, Tu est à</string>
+	<string name="one_sigue_buscando">Poursuivre la recherche</string>
+	<string name="one_el_geocache_no_tiene_coordenadas">La cache n\'a pas de coordonnées GPS</string>
+	<string name="one_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Ouvre le coffre et decouvre le trésor</string>
+	<string name="one_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">Le GPS semble éteint. Veux-tu l\'allumer?</string>
+	<string name="one_si">Oui</string>
+	<string name="one_no">Non</string>
+	<string name="one_tip_title_modo_demo">MODE DEMO</string>
+	<string name="one_tip_message_estas_jugando_en_modo_demo">¡Bienvenue au jeu de Explorer One! Tu joues en mode DEMO. Pour pouvoir profiter de toutes les options des jeux et remplir ton passeport tu dois t\'identifier</string>
+	<string name="one_tip_title_objetivo">OBJETIVO</string>
+	<string name="one_tip_message_tu_objetivo_es_encontrar_el_tesoro_escondido_por_gully">Le but est de trouver le trésor caché dans un des coffre que se trouvent sur la carte</string>
+	<string name="one_tip_title_bienvenido_al_juego">¡BIENVENIDO AL JUEGO!</string>
+	<string name="one_tip_message_bienvenido_al_juego_del_geocaching_one"> Bienvenue au jeu de Explorer One! Le but est de trouver le trésor caché dans un de coffres qui se trouvent sur la carte</string>
+	<string name="one_tip_title_juego_outdoor">JUEGO OUTDOOR</string>
+	<string name="one_tip_message_este_juego_es_outdoor"> Ce jeu est de type \'Outdoor\'. Pour capturer les caches il faut se trouver á coté du coffre</string>
+	<string name="one_tip_title_juego_indoor">JUEGO INDOOR</string>
+	<string name="one_tip_message_este_juego_es_indoor"> Ce jeu est \'Indoor\'. on peut jouer sans forcement se trouver sur le territoire</string>
+	<string name="one_tip_title_intentos">INTENTOS</string>
+	<string name="one_tip_message_en_la_parte_inferior_veras_los_intentos"> Sur la partie inferieur de l\'écran sont montrés les essais disponibles.</string>
+	<string name="one_tip_title_brujula">BOUSSOLE</string>
+	<string name="one_tip_message_si_te_sientes_perdido_puedes_consultar_la_brujula">utiliser la boussole pour mieux trouver les caches</string>
+	<string name="one_tip_title_seleccionar_un_cofre">SELECTIONER UN COFFRE</string>
+	<string name="one_tip_message_para_abrir_un_cofre_toca_sobre_uno_de_los_iconos_del_mapa">Pour ouvrir un coffre cliquer sur les icones dans la carte</string>
+	<string name="one_tip_title_abrir_un_cofre">OUVRIR UN COFFRE</string>
+	<string name="one_tip_message_cuando_seleccionas_un_cofre_podras_abrirlo_desde_su_bocadillo">Au moment d\ouvrir un coffre une bulle apparaîtra avec le bouton pour l\'ouvrir.</string>
+	<string name="one_tip_message_si_el_boton_de_abrir_cofre_esta_desactivado_no_estas_cerca_del_lugar">Si le bouton \'Ouvrir Coffre\' est desactivé, cela veut dire que tu dois t\'approcher plus !</string>
+	<string name="one_tip_message_la_distancia_a_la_que_te_encuentras_de_un_cofre_aparece_sobre_el_boton_abrir_cofre">On peut consulter la distance au coffre et la poisition sur la carte avec le point bleu.</string>
+	
+	
+	<!-- EXPLORER FULL -->
+	<string name="full_explorer">EXPLORER</string>
+	<string name="full_titulo">Titre</string>
+	<string name="full_descripcion">Description</string>
+	<string name="full_logros_conseguidos">Performances</string>
+	<string name="full_vota_este_juego">Voter ce jeu</string>
+	<string name="full_continuar">Continuer</string>
+	<string name="full_realidad_aumentada">Réalité augmentée</string>
+	<string name="full_no_hay_geocaches_que_mostrar">Pas de caches à montrer</string>
+	<string name="full_error_en_la_carga_de_geocaches">Erreur de charge de caches</string>
+	<string name="full_volver_a_jugar">Rejouer</string>
+	<string name="full_enhorabuena_has_encontrado_todos_los_tesoros">Félicitations!, Tu as trouvé tous les trésors</string>
+	<string name="full_has_encontrado_un_tesoro">Tu as trouvé un trésor!</string>
+	<string name="full_ir_a_otro_lugar">Aller sur un autre endroit</string>
+	<string name="full_debes_seguir_el_orden_para_abrir_los_geocaches_vuelves_a_empezar">Il faut suivre l\'ordre pour ouvrir les coffres.\n Recommencer</string>
+	<string name="full_volver_a_empezar">Recommencer</string>
+	<string name="full_ya_has_abierto_este_geocache_antes">Ce coffre a été déjà ouvert</string>
+	<string name="full_prueba_otro_lugar">Essaye avec un autre endroit</string>
+	<string name="full_dirigete_aqui">Viens ici</string>
+	<string name="full_inicio">Départ</string>
+	<string name="full_final">Arrivée</string>
+	<string name="full_error">Erreur</string>
+	<string name="full_error_general">Erreur générale</string>
+	<string name="full_no_se_puede_capturar_el_geocache">Cache impossible à capturer</string>
+	<string name="full_esperando_gps">En attente du GPS...</string>
+	<string name="full_no_hay_conexion">Pas de connexion</string>
+	<string name="full_no_dispones_de_conexion_a_internet_intentalo_de_nuevo">Pas de connexion Internet. Essayer plus tard</string>
+	<string name="full_bravo_lo_has_encontrado_abre_el_cofre">Bravo, Trouvé, Ouvre le coffre</string>
+	<string name="full_aun_estas_lejos_este_cofre_esta_a">Tu es très loin, Ce coffre est à</string>
+	<string name="full_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir">de ta position. Approche-toi et ouvre le coffre</string>
+	<string name="full_no_te_queda_mucho_solo_estas_a">Tu n\'est pas loin, encore à</string>
+	<string name="full_sigue_buscando">Continue à chercher</string>
+	<string name="full_el_geocache_no_tiene_coordenadas">Ce cache n\à pas de coordonnées</string>
+	<string name="full_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Ouvre le coffre et decouvre le trésor</string>
+	<string name="full_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">Le GPS n\'ai pas allumé. Veux-tu le connecter?</string>
+	<string name="full_si">Oui</string>
+	<string name="full_no">Non</string>
+	<string name="full_tip_title_modo_demo">MODE DEMO</string>
+	<string name="full_tip_message_estas_jugando_en_modo_demo">Bienvenue au jeu du Explorer Full! Tu joues en mode DEMO. Pour pouvoir profiter de toutes les options des jeux et remplir ton passeport tu dois t\'identifier</string>
+	<string name="full_tip_title_objetivo">OBJECTIF</string>
+	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Le but est de trouver tous les trésors que Gully a caché dans les coffres qui sont sur la carte</string>
+	<string name="full_tip_title_bienvenido_al_juego">BIENVENIDUE AU JEU!</string>
+	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">Bienvenue au jeu de Explorer Full! Le but est de trouver tous les trésors que Gully a caché dans les coffres qui sont sur la carte</string>
+	<string name="full_tip_title_juego_outdoor">JEU OUTDOOR</string>
+	<string name="full_tip_message_este_juego_es_outdoor">Ce jeu est \'Outdoor\'. Pour capturer les caches il faut se trouver á coté du coffre</string>
+	<string name="full_tip_title_juego_indoor">JUEGO INDOOR</string>
+	<string name="full_tip_message_este_juego_es_indoor">Este juego es \'Indoor\'. On peut jouer sans forcement se trouver sur le territoire</string>
+	<string name="full_tip_title_intentos">TENTATIVES</string>
+	<string name="full_tip_message_en_la_parte_inferior_veras_los_intentos">Sur la partie inferieur de l\'écran sont montrés les essais disponibles</string>
+	<string name="full_tip_title_brujula">BOUSSOLE</string>
+	<string name="full_tip_message_si_te_sientes_perdido_puedes_consultar_la_brujula">utiliser la boussole pour mieux trouver les caches</string>
+	<string name="full_tip_title_seleccionar_un_cofre">SELECCIONER UN COFFRE</string>
+	<string name="full_tip_message_para_abrir_un_cofre_toca_sobre_uno_de_los_iconos_del_mapa">Pour ouvrir un coffre cliquer sur les icones dans la carte</string>
+	<string name="full_tip_title_abrir_un_cofre">OUVRIR UN COFFRE</string>
+	<string name="full_tip_message_cuando_seleccionas_un_cofre_podras_abrirlo_desde_su_bocadillo">Au moment d\ouvrir un coffre une bulle apparaîtra avec le bouton pour l\'ouvrir.</string>
+	<string name="full_tip_message_si_el_boton_de_abrir_cofre_esta_desactivado_no_estas_cerca_del_lugar">Si le bouton \'Ouvrir Coffre\' est desactivé, cela veut dire que tu dois t\'approcher plus !</string>
+	<string name="full_tip_message_la_distancia_a_la_que_te_encuentras_de_un_cofre_aparece_sobre_el_boton_abrir_cofre">On peut consulter la distance au coffre et la poisition sur la carte avec le point bleu</string>
+	
+	
+	<!-- EXPLORER BATTLE -->
+	<string name="battle_explorer">EXPLORER</string>
+	<string name="battle_abandonar">Abandonner</string>
+	<string name="battle_titulo">Titre</string>
+	<string name="battle_descripcion">Description</string>
+	<string name="battle_logros_conseguidos">Performances</string>
+	<string name="battle_vota_este_juego">Voter ce jeu</string>
+	<string name="battle_continuar">Continuer</string>
+	<string name="battle_finalizar">Finaliser</string>
+	<string name="battle_realidad_aumentada">Réalité augmentée</string>
+	<string name="battle_no_hay_geocaches_que_mostrar">Pas de caches à montrer</string>
+	<string name="battle_error_en_la_carga_de_geocaches">Erreur dans la charge de caches</string>
+	<string name="battle_juega_otra_vez">Rejouer</string>
+	<string name="battle_prueba_otro_lugar">Essaye un autre endroît</string>
+	<string name="battle_has_agotado_los_intentos_para_encontrar_el_tesoro">Il ne reste plus d\'essais</string>
+	<string name="battle_error">Erreur</string>
+	<string name="battle_error_general">Erreur générale</string>
+	<string name="battle_error_al_cargar_el_juego">Erreur dans le chargement du jeu</string>
+	<string name="battle_no_se_puede_capturar_el_geocache_puede_que_la_partida_haya_finalizado">La cache ne peut pas être capturer. Peut-être la partie est finie</string>
+	<string name="battle_no_se_puede_capturar_el_geocache">La cache ne peut pas être capturer</string>
+	<string name="battle_esperando_gps">En attente du GPS...</string>
+	<string name="battle_no_hay_conexion">Pas de connexion</string>
+	<string name="battle_no_dispones_de_conexion_a_internet_intentalo_de_nuevo">Pas de connexion Internet. Essaye plus tard</string>
+	<string name="battle_bravo_lo_has_encontrado_abre_el_cofre">Bravo, tu l\'as trouvé, Ouvre le coffre</string>
+	<string name="battle_aun_estas_lejos_este_cofre_esta_a">Tu es très loin, ce coffre est à</string>
+	<string name="battle_de_donde_te_encuentras_aproximate_a_este_lugar_y_lo_podras_abrir">de ta position. Approche-toi plus pour l\'ouvrir</string>
+	<string name="battle_no_te_queda_mucho_solo_estas_a">Te n\'est pas loin, Tu n\'es qu</string>
+	<string name="battle_sigue_buscando">Continue à chercher</string>
+	<string name="battle_el_geocache_no_tiene_coordenadas">Ce cache n\'a pas de coordonnées</string>
+	<string name="battle_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Ouvrir le cofre pour trouver le trésor</string>
+	<string name="battle_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">Il semble que le GPS n\'est pas allumé. Veux-tu l\'allumer</string>
+	<string name="battle_si">Oui</string>
+	<string name="battle_no">Non</string>
+	
+	<!-- MULTIPLAYER -->
+	<string name="multiplayer_unirse_a_partida">Entrer dans la partie</string>
+	<string name="multiplayer_no_hay_partidas_creadas">:( Pas des parties disponibles</string>
+	<string name="multiplayer_crear_nueva_partida">Creer une nouvelle partie</string>
+	<string name="multiplayer_actualizar">Actualiser</string>
+	<string name="multiplayer_partida_sin_nombre">Partie sans nom</string>
+	<string name="multiplayer_juego">Jeu</string>
+	<string name="multiplayer_sin_juego">Sans jeu</string>
+	<string name="multiplayer_jugadores">joueurs</string>
+	<string name="multiplayer_creada_por">Crée par</string>
+	<string name="multiplayer_sin_creador">Sans createur</string>
+	<string name="multiplayer_estado_en_curso_aun_queda_hueco">Etat: en cours (tu peux encore participer)</string>
+	<string name="multiplayer_estado_en_curso">Etat: en cours</string>
+	<string name="multiplayer_estado_finalizada">Etat: terminée</string>
+	<string name="multiplayer_estado_lista_para_jugar">Etat: prete pour jouer</string>
+	<string name="multiplayer_estado_esperando_jugadores">Etat: en attente de joueurs</string>
+	<string name="multiplayer_nueva_partida">NOUVELLE PARTIE</string>
+	<string name="multiplayer_nombre_de_la_partida">Nom de la partie</string>
+	<string name="multiplayer_juego_seleccionado">Jeu selectioné</string>
+	<string name="multiplayer_numero_minimo_de_jugadores_para_comenzar">Nombre maximum de joueurs</string>
+	<string name="multiplayer_numero_maximo_de_jugadores_admitidos">Nombre maximum de joueurs admis</string>
+	<string name="multiplayer_entrar_en_la_partida">Entrer dans la partie</string>
+	<string name="multiplayer_el_numero_minimo_de_jugadores_debe_ser_de_al_menos_2">Le nombre minimum de joueurs est de 2</string>
+	<string name="multiplayer_error">Erreur</string>
+	<string name="multiplayer_error_al_crear_partida">Erreur au momment de creer la partie</string>
+	<string name="multiplayer_titulo_de_la_partida">Titre de la partie</string>
+	<string name="multiplayer_por_favor_introdice_titulo_para_la_partida">Il faut donner un nom à la partie</string>
+	<string name="multiplayer_unirse_a_partida">S\'unir à la partie</string>
+	<string name="multiplayer_jugadores_en_esta_partida">Nombre de joueurs dans cette partie:</string>
+	<string name="multiplayer_abandonar_la_partida">Abandonner la partie?</string>
+	<string name="multiplayer_seguro_que_deseas_abandonar_la_partida">Sur d\'abandonner la partie?</string>
+	<string name="multiplayer_si">Oui</string>
+	<string name="multiplayer_no">Non</string>
+	<string name="multiplayer_abandonaste_la_partida">Tu as abandonné la partie</string>
+	<string name="multiplayer_error_al_comprobar_sesion">Erreur de session</string>
+	<string name="multiplayer_error_al_obtener_datos_de_la_partida">Erreur de données de la partie</string>
+	<string name="multiplayer_unirse_a_partida">S\'unir à la partie?</string>
+	<string name="multiplayer_quieres_unirte_a_esta_partida">Veux-tu entrer à la partie?</string>
+	<string name="multiplayer_unirme">Entrer</string>
+	<string name="multiplayer_cancelar">Annuler</string>
+	<string name="multiplayer_datos_erroneos_en_la_partida">Données erronées de la partie</string>
+	<string name="multiplayer_yo">(Moi)</string>
+	<string name="multiplayer_jugador_sin_nombre">Joueur sans nom</string>
+	<string name="multiplayer_abandonar">Abandonner</string>
+	
+	
+	
+</resources>

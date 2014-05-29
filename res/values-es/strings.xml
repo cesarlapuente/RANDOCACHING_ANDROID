@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
+    <!-- Lo único que hay que cambiar es el texto que va entre las etiquetas respetando mayúsculas y minúsculas 
+    y anteponiendo la barra invertida si utilizamos el símbolo apóstrofe -->
 
 	<!-- APP MAIN -->
     <string name="app_name">Travel in Game</string>

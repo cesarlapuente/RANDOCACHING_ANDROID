@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Lo único que hay que cambiar es el texto que va entre las etiquetas respetando mayúsculas y minúsculas 
+    y anteponiendo la barra invertida si utilizamos el símbolo apóstrofe -->
+    
+    
 	<!-- APP MAIN -->
     <string name="app_name">Travel in Game</string>
     <string name="app_id">398592920275073</string>
@@ -44,7 +48,7 @@ Press play and enjoy the ride .</string>
 	<string name="premios_no_hay_elementos">:( No items</string>
 	<string name="premios_detalle_premio">AWARD DETAIL</string>
 	<string name="premios_sin_titulo">NO TITLE</string>
-	<string name="premios_sin_descripcion_disponible">No descrition is available</string>
+	<string name="premios_sin_descripcion_disponible">No description is available</string>
 	<string name="premios_error_al_cargar">Error loading</string>
 	<string name="premios_no_se_puede_cargar_el_premio_en_estos_momentos">We can\'t load the award at this moment</string>
 	
@@ -55,14 +59,14 @@ Press play and enjoy the ride .</string>
 	<string name="historias_no_hay_elementos">:( No items</string>
 	<string name="historias_detalle_historia">STORY DETAIL</string>
 	<string name="historias_sin_titulo">NO TITLE</string>
-	<string name="historias_sin_descripcion_disponible">No descrition is available</string>
+	<string name="historias_sin_descripcion_disponible">No description is available</string>
 	<string name="historias_error_al_cargar">Error loading</string>
 	<string name="historias_no_se_puede_cargar_la_historia_en_estos_momentos">We can\'t load the story at this moment</string>
 	
 	<!-- DESTINATIONS -->
 	<string name="destinos_detalle_destino">DESTINATION DETAIL</string>
 	<string name="destinos_sin_titulo">NO TITLE</string>
-	<string name="destinos_sin_descripcion_disponible">No descrition is available</string>
+	<string name="destinos_sin_descripcion_disponible">No description is available</string>
 	<string name="destinos_error_al_cargar">Error loading</string>
 	<string name="destinos_no_se_puede_cargar_el_destino_en_estos_momentos">We can\'t load the destination at this moment</string>
 	
