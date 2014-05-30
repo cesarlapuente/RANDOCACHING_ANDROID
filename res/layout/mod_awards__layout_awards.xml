@@ -1,5 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.alborgis.ting"
+    xmlns:app="http://schemas.android.com/apk/res/com.alborgis.randocaching"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:animateLayoutChanges="true"
@@ -102,7 +102,7 @@
             
         </RelativeLayout>
 
-        <com.alborgis.ting.mainapp.common.custom_controls.endless_horizontal_tile_gridview.EndlessHorizontalTileGridView
+        <com.alborgis.randocaching.mainapp.common.custom_controls.endless_horizontal_tile_gridview.EndlessHorizontalTileGridView
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/gridView"

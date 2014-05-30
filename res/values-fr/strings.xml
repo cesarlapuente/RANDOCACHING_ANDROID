@@ -5,7 +5,7 @@
     y anteponiendo la barra invertida si utilizamos el símbolo apóstrofe -->
 
 	<!-- APP MAIN -->
-    <string name="app_name">Travel in Game</string>
+    <string name="app_name">Randocaching</string>
     <string name="app_id">398592920275073</string>
     
     <!-- COMMON -->
@@ -20,15 +20,15 @@
     
     <!-- ABOUT -->
     <string name="about_informacion">INFORMATION</string>
-    <string name="about_text">Travel in Game es un juego sobre viajes y para viajeros curiosos y audaces o simplemente una manera de entretenimiento entorno a los destinos viajeros. \n\n
-En Travel in Game el destino se convierte en un tablero de juegos. Se puede jugar a juegos geolocalizados, que se juegan directamente en el destino, visitando los lugares que aparecen en el juego. Pero se puede jugar también desde cualquier lado, antes o después del viaje, para reconocer lugares que ya hemos visitado o descubrir los lugares que nos gustaría visitar.\n\n
-Travel in Game se ha realizado gracias a la financiación del Ministerio de Industria, Energía y Turismo y la participación directa del Cluster de Turismo de Madrid Network.\n
+    <string name="about_text">Randocaching es un juego sobre viajes y para viajeros curiosos y audaces o simplemente una manera de entretenimiento entorno a los destinos viajeros. \n\n
+En Randocaching el destino se convierte en un tablero de juegos. Se puede jugar a juegos geolocalizados, que se juegan directamente en el destino, visitando los lugares que aparecen en el juego. Pero se puede jugar también desde cualquier lado, antes o después del viaje, para reconocer lugares que ya hemos visitado o descubrir los lugares que nos gustaría visitar.\n\n
+Randocaching se ha realizado gracias a la financiación del Ministerio de Industria, Energía y Turismo y la participación directa del Cluster de Turismo de Madrid Network.\n
 Patrocinan este juego viajero empresas lideres del sector turístico: Rumbo, Restaurante Botín y Anaya Touring.\n\n
 La selección de destinos y lugares de interés turístico, así como los contenidos se inspiran en la colección de guías de Anaya Touring \'Guías compact. Un corto viaje a...\' Y de la colección \'Volver a...\'\n\n
 Pulsa el play y disfruta del viaje.</string>
 
     <!-- HOME -->
-    <string name="home_gully_frase_bocadillo_1">¡Bonjour! Je m\'appelle Gully. Bienvenue au</string>
+    <string name="home_gully_frase_bocadillo_1">¡Bonjour! Je m\'appelle Randy. Bienvenue au</string>
     <string name="home_gully_frase_bocadillo_2">Le jeu des randonneurs. Un jeu social de découverte des territoires sur des itinéraires thématiques</string>
 	<string name="home_ciudad">TERRITOIRE...</string>
 	<string name="home_juego">JEU...</string>
@@ -70,10 +70,10 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="destinos_no_se_puede_cargar_el_destino_en_estos_momentos">Le territoire ne peut pas être montrer maintenant</string>
 	
 	<!-- LOGIN -->
-	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Rejoignez la communauté Travel in Game</string>
+	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Rejoignez la communauté Randocaching</string>
 	<string name="login_si_solo_quieres_probar">Si tu veux juste essayer</string>
 	<string name="login_usa_tu_cuenta_de_facebook">utilise ton compte Facebook</string>
-	<string name="login_usa_tu_cuenta_de_travel_in_game">Utilise ton compte Travel in Game</string>
+	<string name="login_usa_tu_cuenta_de_travel_in_game">Utilise ton compte Randocaching</string>
 	<string name="login_correo_electronico">e-mail</string>
 	<string name="login_contrasena">môt de passe</string>
 	<string name="login_entrar">Acceder!</string>
@@ -90,7 +90,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="login_error_al_hacer_login">Erreur d\'identifiant</string>
 	
 	<!-- REGISTER -->
-	<string name="register_unete_a_la_comunidad_travel_in_game">Rejoignez la communauté Travel in Game</string>
+	<string name="register_unete_a_la_comunidad_travel_in_game">Rejoignez la communauté Randocaching</string>
 	<string name="register_correo_electronico">e-mail</string>
 	<string name="register_contrasena">Môt de passe</string>
 	<string name="register_repite_contrasena">Reintroduire le môt de passe</string>
@@ -99,7 +99,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="register_unete">Rejoindre!</string>
 	<string name="register_cerrar">Fermer</string>
 	<string name="register_crear_cuenta">Créer son compte</string>
-	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">Souhaitez créer un compte Travel in Game?</string>
+	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">Souhaitez créer un compte Randocaching?</string>
 	<string name="register_cancelar">Annuler</string>
 	<string name="register_por_favor_introduce_tu_correo_electronico">Introduire e-mail</string>
 	<string name="register_el_correo_electronico_especificado_no_es_valido">e-mail pas valable</string>
@@ -147,7 +147,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="game_intro_no_se_puede_reiniciar_la_partida">Réinisialisation de la partie impossible</string>
 	
 	<!-- EXPLORER ONE -->
-	<string name="one_explorer">EXPLORER</string>
+	<string name="one_explorer">RANDOCACHING</string>
 	<string name="one_titulo">Titre</string>
 	<string name="one_descripcion">Description</string>
 	<string name="one_logros_conseguidos">Performances</string>
@@ -198,7 +198,7 @@ Pulsa el play y disfruta del viaje.</string>
 	
 	
 	<!-- EXPLORER FULL -->
-	<string name="full_explorer">EXPLORER</string>
+	<string name="full_explorer">RANDOCACHING</string>
 	<string name="full_titulo">Titre</string>
 	<string name="full_descripcion">Description</string>
 	<string name="full_logros_conseguidos">Performances</string>
@@ -237,9 +237,9 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="full_tip_title_modo_demo">MODE DEMO</string>
 	<string name="full_tip_message_estas_jugando_en_modo_demo">Bienvenue au jeu du Explorer Full! Tu joues en mode DEMO. Pour pouvoir profiter de toutes les options des jeux et remplir ton passeport tu dois t\'identifier</string>
 	<string name="full_tip_title_objetivo">OBJECTIF</string>
-	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Le but est de trouver tous les trésors que Gully a caché dans les coffres qui sont sur la carte</string>
+	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Le but est de trouver tous les trésors que Randy a caché dans les coffres qui sont sur la carte</string>
 	<string name="full_tip_title_bienvenido_al_juego">BIENVENIDUE AU JEU!</string>
-	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">Bienvenue au jeu de Explorer Full! Le but est de trouver tous les trésors que Gully a caché dans les coffres qui sont sur la carte</string>
+	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">Bienvenue au jeu de Explorer Full! Le but est de trouver tous les trésors que Randy a caché dans les coffres qui sont sur la carte</string>
 	<string name="full_tip_title_juego_outdoor">JEU OUTDOOR</string>
 	<string name="full_tip_message_este_juego_es_outdoor">Ce jeu est \'Outdoor\'. Pour capturer les caches il faut se trouver á coté du coffre</string>
 	<string name="full_tip_title_juego_indoor">JUEGO INDOOR</string>
@@ -257,7 +257,7 @@ Pulsa el play y disfruta del viaje.</string>
 	
 	
 	<!-- EXPLORER BATTLE -->
-	<string name="battle_explorer">EXPLORER</string>
+	<string name="battle_explorer">RANDOCACHING</string>
 	<string name="battle_abandonar">Abandonner</string>
 	<string name="battle_titulo">Titre</string>
 	<string name="battle_descripcion">Description</string>

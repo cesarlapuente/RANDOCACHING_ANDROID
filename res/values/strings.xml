@@ -6,7 +6,7 @@
     
     
 	<!-- APP MAIN -->
-    <string name="app_name">Travel in Game</string>
+    <string name="app_name">Randocaching</string>
     <string name="app_id">398592920275073</string>
     
     <!-- COMMON -->
@@ -21,15 +21,15 @@
     
     <!-- ABOUT -->
     <string name="about_informacion">INFORMATION</string>
-    <string name="about_text">Travel in Game is a game about travel and curious and adventurous traveler or just a way to entertain travelers destinations around . \n \n
-In Game Travel in the destination becomes a game board . You can play geo games, which are played directly on the target, visiting the places that appear in the game . But you can also play from either side , before or after the trip , to recognize places already visited or discover the places we like to visit. \N \n
-Travel in Game has been made ​​possible by funding from the Ministry of Industry, Energy and Tourism and the direct involvement of Madrid Tourism Cluster Network. \N
+    <string name="about_text">Randocaching is a game about travel and curious and adventurous traveler or just a way to entertain travelers destinations around . \n \n
+In Randocaching the destination becomes a game board . You can play geo games, which are played directly on the target, visiting the places that appear in the game . But you can also play from either side , before or after the trip , to recognize places already visited or discover the places we like to visit. \N \n
+Randocaching has been made ​​possible by funding from the Ministry of Industry, Energy and Tourism and the direct involvement of Madrid Tourism Cluster Network. \N
 Sponsor this traveling game leading tourism businesses : Flights, Restaurante Botin and Anaya Touring \n\n .
 The selection of destinations and tourist attractions , as well as the contents are inspired by the collection of guides Anaya Touring \' Guide compact . A short drive to ... \'Y Collection \' Back to ... \'\n \n
 Press play and enjoy the ride .</string>
 
     <!-- HOME -->
-    <string name="home_gully_frase_bocadillo_1">Hi! I\'m Gully. Welcome to</string>
+    <string name="home_gully_frase_bocadillo_1">Hi! I\'m Randy. Welcome to</string>
     <string name="home_gully_frase_bocadillo_2">The game of audacious travelers. Explore the destinations of social geo-gaming</string>
 	<string name="home_ciudad">CITY...</string>
 	<string name="home_juego">GAME...</string>
@@ -71,10 +71,10 @@ Press play and enjoy the ride .</string>
 	<string name="destinos_no_se_puede_cargar_el_destino_en_estos_momentos">We can\'t load the destination at this moment</string>
 	
 	<!-- LOGIN -->
-	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Join the Travel in Game audacious players community</string>
+	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Join the Randocaching audacious players community</string>
 	<string name="login_si_solo_quieres_probar">If you only want to try it</string>
 	<string name="login_usa_tu_cuenta_de_facebook">Use your Facebook account</string>
-	<string name="login_usa_tu_cuenta_de_travel_in_game">Use your Travel in Game account</string>
+	<string name="login_usa_tu_cuenta_de_travel_in_game">Use your Randocaching account</string>
 	<string name="login_correo_electronico">Email</string>
 	<string name="login_contrasena">Password</string>
 	<string name="login_entrar">Enter!</string>
@@ -91,7 +91,7 @@ Press play and enjoy the ride .</string>
 	<string name="login_error_al_hacer_login">Error on login</string>
 	
 	<!-- REGISTER -->
-	<string name="register_unete_a_la_comunidad_travel_in_game">Join the Travel in Game community</string>
+	<string name="register_unete_a_la_comunidad_travel_in_game">Join the Randocaching community</string>
 	<string name="register_correo_electronico">Email</string>
 	<string name="register_contrasena">Password</string>
 	<string name="register_repite_contrasena">Repeat password</string>
@@ -100,7 +100,7 @@ Press play and enjoy the ride .</string>
 	<string name="register_unete">Join!</string>
 	<string name="register_cerrar">Close</string>
 	<string name="register_crear_cuenta">Create account</string>
-	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">Do you want to create your account on Travel in Game?</string>
+	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">Do you want to create your account on Randocaching?</string>
 	<string name="register_cancelar">Cancel</string>
 	<string name="register_por_favor_introduce_tu_correo_electronico">Please, enter your email</string>
 	<string name="register_el_correo_electronico_especificado_no_es_valido">The entered email is not valid</string>
@@ -123,7 +123,7 @@ Press play and enjoy the ride .</string>
 	<string name="pasaporte_ver">Show</string>
 	<string name="pasaporte_desconectar">Disconnect</string>
 	<string name="pasaporte_desconexion">Disconnection</string>
-	<string name="pasaporte_deseas_desconectarte_de_travel_in_game">Do you want to disconnect from Travel in Game?</string>
+	<string name="pasaporte_deseas_desconectarte_de_travel_in_game">Do you want to disconnect from Randocaching?</string>
 	<string name="pasaporte_cancelar">Cancel</string>
 	<string name="pasaporte_error">Error</string>
 	<string name="pasaporte_no_se_puede_desconectar_la_sesion_actual">We can\'t disconnect your current session</string>
@@ -148,7 +148,7 @@ Press play and enjoy the ride .</string>
 	<string name="game_intro_no_se_puede_reiniciar_la_partida">We can\'t reset the game now</string>
 	
 	<!-- EXPLORER ONE -->
-	<string name="one_explorer">EXPLORER</string>
+	<string name="one_explorer">RANDOCACHING</string>
 	<string name="one_titulo">Title</string>
 	<string name="one_descripcion">Description</string>
 	<string name="one_logros_conseguidos">Earned achievements</string>
@@ -172,16 +172,16 @@ Press play and enjoy the ride .</string>
 	<string name="one_no_te_queda_mucho_solo_estas_a">You are near, only at</string>
 	<string name="one_sigue_buscando">still looking</string>
 	<string name="one_el_geocache_no_tiene_coordenadas">The geocache has no coordinates</string>
-	<string name="one_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Gully\'s treasure is inside</string>
+	<string name="one_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Randy\'s treasure is inside</string>
 	<string name="one_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">It looks like your GPS is off. Do you want to turn it on?</string>
 	<string name="one_si">Yes</string>
 	<string name="one_no">No</string>
 	<string name="one_tip_title_modo_demo">DEMO MODE</string>
-	<string name="one_tip_message_estas_jugando_en_modo_demo">Welcome to the Geocaching One game! You are current playing on demo mode. Remember that you can play with your Travel in Game or Facebook account in order to earn achievements, awards and save your progress</string>
+	<string name="one_tip_message_estas_jugando_en_modo_demo">Welcome to the Geocaching One game! You are current playing on demo mode. Remember that you can play with your Randocaching or Facebook account in order to earn achievements, awards and save your progress</string>
 	<string name="one_tip_title_objetivo">TARGET</string>
-	<string name="one_tip_message_tu_objetivo_es_encontrar_el_tesoro_escondido_por_gully">Your target is to find the treasure that Gully has hidden inside one of the chests you cant see all over the map</string>
+	<string name="one_tip_message_tu_objetivo_es_encontrar_el_tesoro_escondido_por_gully">Your target is to find the treasure that Randy has hidden inside one of the chests you cant see all over the map</string>
 	<string name="one_tip_title_bienvenido_al_juego">¡WELCOME TO GAME!</string>
-	<string name="one_tip_message_bienvenido_al_juego_del_geocaching_one">Welcome to the Geocaching One game! Your target is to find the treasure that Gully has hidden inside one of the chests you cant see all over the map</string>
+	<string name="one_tip_message_bienvenido_al_juego_del_geocaching_one">Welcome to the Geocaching One game! Your target is to find the treasure that Randy has hidden inside one of the chests you cant see all over the map</string>
 	<string name="one_tip_title_juego_outdoor">OUTDOOR GAME</string>
 	<string name="one_tip_message_este_juego_es_outdoor">This game is \'Outdoor\'. It means that you will need to be near of the chests in order to open them</string>
 	<string name="one_tip_title_juego_indoor">INDOOR GAME</string>
@@ -199,7 +199,7 @@ Press play and enjoy the ride .</string>
 	
 	
 	<!-- EXPLORER FULL -->
-	<string name="full_explorer">EXPLORER</string>
+	<string name="full_explorer">RANDOCACHING</string>
 	<string name="full_titulo">Title</string>
 	<string name="full_descripcion">Description</string>
 	<string name="full_logros_conseguidos">Earned achievements</string>
@@ -231,16 +231,16 @@ Press play and enjoy the ride .</string>
 	<string name="full_no_te_queda_mucho_solo_estas_a">You are near, only at</string>
 	<string name="full_sigue_buscando">still looking</string>
 	<string name="full_el_geocache_no_tiene_coordenadas">The geocache has no coordinates</string>
-	<string name="full_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Gully\'s treasure is inside</string>
+	<string name="full_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Randy\'s treasure is inside</string>
 	<string name="full_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">It looks like your GPS is off. Do you want to turn it on?</string>
 	<string name="full_si">Yes</string>
 	<string name="full_no">No</string>
 	<string name="full_tip_title_modo_demo">DEMO MODE</string>
-	<string name="full_tip_message_estas_jugando_en_modo_demo">Welcome to the Geocaching Full game! You are current playing on demo mode. Remember that you can play with your Travel in Game or Facebook account in order to earn achievements, awards and save your progress</string>
+	<string name="full_tip_message_estas_jugando_en_modo_demo">Welcome to the Geocaching Full game! You are current playing on demo mode. Remember that you can play with your Randocaching or Facebook account in order to earn achievements, awards and save your progress</string>
 	<string name="full_tip_title_objetivo">TARGET</string>
-	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Your target is to found all the treasures that Gully has hidden all around the map</string>
+	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Your target is to found all the treasures that Randy has hidden all around the map</string>
 	<string name="full_tip_title_bienvenido_al_juego">¡WELCOME TO GAME!</string>
-	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">Welcome to the Geocaching Full game! Your target is to found all the treasures that Gully has hidden all around the map</string>
+	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">Welcome to the Geocaching Full game! Your target is to found all the treasures that Randy has hidden all around the map</string>
 	<string name="full_tip_title_juego_outdoor">OUTDOOR GAME</string>
 	<string name="full_tip_message_este_juego_es_outdoor">This game is \'Outdoor\'. It means that you will need to be near of the chests in order to open them</string>
 	<string name="full_tip_title_juego_indoor">INDOOR GAME</string>
@@ -258,7 +258,7 @@ Press play and enjoy the ride .</string>
 	
 	
 	<!-- EXPLORER BATTLE -->
-	<string name="battle_explorer">EXPLORER</string>
+	<string name="battle_explorer">RANDOCACHING</string>
 	<string name="battle_abandonar">Leave</string>
 	<string name="battle_titulo">Title</string>
 	<string name="battle_descripcion">Description</string>
@@ -286,7 +286,7 @@ Press play and enjoy the ride .</string>
 	<string name="battle_no_te_queda_mucho_solo_estas_a">You are near, only at</string>
 	<string name="battle_sigue_buscando">still looking</string>
 	<string name="battle_el_geocache_no_tiene_coordenadas">The geocache has no coordinates</string>
-	<string name="battle_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Gully\'s treasure is inside</string>
+	<string name="battle_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Open the chest and if Randy\'s treasure is inside</string>
 	<string name="battle_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">It looks like your GPS is off. Do you want to turn it on?</string>
 	<string name="battle_si">Yes</string>
 	<string name="battle_no">No</string>

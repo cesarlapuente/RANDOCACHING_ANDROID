@@ -5,7 +5,7 @@
     y anteponiendo la barra invertida si utilizamos el símbolo apóstrofe -->
 
 	<!-- APP MAIN -->
-    <string name="app_name">Travel in Game</string>
+    <string name="app_name">Randocaching</string>
     <string name="app_id">398592920275073</string>
     
     <!-- COMMON -->
@@ -20,15 +20,15 @@
     
     <!-- ABOUT -->
     <string name="about_informacion">INFORMACIÓN</string>
-    <string name="about_text">Travel in Game es un juego sobre viajes y para viajeros curiosos y audaces o simplemente una manera de entretenimiento entorno a los destinos viajeros. \n\n
-En Travel in Game el destino se convierte en un tablero de juegos. Se puede jugar a juegos geolocalizados, que se juegan directamente en el destino, visitando los lugares que aparecen en el juego. Pero se puede jugar también desde cualquier lado, antes o después del viaje, para reconocer lugares que ya hemos visitado o descubrir los lugares que nos gustaría visitar.\n\n
-Travel in Game se ha realizado gracias a la financiación del Ministerio de Industria, Energía y Turismo y la participación directa del Cluster de Turismo de Madrid Network.\n
+    <string name="about_text">Randocaching es un juego sobre viajes y para viajeros curiosos y audaces o simplemente una manera de entretenimiento entorno a los destinos viajeros. \n\n
+En Randocaching el destino se convierte en un tablero de juegos. Se puede jugar a juegos geolocalizados, que se juegan directamente en el destino, visitando los lugares que aparecen en el juego. Pero se puede jugar también desde cualquier lado, antes o después del viaje, para reconocer lugares que ya hemos visitado o descubrir los lugares que nos gustaría visitar.\n\n
+Randocaching se ha realizado gracias a la financiación del Ministerio de Industria, Energía y Turismo y la participación directa del Cluster de Turismo de Madrid Network.\n
 Patrocinan este juego viajero empresas lideres del sector turístico: Rumbo, Restaurante Botín y Anaya Touring.\n\n
 La selección de destinos y lugares de interés turístico, así como los contenidos se inspiran en la colección de guías de Anaya Touring \'Guías compact. Un corto viaje a...\' Y de la colección \'Volver a...\'\n\n
 Pulsa el play y disfruta del viaje.</string>
 
     <!-- HOME -->
-    <string name="home_gully_frase_bocadillo_1">¡Hola! Soy Gully. Bienvenido a</string>
+    <string name="home_gully_frase_bocadillo_1">¡Hola! Soy Randy. Bienvenido a</string>
     <string name="home_gully_frase_bocadillo_2">El juego de los viajeros audaces. Explora los destinos del social geo-gaming</string>
 	<string name="home_ciudad">CIUDAD...</string>
 	<string name="home_juego">JUEGO...</string>
@@ -70,10 +70,10 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="destinos_no_se_puede_cargar_el_destino_en_estos_momentos">No se puede cargar el destino en estos momentos</string>
 	
 	<!-- LOGIN -->
-	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Únete a la comunidad de jugadores audaces Travel in Game</string>
+	<string name="login_unete_a_la_comunidad_de_jugadores_audaces_travel_in_game">Únete a la comunidad de jugadores audaces Randocaching</string>
 	<string name="login_si_solo_quieres_probar">Si sólo quieres probar</string>
 	<string name="login_usa_tu_cuenta_de_facebook">Usa tu cuenta de Facebook</string>
-	<string name="login_usa_tu_cuenta_de_travel_in_game">Usa tu cuenta de Travel in Game</string>
+	<string name="login_usa_tu_cuenta_de_travel_in_game">Usa tu cuenta de Randocaching</string>
 	<string name="login_correo_electronico">Correo electrónico</string>
 	<string name="login_contrasena">Contraseña</string>
 	<string name="login_entrar">Entrar!</string>
@@ -90,7 +90,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="login_error_al_hacer_login">Error al hacer login</string>
 	
 	<!-- REGISTER -->
-	<string name="register_unete_a_la_comunidad_travel_in_game">Únete a la comunidad Travel in Game</string>
+	<string name="register_unete_a_la_comunidad_travel_in_game">Únete a la comunidad Randocaching</string>
 	<string name="register_correo_electronico">Correo electrónico</string>
 	<string name="register_contrasena">Contraseña</string>
 	<string name="register_repite_contrasena">Repite contraseña</string>
@@ -99,7 +99,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="register_unete">Únete!</string>
 	<string name="register_cerrar">Cerrar</string>
 	<string name="register_crear_cuenta">Crear cuenta</string>
-	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">¿Deseas crear tu cuenta en Travel in Game?</string>
+	<string name="register_deseas_crear_tu_cuenta_en_travel_in_game">¿Deseas crear tu cuenta en Randocaching?</string>
 	<string name="register_cancelar">Cancelar</string>
 	<string name="register_por_favor_introduce_tu_correo_electronico">Por favor, introduce tu correo electrónico</string>
 	<string name="register_el_correo_electronico_especificado_no_es_valido">El correo electrónico especificado no es válido</string>
@@ -122,7 +122,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="pasaporte_ver">Ver</string>
 	<string name="pasaporte_desconectar">Desconectar</string>
 	<string name="pasaporte_desconexion">Desconexión</string>
-	<string name="pasaporte_deseas_desconectarte_de_travel_in_game">¿Deseas desconectarte de Travel in Game?</string>
+	<string name="pasaporte_deseas_desconectarte_de_travel_in_game">¿Deseas desconectarte de Randocaching?</string>
 	<string name="pasaporte_cancelar">Cancelar</string>
 	<string name="pasaporte_error">Error</string>
 	<string name="pasaporte_no_se_puede_desconectar_la_sesion_actual">No se puede desconectar la sesión actual</string>
@@ -147,7 +147,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="game_intro_no_se_puede_reiniciar_la_partida">No se puede reiniciar la partida</string>
 	
 	<!-- EXPLORER ONE -->
-	<string name="one_explorer">EXPLORER</string>
+	<string name="one_explorer">RANDOCACHING</string>
 	<string name="one_titulo">Título</string>
 	<string name="one_descripcion">Descripción</string>
 	<string name="one_logros_conseguidos">Logros conseguidos</string>
@@ -171,16 +171,16 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="one_no_te_queda_mucho_solo_estas_a">No te queda mucho, sólo estás a</string>
 	<string name="one_sigue_buscando">sigue buscando</string>
 	<string name="one_el_geocache_no_tiene_coordenadas">El geocaché no tiene coordenadas</string>
-	<string name="one_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Abre el cofre y descubre si esconde el tesoro de Gully</string>
+	<string name="one_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Abre el cofre y descubre si esconde el tesoro de Randy</string>
 	<string name="one_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">Parece que no tienes encendido el GPS. ¿Quieres habilitarlo?</string>
 	<string name="one_si">Si</string>
 	<string name="one_no">No</string>
 	<string name="one_tip_title_modo_demo">MODO DEMO</string>
-	<string name="one_tip_message_estas_jugando_en_modo_demo">¡Bienvenido al juego del Geocaching One! Estás jugando en modo DEMO. Recuerda que puedes jugar con tu cuenta de Travel in Games o de Facebook para poder obtener logros, ganar premios y guardar la partida</string>
+	<string name="one_tip_message_estas_jugando_en_modo_demo">¡Bienvenido al juego del Geocaching One! Estás jugando en modo DEMO. Recuerda que puedes jugar con tu cuenta de Randocachings o de Facebook para poder obtener logros, ganar premios y guardar la partida</string>
 	<string name="one_tip_title_objetivo">OBJETIVO</string>
-	<string name="one_tip_message_tu_objetivo_es_encontrar_el_tesoro_escondido_por_gully">Tu objetivo es encontrar el tesoro que Gully ha escondido en alguno de los cofres repartidos por la zona que ves sobre el mapa</string>
+	<string name="one_tip_message_tu_objetivo_es_encontrar_el_tesoro_escondido_por_gully">Tu objetivo es encontrar el tesoro que Randy ha escondido en alguno de los cofres repartidos por la zona que ves sobre el mapa</string>
 	<string name="one_tip_title_bienvenido_al_juego">¡BIENVENIDO AL JUEGO!</string>
-	<string name="one_tip_message_bienvenido_al_juego_del_geocaching_one">¡Bienvenido al juego del Geocaching One! Tu objetivo es encontrar el tesoro que Gully ha escondido en alguno de los cofres repartidos por la zona que ves sobre el mapa</string>
+	<string name="one_tip_message_bienvenido_al_juego_del_geocaching_one">¡Bienvenido al juego del Geocaching One! Tu objetivo es encontrar el tesoro que Randy ha escondido en alguno de los cofres repartidos por la zona que ves sobre el mapa</string>
 	<string name="one_tip_title_juego_outdoor">JUEGO OUTDOOR</string>
 	<string name="one_tip_message_este_juego_es_outdoor">Este juego es \'Outdoor\'. Quiere decir que para jugar esta partida necesitarás estar cerca de los cofres para poderlos abrir</string>
 	<string name="one_tip_title_juego_indoor">JUEGO INDOOR</string>
@@ -198,7 +198,7 @@ Pulsa el play y disfruta del viaje.</string>
 	
 	
 	<!-- EXPLORER FULL -->
-	<string name="full_explorer">EXPLORER</string>
+	<string name="full_explorer">RANDOCACHING</string>
 	<string name="full_titulo">Título</string>
 	<string name="full_descripcion">Descripción</string>
 	<string name="full_logros_conseguidos">Logros conseguidos</string>
@@ -230,16 +230,16 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="full_no_te_queda_mucho_solo_estas_a">No te queda mucho, sólo estás a</string>
 	<string name="full_sigue_buscando">sigue buscando</string>
 	<string name="full_el_geocache_no_tiene_coordenadas">El geocaché no tiene coordenadas</string>
-	<string name="full_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Abre el cofre y descubre si esconde el tesoro de Gully</string>
+	<string name="full_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Abre el cofre y descubre si esconde el tesoro de Randy</string>
 	<string name="full_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">Parece que no tienes encendido el GPS. ¿Quieres habilitarlo?</string>
 	<string name="full_si">Si</string>
 	<string name="full_no">No</string>
 	<string name="full_tip_title_modo_demo">MODO DEMO</string>
-	<string name="full_tip_message_estas_jugando_en_modo_demo">¡Bienvenido al juego del Geocaching Full! Estás jugando en modo DEMO. Recuerda que puedes jugar con tu cuenta de Travel in Games o de Facebook para poder obtener logros, ganar premios y guardar la partida</string>
+	<string name="full_tip_message_estas_jugando_en_modo_demo">¡Bienvenido al juego del Geocaching Full! Estás jugando en modo DEMO. Recuerda que puedes jugar con tu cuenta de Randocachings o de Facebook para poder obtener logros, ganar premios y guardar la partida</string>
 	<string name="full_tip_title_objetivo">OBJETIVO</string>
-	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Tu objetivo es encontrar todos los tesoros que Gully ha ocultado en los cofres que ves en el mapa</string>
+	<string name="full_tip_message_tu_objetivo_es_encontrar_todos_los_tesoros_escondidos_por_gully">Tu objetivo es encontrar todos los tesoros que Randy ha ocultado en los cofres que ves en el mapa</string>
 	<string name="full_tip_title_bienvenido_al_juego">¡BIENVENIDO AL JUEGO!</string>
-	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">¡Bienvenido al juego del Geocaching Full! Tu objetivo es encontrar todos los tesoros que Gully ha ocultado en los cofres que ves en el mapa</string>
+	<string name="full_tip_message_bienvenido_al_juego_del_geocaching_full">¡Bienvenido al juego del Geocaching Full! Tu objetivo es encontrar todos los tesoros que Randy ha ocultado en los cofres que ves en el mapa</string>
 	<string name="full_tip_title_juego_outdoor">JUEGO OUTDOOR</string>
 	<string name="full_tip_message_este_juego_es_outdoor">Este juego es \'Outdoor\'. Quiere decir que para jugar esta partida necesitarás estar cerca de los cofres para poderlos abrir</string>
 	<string name="full_tip_title_juego_indoor">JUEGO INDOOR</string>
@@ -257,7 +257,7 @@ Pulsa el play y disfruta del viaje.</string>
 	
 	
 	<!-- EXPLORER BATTLE -->
-	<string name="battle_explorer">EXPLORER</string>
+	<string name="battle_explorer">RANDOCACHING</string>
 	<string name="battle_abandonar">Abandonar</string>
 	<string name="battle_titulo">Título</string>
 	<string name="battle_descripcion">Descripción</string>
@@ -285,7 +285,7 @@ Pulsa el play y disfruta del viaje.</string>
 	<string name="battle_no_te_queda_mucho_solo_estas_a">No te queda mucho, sólo estás a</string>
 	<string name="battle_sigue_buscando">sigue buscando</string>
 	<string name="battle_el_geocache_no_tiene_coordenadas">El geocaché no tiene coordenadas</string>
-	<string name="battle_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Abre el cofre y descubre si esconde el tesoro de Gully</string>
+	<string name="battle_abre_el_cofre_y_descubre_si_esconde_el_tesoro_de_gully">Abre el cofre y descubre si esconde el tesoro de Randy</string>
 	<string name="battle_parece_que_no_tienes_encendido_el_gps_quieres_habilitarlo">Parece que no tienes encendido el GPS. ¿Quieres habilitarlo?</string>
 	<string name="battle_si">Si</string>
 	<string name="battle_no">No</string>

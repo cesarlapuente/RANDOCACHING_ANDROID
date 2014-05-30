@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alborgis.ting.mainapp"
-    android:versionCode="21"
+    package="com.alborgis.randocaching.mainapp"
+    android:versionCode="1"
     android:versionName="1.0"
     android:installLocation="auto">
 
@@ -39,20 +39,20 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     
-    <permission android:name="com.alborgis.ting.mainapp.permission.C2D_MESSAGE"
+    <permission android:name="com.alborgis.randocaching.mainapp.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.alborgis.ting.mainapp.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.alborgis.randocaching.mainapp.permission.C2D_MESSAGE" />
 
     
 
 <application
-        android:name="com.alborgis.ting.mainapp.MainApp"
+        android:name="com.alborgis.randocaching.mainapp.MainApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.alborgis.ting.mainapp.splash.SplashActivity"
+            android:name="com.alborgis.randocaching.mainapp.splash.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -61,109 +61,109 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.alborgis.ting.mainapp.home.MainActivity"
+            android:name="com.alborgis.randocaching.mainapp.home.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.games.GameIntroActivity"
+            android:name="com.alborgis.randocaching.mainapp.games.GameIntroActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.games.geocache_one.GeocacheOneMapActivity"
+            android:name="com.alborgis.randocaching.mainapp.games.geocache_one.GeocacheOneMapActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.games.geocache_full.GeocacheFullMapActivity"
+            android:name="com.alborgis.randocaching.mainapp.games.geocache_full.GeocacheFullMapActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.games.geocache_battle.GeocacheBattleMapActivity"
+            android:name="com.alborgis.randocaching.mainapp.games.geocache_battle.GeocacheBattleMapActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.ra.RAActivity"
+            android:name="com.alborgis.randocaching.mainapp.ra.RAActivity"
             android:configChanges="screenSize|orientation" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.passport.PassportActivity"
+            android:name="com.alborgis.randocaching.mainapp.passport.PassportActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.passport.PassportGridActivity"
+            android:name="com.alborgis.randocaching.mainapp.passport.PassportGridActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.about.AboutActivity"
+            android:name="com.alborgis.randocaching.mainapp.about.AboutActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.awards.AwardsActivity"
+            android:name="com.alborgis.randocaching.mainapp.awards.AwardsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.stories.StoriesActivity"
+            android:name="com.alborgis.randocaching.mainapp.stories.StoriesActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.login.FacebookLoginActivity"
+            android:name="com.alborgis.randocaching.mainapp.login.FacebookLoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.destinations.DestinationDetailActivity"
+            android:name="com.alborgis.randocaching.mainapp.destinations.DestinationDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.stories.StoryDetailActivity"
+            android:name="com.alborgis.randocaching.mainapp.stories.StoryDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.awards.AwardDetailActivity"
+            android:name="com.alborgis.randocaching.mainapp.awards.AwardDetailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.games.multiplayer.SlotsActivity"
+            android:name="com.alborgis.randocaching.mainapp.games.multiplayer.SlotsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.games.multiplayer.CreateSlotActivity"
+            android:name="com.alborgis.randocaching.mainapp.games.multiplayer.CreateSlotActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         
         <activity
-            android:name="com.alborgis.ting.mainapp.games.multiplayer.JoinSlotActivity"
+            android:name="com.alborgis.randocaching.mainapp.games.multiplayer.JoinSlotActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
@@ -180,17 +180,17 @@
         
         
         <receiver
-            android:name="com.alborgis.ting.mainapp.common.push.GcmBroadcastReceiver"
+            android:name="com.alborgis.randocaching.mainapp.common.push.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <!-- Receives the actual messages. -->
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <!-- Receives the registration id. -->
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="com.alborgis.ting.mainapp" />
+                <category android:name="com.alborgis.randocaching.mainapp" />
             </intent-filter>
         </receiver>
-        <service android:name="com.alborgis.ting.mainapp.common.push.GcmIntentService" />
+        <service android:name="com.alborgis.randocaching.mainapp.common.push.GcmIntentService" />
        
     </application>
 
