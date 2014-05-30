@@ -67,7 +67,7 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 	TextView lblBocadilloTexto1;
 	TextView lblBocadilloTexto2;
 	
-	Button btnMostrarJuegos;
+	ImageButton btnMostrarJuegos;
 	Button btnMostrarSoloDestinos;
 	Button btnSelCiudad;
 	Button btnSelJuego;
@@ -137,7 +137,7 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		panelCargandoGrid = (RelativeLayout) findViewById(R.id.panelCargandoGrid);
 		panelGridVacio = (RelativeLayout) findViewById(R.id.panelGridVacio);
 		tvNoHayElementos = (TextView) findViewById(R.id.tvNoHayElementos);
-		btnMostrarJuegos = (Button) findViewById(R.id.btnMostrarJuegos);
+		btnMostrarJuegos = (ImageButton) findViewById(R.id.btnMostrarJuegos);
 		btnMostrarSoloDestinos = (Button) findViewById(R.id.btnMostrarSoloDestinos);
 		btnSelCiudad = (Button) findViewById(R.id.btnSelCiudad);
 		btnSelJuego = (Button) findViewById(R.id.btnSelJuego);
@@ -158,7 +158,6 @@ public class MainActivity extends Activity implements EndlessGridViewListener, L
 		btnSelCiudad.setTypeface(tfDroidSansNormal);
 		btnSelJuego.setTypeface(tfDroidSansNormal);
 		tvNoHayElementos.setTypeface(tfGullyBold);
-		btnMostrarJuegos.setTypeface(tfDroidSansNormal);
 		btnMostrarSoloDestinos.setTypeface(tfDroidSansNormal);
 		
 		// Inicializar el gps
