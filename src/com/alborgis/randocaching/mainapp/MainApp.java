@@ -25,8 +25,7 @@ public class MainApp extends Application {
 	//public int RES_ID_FICH_BBBDD = R.raw.bd_app; No es necesario utilizar la BBDD por el momento
 	
 	// Nombres de dominios y urls de servicios
-	//public String URL_SERVIDOR = "http://travelingames.alborgis.com"; // Desarrollo (Sin la barra del final)
-	public String URL_SERVIDOR = "http://ting.thetravelingames.com"; // Produccion (Sin la barra del final)
+	public String URL_SERVIDOR = "http://randocaching.com"; // Produccion (Sin la barra del final)
 
 	// Nombre del endpoint
 	public String ENDPOINT = "rest";
